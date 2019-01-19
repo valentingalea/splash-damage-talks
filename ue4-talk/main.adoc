@@ -50,3 +50,16 @@ struct FBMCodingStandardBlueprintVarGroup
     UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = Camera)
     TArray<int> WidgetCameraLevels; // [class.member.def] Unreal arrays start initialized and empty
 -----
+
+== Existing Coding Standards
+Everbody and their grandma try to establish coding styles/standards
+
+- C++ standard
+  * everything is lowercase like_this
+- Google style guide
+  * https://google.github.io/styleguide/cppguide.html
+- Epic's own
+  * https://docs.unrealengine.com/en-us/Programming/Development/CodingStandard
+
+== Enforcing a Style
+TODO:
