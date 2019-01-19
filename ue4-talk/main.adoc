@@ -9,6 +9,7 @@
 :revealjs_fragments: true
 :source-highlighter: highlightjs
 :icons: font
+:customcss: main.css
 
 == About
 TODO:
@@ -30,3 +31,22 @@ TODO:
 - Engine migrations and merge strategy
 - Multiple project management
 
+== Standard Test
+[source, cpp]
+-----
+// [ue.gen.struct] [ue.ecs.group] move groups of Blueprint exposed variables into separate structures
+//	this helps refactoring and takes the stress out of interfaces
+//	for ex implementation-only functions can just take the group as an argument
+//	NOTE: this is not always possible, but highly desirable for "config" like variables
+USTRUCT(BlueprintType)
+struct FBMCodingStandardBlueprintVarGroup
+{
+    GENERATED_BODY()
+
+    // [vs.plugin] some good tools to help manage these special meta attributes
+    //	it's a pain to write them by hand
+    //	- UE4 Intellisense https://marketplace.visualstudio.com/items?itemName=RxCompiLe.UE4Intellisense
+    //	- SpecifierTool https://marketplace.visualstudio.com/items?itemName=patience2012.SpecifierTool
+    UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = Camera)
+    TArray<int> WidgetCameraLevels; // [class.member.def] Unreal arrays start initialized and empty
+-----

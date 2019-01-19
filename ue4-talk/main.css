@@ -1,0 +1,15 @@
+
+.reveal section img {
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.reveal pre {
+    width: 125%;
+    margin-left: -12%;
+    font-weight: 400; /* normal is 400, bold is 700 */
+}
+.reveal pre code {
+    max-height: 100%;
+}
