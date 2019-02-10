@@ -1,0 +1,21 @@
+{
+  "name": "mdx-test",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "mdx-deck": "^1.8.2"
+  },
+  "devDependencies": {
+    "mdx-deck-code-surfer": "^0.5.5",
+    "raw-loader": "^1.0.0"
+  },
+  "scripts": {
+    "start": "mdx-deck deck.mdx",
+    "build": "mdx-deck build --no-html deck.mdx",
+    "pdf": "mdx-deck pdf deck.mdx",
+    "image": "mdx-deck screenshot deck.mdx",
+    "help": "mdx-deck"
+  },
+  "author": "V G",
+  "license": "MIT"
+}
