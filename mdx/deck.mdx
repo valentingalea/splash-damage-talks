@@ -1,51 +1,14 @@
-import { Head } from 'mdx-deck'
 import { CodeSurfer } from "mdx-deck-code-surfer"
-
-<!-- export { future as theme } from 'mdx-deck/themes' -->
-
-<Head>
-  <title>Presentation Title</title>
-</Head>
-
-# Hello
-TODO: move this in separate file
-TODO: clean this repo
-
----
 import vsDark from "prism-react-renderer/themes/vsDark"
 
-<CodeSurfer
-  title="Some Title (optional)"
-  code={require("!raw-loader!../blackmass/test.h")}
-  lang="cpp"
-  showNumbers={false}
-  steps={[
-    { notes: "Start with this note"},
-    { range: [1, 10], notes: "optional" },
-    { range: [15, 25] },
-    { range: [30, 50] }
-  ]}
-/>
+# Live Code Standards
+
+TODO: change theme to dark
 
 ---
-import { Appear } from 'mdx-deck'
+## About
 
-<ul>
-  <Appear>
-    <li>One</li>
-    <li>Two</li>
-    <li>Three</li>
-  </Appear>
-</ul>
-
----
-<div>
-  <Appear>
-    <p>One</p>
-    <p>Two</p>
-    <p>Three</p>
-  </Appear>
-</div>
+TODO: full screen pic
 
 ---
 ## What are Coding Standards TODO: too big font
@@ -90,9 +53,18 @@ TODO: quotes from wiki
 - using a chapter/tag system for easy reference
 
 ---
-## Overview
-
-TODO: zoom anim thru the .h
+<CodeSurfer
+  title="The standard"
+  code={require("!raw-loader!../standards/snip/test.h")}
+  lang="cpp"
+  showNumbers={false}
+  steps={[
+    { notes: "TODO: overview"},
+    { range: [1, 10], notes: "TODO: split there proper" },
+    { range: [15, 25] },
+    { range: [30, 50] }
+  ]}
+/>
 
 ---
 ## Referencing / Searching
