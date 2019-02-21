@@ -55,21 +55,25 @@ TODO: quotes from wiki
 ---
 <CodeSurfer
   title="The standard"
-  code={require("!raw-loader!../standards/snip/test.h")}
+  code={require("!raw-loader!../standards/snip/overview.h")}
   lang="cpp"
   showNumbers={false}
   steps={[
-    { notes: "TODO: overview"},
-    { range: [1, 10], notes: "TODO: split there proper" },
-    { range: [15, 25] },
-    { range: [30, 50] }
+    { range: [ 1, 15], notes: "" },
+    { range: [15, 30] },
+    { range: [30, 45] },
+    { range: [45, 60] },
+    { range: [60, 75] },
+    { lines: [66], notes: "notice the chapter tagging system" }
   ]}
 />
 
 ---
-## Referencing / Searching
+## Tagging
 
-TODO: explain the tag system
+- inspired by the C++ standard itself (TODO: quote)
+- allows easy search and reference
+- handy in code reviews
 
 ---
 ## Walkthru
