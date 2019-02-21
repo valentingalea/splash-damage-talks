@@ -59,6 +59,7 @@ TODO: quotes from wiki
   lang="cpp"
   showNumbers={false}
   steps={[
+    { notes: "the header file" },
     { range: [ 1, 15], notes: "" },
     { range: [15, 30] },
     { range: [30, 45] },
@@ -76,9 +77,62 @@ TODO: quotes from wiki
 - handy in code reviews
 
 ---
-## Walkthru
+## Walkthrough
 
-TODO: show the main sections
+- more architectural than strict rule-sets
+- very Unreal Engine 4 focused
+- cater to all experience levels
+
+---
+<CodeSurfer
+  title="Section: Layout"
+  code={require("!raw-loader!../standards/snip/layout.cpp")}
+  lang="cpp"
+  steps={[
+    { notes: " " },
+  ]}
+/>
+
+---
+<CodeSurfer
+  title="Section: Braces"
+  code={require("!raw-loader!../standards/snip/braces.cpp")}
+  lang="cpp"
+  steps={[
+    { notes: " " },
+    { range: [ 8, 24], notes: "" },
+    { range: [34, 47] }
+  ]}
+/>
+
+---
+<CodeSurfer
+  title="Section: auto"
+  code={require("!raw-loader!../standards/snip/auto.cpp")}
+  lang="cpp"
+  steps={[
+    { notes: " " },
+    { range: [ 6, 12], notes: "" },
+    { range: [17, 19] },
+    { range: [21, 27] },
+    { range: [29, 40] },
+    { range: [46, 53] }
+  ]}
+/>
+
+---
+<CodeSurfer
+  title="Section: lambda"
+  code={require("!raw-loader!../standards/snip/lambda.cpp")}
+  lang="cpp"
+  steps={[
+    { notes: " " },
+    { range: [ 3,  8], notes: "" },
+    { range: [17, 22] },
+    { range: [24, 28] },
+    { range: [34, 43] }
+  ]}
+/>
 
 ---
 ## Modify and improve
