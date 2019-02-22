@@ -1,9 +1,8 @@
 import { CodeSurfer } from "mdx-deck-code-surfer"
+export { default as theme } from "./theme"
 import vsDark from "prism-react-renderer/themes/vsDark"
 
-# Live Code Standards
-
-TODO: change theme to dark
+# Live Coding Standards
 
 ---
 import { Image } from 'mdx-deck'
@@ -24,7 +23,7 @@ Valentin Galea
 </Image>
 
 ---
-## What are Coding Standards TODO: too big font
+## What are Coding Standards
 
 TODO: quotes from wiki
 
@@ -34,9 +33,9 @@ TODO: quotes from wiki
 - C++ standard
   * everything is lowercase like_this
 - Google style guide
-  * https://google.github.io/styleguide/cppguide.html
+  - https://google.github.io/styleguide/cppguide.html
 - Epic's own
-  * https://docs.unrealengine.com/en-us/Programming/Development/CodingStandard
+  - https://docs.unrealengine.com/en-us/Programming/Development/CodingStandard
 - TODO: more
 - TODO: too big font
 - TOOD: use URL short
@@ -80,6 +79,7 @@ TODO: quotes from wiki
   code={require("!raw-loader!../standards/snip/overview.h")}
   lang="cpp"
   showNumbers={false}
+  theme={vsDark}
   steps={[
     { notes: "the header file" },
     { range: [ 1, 15], notes: "" },
@@ -110,6 +110,7 @@ TODO: quotes from wiki
   title="Section: Layout"
   code={require("!raw-loader!../standards/snip/layout.cpp")}
   lang="cpp"
+  theme={vsDark}
   steps={[
     { notes: " " },
   ]}
@@ -120,6 +121,7 @@ TODO: quotes from wiki
   title="Section: Braces"
   code={require("!raw-loader!../standards/snip/braces.cpp")}
   lang="cpp"
+  theme={vsDark}
   steps={[
     { notes: " " },
     { range: [ 8, 24], notes: "" },
@@ -132,6 +134,7 @@ TODO: quotes from wiki
   title="Section: auto"
   code={require("!raw-loader!../standards/snip/auto.cpp")}
   lang="cpp"
+  theme={vsDark}
   steps={[
     { notes: " " },
     { range: [ 6, 12], notes: "" },
@@ -147,6 +150,7 @@ TODO: quotes from wiki
   title="Section: lambda"
   code={require("!raw-loader!../standards/snip/lambda.cpp")}
   lang="cpp"
+  theme={vsDark}
   steps={[
     { notes: " " },
     { range: [ 3,  8], notes: "" },
