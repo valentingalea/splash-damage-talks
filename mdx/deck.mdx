@@ -6,9 +6,22 @@ import vsDark from "prism-react-renderer/themes/vsDark"
 TODO: change theme to dark
 
 ---
-## About
+import { Image } from 'mdx-deck'
+import Box from 'superbox'
 
-TODO: full screen pic
+<Image src="img/banner.jpg">
+<Box
+  css={{
+    position: 'relative',
+    top: '50%',
+    transform: 'translateY(-50%)',
+    color: 'white'
+  }}
+>
+Valentin Galea
+</Box>
+
+</Image>
 
 ---
 ## What are Coding Standards TODO: too big font
@@ -50,7 +63,16 @@ TODO: quotes from wiki
 - standards are source code files!
   * you can break the build messing with the standard :)
 - they are created and improved thru code reviews
-- using a chapter/tag system for easy reference
+- they have a system for easy reference and searching
+
+---
+## The Coding Standards
+
+* 2 files
+  * SplashDamageCodingStandard.h
+  * SplashDamageCodingStandard.cpp
+* located in the main source code
+  * `ue4/Game/Source/Main/...`
 
 ---
 <CodeSurfer
@@ -143,4 +165,3 @@ TODO: show picture
 ---
 ## Unintended consequences
 
-TODO: the actor .gif
