@@ -21,7 +21,14 @@ export default {
     li: {
         fontSize: '1em'
     },
+    p: {
+        fontSize: '1em',
+        margin: '0'
+    },
     a: {
         textDecoration: 'none'
+    },
+    code: {
+        color: 'grey'
     }
 }
