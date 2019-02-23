@@ -1,1 +1,0 @@
-npm install --save asciidoctor-reveal.js
