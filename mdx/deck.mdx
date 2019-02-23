@@ -1,10 +1,10 @@
 import { CodeSurfer } from "mdx-deck-code-surfer"
 export { default as theme } from "./theme"
 import vsDark from "prism-react-renderer/themes/vsDark"
+import { Appear } from 'mdx-deck'
+import { Head } from 'mdx-deck'
 
 # Live Coding Standards
-
-import { Head } from 'mdx-deck'
 
 <Head><title>Live Coding Standards</title></Head>
 
@@ -205,7 +205,9 @@ If enough up-votes the proposal gets submitted 👍
 ---
 ## Unintended consequences
 
-![ue4 actor](img/coding-actor.png)
+<Appear>
+  <img src="img/coding-actor.png" alt="UE4 screenshot"/>
+</Appear>
 
 ---
 ## The End
