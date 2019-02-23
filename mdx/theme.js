@@ -20,5 +20,8 @@ export default {
     },
     li: {
         fontSize: '1em'
+    },
+    a: {
+        textDecoration: 'none'
     }
 }
