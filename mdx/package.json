@@ -14,7 +14,9 @@
     "build": "mdx-deck build --no-html deck.mdx",
     "pdf": "mdx-deck pdf deck.mdx",
     "image": "mdx-deck screenshot deck.mdx",
-    "help": "mdx-deck"
+    "help": "mdx-deck",
+    "ue4": "mdx-deck ue4.mdx",
+    "ue4-build": "mdx-deck build --no-html ue4.mdx"
   },
   "author": "V G",
   "license": "MIT"

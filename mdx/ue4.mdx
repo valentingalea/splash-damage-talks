@@ -1,0 +1,42 @@
+import { CodeSurfer } from "mdx-deck-code-surfer"
+export { default as theme } from "./theme"
+import vsDark from "prism-react-renderer/themes/vsDark"
+import { Appear } from 'mdx-deck'
+import { Head } from 'mdx-deck'
+
+# UE4
+
+<Head><title>UE4</title></Head>
+
+---
+<CodeSurfer
+  title="Normal Submit Flow"
+  code={require("!raw-loader!../flow/submit.txt")}
+  theme={vsDark}
+  lang="yaml"
+  steps={[
+    { notes: "" },
+    { range: [ 1,  5] },
+    { range: [10, 15] },
+    { range: [23, 28] },
+    { range: [36, 41] }
+  ]}
+/>
+
+---
+<CodeSurfer
+  title="Pre Submit Flow"
+  code={require("!raw-loader!../flow/pre-submit.txt")}
+  theme={vsDark}
+  lang="yaml"
+  steps={[
+    { notes: "" },
+    { range: [ 1,  5] },
+    { range: [10, 15] },
+    { range: [23, 28] },
+    { range: [36, 41] },
+    { lines: [43, 47] },
+    { range: [50, 53] },
+    { range: [62, 66] },
+  ]}
+/>
