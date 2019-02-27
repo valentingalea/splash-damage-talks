@@ -9,6 +9,74 @@ import { Head } from 'mdx-deck'
 <Head><title>UE4</title></Head>
 
 ---
+## Original agenda
+
+- Quick history of the studio
+- Overview of the shipped UE games
+- Internal teams and management
+- Coding Standards and approach
+- Content Standards and enforcing
+- Engine changes
+- Game architecture / modules
+- Unit / Functional testing
+- Approach in ECS design
+- Learnings from GAS
+- Tools overview
+- Submit and review policies
+- Build pipelines / CI
+- Engine migrations and merge strategy
+- Multiple project management
+
+---
+## Company history
+
+TODO: get the timeline and spread in 2-3 slides
+
+---
+## UE4 games
+
+* Gears Ultimate Edition
+* Gears 4 and 5
+* Gears Tactics
+* Chelan
+* multiple announced titles
+
+---
+## Teams and Projects
+
+* how we run multiple Projects
+* how we share information
+* splash-engine
+
+---
+## Coding Standards
+
+TODO: insert prev deck
+TODO: showcase more UE4 stuff
+
+---
+## Content Standards
+
+TODO: export PDF from Confluence
+
+* how we define them
+* how we check
+  * naming validator
+  * blueprint validator
+
+---
+## Content Validator
+
+* unmap dev folder
+* the cook-all trick we use
+  * alternatives
+
+---
+## Pre-commit
+
+TODO: rename from submit to commit
+
+---
 <CodeSurfer
   title="Normal Submit Flow"
   code={require("!raw-loader!../flow/submit.txt")}
@@ -41,62 +109,44 @@ import { Head } from 'mdx-deck'
   ]}
 />
 
+---
+## Pre-commit
+
+* frontend vs backend
+* frontend: Resharper / CVT
+* backend: the build config with the 3 configs
+  * how was done
 
 ---
-## Original agenda
+## buildgraph
 
-- Quick history of the studio
-- Overview of the shipped UE games
-- Internal teams and management
-- Coding Standards and approach
-- Content Standards and enforcing
-- Engine changes
-- Game architecture / modules
-- Unit / Functional testing
-- Approach in ECS design
-- Learnings from GAS
-- Tools overview
-- Submit and review policies
-- Build pipelines / CI
-- Engine migrations and merge strategy
-- Multiple project management
+* talk about UBT and traditional build/cook/run scripts
+  * disadvantages with this TODO: screenshot with multistep Raptor shit
+* unify all paths
+* minimal solution support
+* consistent scripts
+* project files ready
+* infrastructure as code
+  * we support both TeamCity and Jenkins
+* what we modified
 
 ---
-## detail
+## UGS
 
--buildgraph
-  * unify all paths
-  * minimal solution support
-  * consistent scripts
-  * project files ready
-  * infrastructure as code
-  ** we support both TeamCity and Jenkins
-  * what we modified
-- UGS
   * how we use it
   * our modification
   * rewrote UGS script
   * code-data dependency
+
+---
+## Other
+
 - testing
   * TODO: understand from work
 - game structure
   * modules (types & layout)
-- pre-commit
-  * the anim
-  * how we achieved it
 - tools
   * code reviews tools
   * PCT 
   * CVT
   * Trigger
-- code standard
-- content standard
-  * name & blueprint validators
-  * content validation
-  * mention DDC
-
----
-## TODO
-
-- talk to marketing for history of studio / UE4 projects
-- get a list of stuff to get from work (pics / study Confluence)
