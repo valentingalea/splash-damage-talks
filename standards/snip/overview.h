@@ -2,7 +2,7 @@
 #pragma once
 
 // [basic.rule] FOLLOW UE4 coding style! 
-//    https://docs.unrealengine.com/latest/INT/Programming/Development/CodingStand
+//    https://docs.unrealengine.com/latest/INT/Programming/Development/CodingSta
 //    especially here in the header/interface
 //    in the implementation (.cpp) you are allowed to diverge a bit
 //    but NEVER when it comes to things that will be visible from outside
@@ -44,7 +44,7 @@ public:
     // due to the way GENERATED_BODY works, `= default`-ing is problematic
 
     // [class.dtor] don't write empty one, default or remove it
-    //    respect the rule of 3/5/0 http://en.cppreference.com/w/cpp/language/rule
+    //    respect the rule of 3/5/0 http://en.cppreference.com/w/cpp/language/ru
     ~ASDCodingStandardExampleActor() = default; // or just remove
 
     // [class.virtual] explicitly mark up virtual methods
@@ -70,6 +70,32 @@ public:
 
     // [class.inline.good] Move the definitions of inline function outside the c
     TWeakObjectPtr<USkeletalMeshComponent> GoodExampleOfInline();
+
+protected:
+    // [class.order] Do not alternate functions and variables in the class decla
+    // Put all functions first, all variables last
+
+    // [ue.ecs.split] Split functionality into components
+    //    avoid creating monolithic giant classes!
+    // [header.rule.fwd] example of in-place forward declaration
+
+    // [ue.ecs.gc] never use naked pointers to UObject's, always have UPROPERTY 
+    // or equivalent UE smart pointers
+    //    - For storing pointers to classes you don't own, use TWeakObjectPtr
+    //    - Don't initialise TWeakObjectPtr as it will force you to headers!
+    TWeakObjectPtr<USkeletalMeshComponent> OtherMesh; /* <- GOOD */
+    //TWeakObjectPtr<USkeletalMeshComponent> AnotherMesh = nullptr; /* <- BAD */
+    //    - For storing pointers to classes you do own, use UPROPERTY() w. init
+    UPROPERTY(BlueprintReadOnly, Category = Mesh)
+    USkeletalMeshComponent* MyMesh = nullptr;
+
+    // [class.order.replication] As an exception to [class.ordering], 
+    // declare replication functions next to the variable that used them to
+    // avoid cluttering the interface with non-client code
+    UPROPERTY(Transient, ReplicatedUsing = "OnRep_WantsToSprint")
+    bool WantsToSprint = false;
+    UFUNCTION()
+    void OnRep_WantsToSprint();
 };
 
 // [ue.gen.struct] [ue.ecs.group] move groups of Blueprint exposed variables
@@ -88,7 +114,7 @@ struct FSDCodingStandardBlueprintVarGroup
     TArray<int> WidgetCameraLevels; // [class.member.def] arrays start empty
 
     // [class.member.def] always provide defaults for member variables
-    //    prefer assigning them here, not in the constructor - that should be rese
+    //    prefer assigning them here, not in the constructor - that should be re
     //    for more complicated init logic / creation 
     UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = Camera)
     float CameraTraceVolumeWidth = 96.0f * 5;
@@ -110,4 +136,71 @@ struct FSDCodingStandardBlueprintVarGroup
     //    general rule of thumb: sort in descending order by size 
     UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = Camera)
     bool ShowWeaponWidget = true;
+};
+
+UCLASS()
+class USDCodingStandardExampleComponent : public USceneComponent
+{
+    GENERATED_BODY()
+
+public:
+    // [func.arg.readability] avoid `bool` function arguments, especially succes
+    /* BAD -> */ void FuncHardToReadOnCall(int Order, bool bSetCache, bool bUseL
+
+    using TOrder = int;
+    enum class ECacheFlags { Use, Disabled, Unspecified };
+    enum class ELogging { Yes, No };
+    /* GOOD -> */ void FuncNiceToReadOnCall(TOrder, ECacheFlags, ELogging);
+    //    argument names in declarations are ignored, try to encode as much mean
+    //    also even this simple typedef/using goes a long way readability wise a
+    //    ex: FuncNiceToReadOnCall(FOrder(42), FCacheFlags::Use, FLogFlags::Cust
+
+    // [func.arg.readability] avoid consecutive chains of same type, avoid too m
+    /* BAD -> */ void FuncWithTooManyArgs(FVector Location, FVector Origin, FVec
+        FRotator Rotation, UPrimitiveComponent *Parent, AActor *Owner, float Dam
+    // try to add a helper structure, or maybe you can split in more functions t
+
+    // [singleton.no] NEVER USE SINGLETONS!!!
+    //    - they are very problematic in multi-threaded scenarios
+    //    - they interfere/break with Hot Reload and plugins
+    //    - discuss alternatives with your lead
+    //    - if you somehow have to add one, first reconsider!
+    //    then use the Meyers pattern: https://stackoverflow.com/a/1661564
+    /* BAD -> */ static USDCodingStandardExampleComponent* Instance; // defined 
+    /* VERY BAD -> */ USDCodingStandardExampleComponent* GetInstance() { return 
+
+    // [ue.alloc] expose the allocation as a policy for new utility methods you 
+    //    this way the caller has a chance to decide how memory is utilized
+    template<class AllocatorType>
+    void GetComponents(TArray<UActorComponent *, AllocatorType>& OutComponents);
+
+    // [cpp.lambda] used later for guidelines
+    void LambdaStyle(AActor *ExternalEntity);
+
+    // [cpp.rel_ops] when implementing relation operators, use the binary free f
+    //  as it provides the most flexibility with operands order and usage
+    //  If they needs to access private members 
+    //  make them `friend` and respect [class.inline.good]
+    friend inline bool operator == (
+        const USDCodingStandardExampleComponent &lhs,
+        const USDCodingStandardExampleComponent &rhs);
+
+protected:
+    UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+    FSDCodingStandardBlueprintVarGroup BlueprintGroup;
+
+private:
+    // [class.constant] best way to define constants
+    constexpr static int SomeDefaultMagicValue = 0xFF00;
+    // BAD alternatives:
+    //    #define OtherDefaultMagicValue (5)
+    //    enum { RandomSeemValue = 434334 };
+    //    static int AnotherMagicNumber; // actual value buried in .cpp
+
+    // [naming.bool] Exception from UE4 coding standard:
+    //    DON'T add `b` prefix to bool declaration names!
+    //    instead use English Modal Verbs and variations like: 
+    //  Can, Does, Will, Is, Has, Use, etc
+    bool bInGame, bAttack, bLog, bCustomStencil; /* <- BAD */
+    bool InGame, CanAttack, UseLog, HasCustomStencil; /* <- GOOD */
 };
