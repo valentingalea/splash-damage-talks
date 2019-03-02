@@ -182,6 +182,59 @@ TODO: content folder structure
 - TODO: screenshot of some errors
 
 ---
+## Compilation
+
+---
+## Hardware
+
+- Everyday work is very CPU intensive
+- CPU cores
+  *  8 -> 16: ~95% performance increase
+  * 16 -> 32: 1.7x faster
+  * 16 -> 64: 2.1x faster
+- RAM
+  * 16-64 GB TODO: confirm
+- Disk space
+  * 1 TB SSD + 2 TB mechanical drive
+  * some projects push requirements (more SSD's, larger mechanical)
+
+---
+## Build Farm
+
+- Configuration / layout different per project
+- Sweetspot for price/performance for us 32 thread CPUs
+  * Good performer: 16c/32t Threadripper 1950x
+  * TODO: what does Gander have?
+- Orchestration
+  * TeamCity majority of projects
+  * Jenkins as well
+
+TODO: is it worth showing the table with hardware types / times?
+
+---
+## Infrastructure-As-Code
+
+- In the past we used ad-hoc methods that didn't scale well
+  * too tight integrated with the CI orchestrator TODO: screenshot of raptor
+  * too bespoke for a project - cannot reuse
+  * hard to debug locally
+- Now leveraging Epic's own _Buildgraph_
+
+---
+## BuildGraph
+
+* talk about UBT and traditional build/cook/run scripts
+* unify all paths
+* minimal solution support
+* consistent scripts
+* project files ready
+* infrastructure as code
+  * we support both TeamCity and Jenkins
+* what we modified
+
+TODO: refactor
+
+---
 ## Pre-Commit
 
 ---
@@ -265,19 +318,6 @@ TODO: pic of Bogdan's new tool
     * Editor Dev build + Main game Dev build + PS4 build
     * Overnight: 1.5-2h on fastest machine
     * Daily: 5-15 min per commit check
-
----
-## buildgraph
-
-* talk about UBT and traditional build/cook/run scripts
-  * disadvantages with this TODO: screenshot with multistep Raptor shit
-* unify all paths
-* minimal solution support
-* consistent scripts
-* project files ready
-* infrastructure as code
-  * we support both TeamCity and Jenkins
-* what we modified
 
 ---
 ## UGS
