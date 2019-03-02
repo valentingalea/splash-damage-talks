@@ -164,13 +164,11 @@ TODO: content folder structure
 - TODO: screenshot of some errors
 
 ---
-## Pre-commit
-
-TODO: rename from submit to commit
+## Pre-Commit
 
 ---
 <CodeSurfer
-  title="Normal Submit Flow"
+  title="Normal Commit Flow"
   code={require("!raw-loader!../flow/submit.txt")}
   theme={vsDark}
   lang="yaml"
@@ -185,7 +183,7 @@ TODO: rename from submit to commit
 
 ---
 <CodeSurfer
-  title="Pre Submit Flow"
+  title="Pre-Commit Flow"
   code={require("!raw-loader!../flow/pre-submit.txt")}
   theme={vsDark}
   lang="yaml"
@@ -202,12 +200,53 @@ TODO: rename from submit to commit
 />
 
 ---
-## Pre-commit
+## How it works
 
-* frontend vs backend
-* frontend: Resharper / CVT
-* backend: the build config with the 3 configs
-  * how was done
+- Effectively 2 systems working together
+- Frontend
+  * what the devs interact with
+- Backend
+  * CI / build-machines
+
+---
+## Pre-Commit Frontend
+
+- Tools that allow indirect submits to main code base
+- Off-the-shelf
+  * Visual Studio ReSharper Team City plugin
+  * https://www.jetbrains.com/resharper/
+- Internally developed
+  * more project specific
+  * written in C# or Python  
+
+---
+## Example: Visual Studio ReSharper
+
+![resharper](http://blogs.jetbrains.com/dotnet/wp-content/uploads/2013/03/image4.png)
+
+TODO: better/bigger pic (of our own)
+
+---
+## Example: Internal Tools
+
+TODO: pic of CVT
+
+TODO: pic of Bogdan's new tool
+
+---
+## Pre-Commit Backend
+
+- *Personal Build* system
+  * starts CI build configuration in isolation
+  * more configurations -> better coverage 😊️
+  * more configurations -> stress on build farm ☹️
+- Compile time-saving solution
+  * rebuild all participating configuration over nightly
+  * incremental (non-unity) builds throughout the day
+  * example:
+    * Editor Dev build + Main game Dev build + PS4 build
+    * Overnight: 1.5-2h on fastest machine
+    * Daily: 5-15 min per commit check
 
 ---
 ## buildgraph
