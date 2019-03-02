@@ -108,6 +108,13 @@ TODO: showcase more UE4 stuff
 ![asset examples](img/content-std/example_1.png)
 
 ---
+## Blueprint Standards
+
+TODO: screenshot
+
+TODO: talk to Tam if still used / any good 
+
+---
 ## Enforcing
 
 - Automated checker / validator
@@ -122,12 +129,39 @@ TODO: showcase more UE4 stuff
 
 TODO: code scroll of the JSON list
 
----
-## Content Validator
+TODO: content folder structure
 
-* unmap dev folder
-* the cook-all trick we use
-  * alternatives
+---
+## Content Validation
+
+---
+## Automated Validation
+
+- CI (Continuos Integration) support
+  * validation after submit
+  * nightly builds
+- Blueprints Validation
+- Assets Validation
+
+---
+## Blueprints Validation
+
+- Editor commandlet
+- basic checks
+  - comment nodes present
+  - maximum number of nodes
+  - TODO: what other
+- future work: leverage the Blueprint Compiler
+- TODO: screenshot of errors maybe
+
+---
+## Assets Validation 
+
+- checks for bad/missing references
+- disregards *Developer*, *Test* folders
+- executed via cooking: `-COOKALL -WARNINGASERROR` TODO: actual flags
+- TODO: talk about other solutions
+- TODO: screenshot of some errors
 
 ---
 ## Pre-commit
