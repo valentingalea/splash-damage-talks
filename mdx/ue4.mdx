@@ -320,12 +320,60 @@ TODO: pic of Bogdan's new tool
     * Daily: 5-15 min per commit check
 
 ---
+## Workflow & Rules
+
+- Experiments with commit time-locks
+  * 9am to 6pm to decrease chances of commit  
+  * engine changes only after 5pm because they disrupt Pre-Commit cache
+- Every commit validated against:
+  * Has _title_ and _description_
+  * Contains at least of _tag_ like `[Feature]` `[Bug]` `[Merge]` etc
+  * Has links to _code review_ and code _buddies_
+- Some projects relax or constrain the rules more
+  * example: check against known build-breaking patterns (missing .h/.cpp pair)
+
+---
+## Automation & Testing
+
+---
+## Unit Testing
+
+- Testing plain classes and structs or single UObjects
+- Enhancements to UE4's own framework
+  - follow Given/When/Then structure
+  - separate standard file 
+  - integrated with CI (ex: TeamCity)
+
+TODO: grab test standard
+
+TODO: check the SDTestHarness
+
+TODO: grab TC test screenshot
+
+TODO: talk about Importing private symbols / MODULENAME_TEST_API
+
+---
+## Functional Testing
+
+- Blueprint actors that we embed in bespoke levels using the editor
+- Live under `Content/Test/...`
+- Named `FTEST_` to follow Epic's convention and for visibility
+- Not network capable
+  * Look into recent UE4 additions: _Gauntlet_
+
+TODO: functional test video / screenshot
+
+TODO: clarify if we have functional tests in code
+
+---
 ## UGS
 
-  * how we use it
-  * our modification
-  * rewrote UGS script
-  * code-data dependency
+- how we use it
+- our modification
+- rewrote UGS script
+- code-data dependency
+
+TODO: should I even cover it?
 
 ---
 ## Other
