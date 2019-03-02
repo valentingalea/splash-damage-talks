@@ -10,10 +10,10 @@
     "raw-loader": "^1.0.0"
   },
   "scripts": {
-    "start": "mdx-deck ue4.mdx",
-    "build": "mdx-deck build --no-html ue4.mdx",
-    "pdf": "mdx-deck pdf ue4.mdx",
-    "image": "mdx-deck screenshot ue4.mdx",
+    "start": "mdx-deck UE4.md",
+    "build": "mdx-deck build --no-html UE4.md",
+    "pdf": "mdx-deck pdf UE4.md",
+    "image": "mdx-deck screenshot UE4.md",
     "help": "mdx-deck",
     "code_std": "mdx-deck code_std.mdx",
     "code_std-build": "mdx-deck build --no-html code_std.mdx"
