@@ -201,21 +201,23 @@ WORK: screenshot of content validation errors / TC report
 - Configuration / layout different per project
 - Sweetspot for price/performance for us 32 thread CPUs
   * Good performer: 16c/32t Threadripper 1950x
-  * TODO: what does Gander have?
 - Orchestration
   * TeamCity majority of projects
   * Jenkins as well
 
+WORK: what does Gander have?
 SLIDE: is it worth showing the table with hardware types / times?
 
 ---
 ## Infrastructure-As-Code
 
 - In the past we used ad-hoc methods that didn't scale well
-  * too tight integrated with the CI orchestrator TODO: screenshot of raptor
+  * too tight integrated with the CI orchestrator
   * too bespoke for a project - cannot reuse
   * hard to debug locally
 - Now leveraging Epic's own _Buildgraph_
+
+WORK: get scr of TC big list of steps
 
 ---
 ## BuildGraph
