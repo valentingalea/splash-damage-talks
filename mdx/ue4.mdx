@@ -54,24 +54,18 @@ import { Head } from 'mdx-deck'
 ---
 ## Tasks
 
-TODO: change theme to white or bigger impact black
-
-TODO: theme of code-surfer better contrast of dimmed code
-
-TODO: increase font sizes
-
-TODO: find solution for incremental lists https://github.com/kyleshevlin/react-edges
-
-TODO: try embed code-surfer in react.js
-
-TODO: find solution for header/footer
-
-TODO: separate the sections with img's (badlands style) ideas: games or blurred screenshot of something u
+SYS: theme of code-surfer better contrast of dimmed code
+SYS: find solution for incremental lists https://github.com/kyleshevlin/react-edges
+SYS: try embed code-surfer in react.js
+SYS: find solution for header/footer
+DECK: change theme to white or bigger impact black
+DECK: increase font sizes
+DECK: separate the sections with img's (badlands style) ideas: games or blurred screenshot of something u
 
 ---
 ## Company history
 
-TODO: history timeline from marketing
+WORK: history timeline from marketing
 
 ---
 ## UE4 games
@@ -82,7 +76,7 @@ TODO: history timeline from marketing
 * Chelan
 * multiple announced titles
 
-TODO: pic montage from marketing
+WORK: pic montage from marketing
 
 ---
 ## Teams and Projects
@@ -91,7 +85,7 @@ TODO: pic montage from marketing
 * how we share information
 * splash-engine
 
-TODO: expand on this
+SLIDE: expand teams/prj
 
 ---
 ## Coding Standards
@@ -128,13 +122,6 @@ TODO: code std insert subset of separate talk
 ![asset examples](img/content-std/example_1.png)
 
 ---
-## Blueprint Standards
-
-TODO: blueprint std screenshot
-
-TODO: talk to Tam if still used / any good 
-
----
 ## Enforcing
 
 - Automated checker / validator
@@ -142,14 +129,20 @@ TODO: talk to Tam if still used / any good
   * uses preset JSON list
   * matches asset type against name
 - Intercept new asset creation
-  * TODO: screenshot
+
+WORK: screenshot of asset naming
 
 ---
 ## Enforcing (cont.)
 
-TODO: code scroll of the JSON list
+WORK: get JSON asset names
+SLIDE: JSON asset names code surfer
+WORK: get content folder structure
 
-TODO: content folder structure
+---
+## Blueprint Standards
+
+WORK: talk to Tam if still used / any good & get screenshot 
 
 ---
 ## Content Validation
@@ -157,7 +150,7 @@ TODO: content folder structure
 ---
 ## Automated Validation
 
-- CI (Continuos Integration) support
+- CI (Continuous Integration) support
   * validation after submit
   * nightly builds
 - Blueprints Validation
@@ -167,21 +160,23 @@ TODO: content folder structure
 ## Blueprints Validation
 
 - Editor commandlet
-- basic checks
+- Basic checks
   - comment nodes present
   - maximum number of nodes
-  - TODO: what other
-- future work: leverage the Blueprint Compiler
-- TODO: screenshot of errors maybe
+- Future work: leverage the Blueprint Compiler
+
+WORK: blueprint valid - what other checks / screenshot of report
 
 ---
 ## Assets Validation 
 
 - checks for bad/missing references
 - disregards *Developer*, *Test* folders
-- executed via cooking: `-COOKALL -WARNINGASERROR` TODO: actual flags
-- TODO: talk about other solutions
-- TODO: screenshot of some errors
+- executed via cooking: `-COOKALL -WARNINGASERROR`
+
+WORK: get all cook validation flags
+SLIDE: talk about other solutions
+WORK: screenshot of content validation errors / TC report
 
 ---
 ## Compilation
@@ -211,7 +206,7 @@ TODO: content folder structure
   * TeamCity majority of projects
   * Jenkins as well
 
-TODO: is it worth showing the table with hardware types / times?
+SLIDE: is it worth showing the table with hardware types / times?
 
 ---
 ## Infrastructure-As-Code
@@ -234,7 +229,7 @@ TODO: is it worth showing the table with hardware types / times?
   * we support both TeamCity and Jenkins
 * what we modified
 
-TODO: refactor
+SLIDE: refactor and expand buildgraph
 
 ---
 ## Pre-Commit
@@ -297,14 +292,14 @@ TODO: refactor
 
 ![resharper](http://blogs.jetbrains.com/dotnet/wp-content/uploads/2013/03/image4.png)
 
-TODO: better/bigger pic (of our own)
+WORK: better/bigger Resharper pic (of our own)
 
 ---
 ## Example: Internal Tools
 
-TODO: pic of CVT
+SLIDE: pic of CVT
 
-TODO: pic of Bogdan's new tool
+WORK: pic of Bogdan's new tool
 
 ---
 ## Pre-Commit Backend
@@ -346,13 +341,10 @@ TODO: pic of Bogdan's new tool
   - separate standard file 
   - integrated with CI (ex: TeamCity)
 
-TODO: grab test standard
-
-TODO: check the SDTestHarness
-
-TODO: grab TC test screenshot
-
-TODO: talk about Importing private symbols / MODULENAME_TEST_API
+WORK: grab test standard
+WORK: check the SDTestHarness
+WORK: grab TC test screenshot
+SLIDE: talk about Importing private symbols / MODULENAME_TEST_API
 
 ---
 ## Functional Testing
@@ -363,9 +355,8 @@ TODO: talk about Importing private symbols / MODULENAME_TEST_API
 - Not network capable
   * Look into recent UE4 additions: _Gauntlet_
 
-TODO: functional test video / screenshot
-
-TODO: clarify if we have functional tests in code
+WORK: functional test video / screenshot
+WORK: clarify if we have functional tests in code
 
 ---
 ## UGS
@@ -406,7 +397,8 @@ TODO: should I even cover it?
   ]}
 />
 
-TODO: mention automation and record gif of module creation / maybe just batch file
+TODO: mention automation and record gif of module creation
+WORK: get module batch file
 
 ---
 ## Splash Engine
@@ -424,19 +416,17 @@ TODO: mention automation and record gif of module creation / maybe just batch fi
 - Integrates latest UE4 versions
 
 TODO: diagram of projects layout
-
 TODO: Epic new version example integration
 
 ---
 ## Tools
 
 TODO: quick intro and mention how we will show them for inspiration
-
 TODO: mention across project and within projects
-
 TODO: example screenshots and quick notes about: PCT, CVT, Trigger
 
-TODO: talk to Mark V about TA tools
+WORK: talk to Mark V about TA tools
+WORK: get tools screenshots (CVT, PCT, trigger xml)
 
 ---
 ## The End
