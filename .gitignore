@@ -76,7 +76,5 @@ typings/
 # -----------------------------------------------------------------------------
 .vscode/settings.json
 
-ue4-talk/node_modules/
-ue4-talk/*.html
-
 mdx/node_modules/
+mdx/package-lock.json
