@@ -10,14 +10,14 @@
     "raw-loader": "^1.0.0"
   },
   "scripts": {
-    "start": "mdx-deck deck.mdx",
-    "build": "mdx-deck build --no-html deck.mdx",
-    "pdf": "mdx-deck pdf deck.mdx",
-    "image": "mdx-deck screenshot deck.mdx",
+    "start": "mdx-deck ue4.mdx",
+    "build": "mdx-deck build --no-html ue4.mdx",
+    "pdf": "mdx-deck pdf ue4.mdx",
+    "image": "mdx-deck screenshot ue4.mdx",
     "help": "mdx-deck",
-    "ue4": "mdx-deck ue4.mdx",
-    "ue4-build": "mdx-deck build --no-html ue4.mdx"
+    "code_std": "mdx-deck code_std.mdx",
+    "code_std-build": "mdx-deck build --no-html code_std.mdx"
   },
-  "author": "V G",
+  "author": "Valentin Galea",
   "license": "MIT"
 }
