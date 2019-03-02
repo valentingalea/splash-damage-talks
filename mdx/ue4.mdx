@@ -81,12 +81,46 @@ TODO: showcase more UE4 stuff
 ---
 ## Content Standards
 
-TODO: export PDF from Confluence
+---
+## Motivation
 
-* how we define them
-* how we check
-  * naming validator
-  * blueprint validator
+- Content creation and management is an integral part of development
+- Poor organisation and practices for assets
+  * compound over time
+  * waste productivity
+  * increase cooking and deployment times
+- UE4 Editor is easy to modify to
+  * improve workflows
+  * enforce good practices
+
+---
+## Definitions
+
+![asset naming](img/content-std/template.png)
+
+- Asset naming rules
+  * less confusion and improves searching/browsing
+  * `Prefix` and `BaseAssetName` are mandatory
+
+---
+## Example
+
+![asset examples](img/content-std/example_1.png)
+
+---
+## Enforcing
+
+- Automated checker / validator
+  * Editor commandlet
+  * uses preset JSON list
+  * matches asset type against name
+- Intercept new asset creation
+  * TODO: screenshot
+
+---
+## Enforcing (cont.)
+
+TODO: code scroll of the JSON list
 
 ---
 ## Content Validator
