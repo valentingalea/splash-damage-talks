@@ -376,12 +376,39 @@ TODO: clarify if we have functional tests in code
 TODO: should I even cover it?
 
 ---
+## Projects Setup
+
+---
+## Game Modules
+
+- We strive to have multiple independent modules rather than 1 monolithic one
+- Beneficial for
+  * encapsulation and architecture
+  * faster iteration (linkage improvement for ex)
+  * support for Hot-Reload
+  * re-use throughout projects
+
+---
+<CodeSurfer
+  title="Game Module Layout Example"
+  code={require("!raw-loader!../flow/modules.txt")}
+  theme={vsDark}
+  lang="yaml"
+  steps={[
+    { notes: "" },
+    { range: [ 2, 14], notes: "Runtime module" },
+    { range: [16, 26], notes: "Test module" },
+    { lines: [3], notes: "UBT build file" },
+    { range: [5, 8], notes: "Implementation" },
+    { range: [10, 14], notes: "Interface" }
+  ]}
+/>
+
+TODO: mention automation and record gif of module creation / maybe just batch file
+
+---
 ## Other
 
-- testing
-  * TODO: understand from work
-- game structure
-  * modules (types & layout)
 - tools
   * code reviews tools
   * PCT 

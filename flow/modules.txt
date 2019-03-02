@@ -1,0 +1,28 @@
+GenericComponent
+├───Runtime
+│   │   GenericComponent.Build.cs
+│   │
+│   ├───Private
+│   │   │   GenericComponent.cpp
+│   │   ├───Health
+│   │   │       HealthComponent.cpp
+│   │
+│   └───Public
+│       │   GenericComponent.h
+│       │
+│       ├───Health
+│       │       HealthComponent.h
+│
+└───Test
+     │   GenericComponentTest.Build.cs
+     │
+     ├───Private
+     │   │   GenericComponentTest.cpp
+     │   │
+     │   └───Health
+     │           HealthComponentTest.cpp
+     │
+     └───Public
+                 GenericComponentTest.h
+
+TODO: include Dev/Editor examples
