@@ -3,10 +3,35 @@ export { default as theme } from "./theme"
 import vsDark from "prism-react-renderer/themes/vsDark"
 import { Appear } from 'mdx-deck'
 import { Head } from 'mdx-deck'
+import { Image } from 'mdx-deck'
 
 # UE4
 
 <Head><title>UE4</title></Head>
+
+---
+<Image src="img/timeline/sd-timeline-1.jpg" />
+
+---
+<Image src="img/timeline/sd-timeline-2.jpg" />
+
+---
+<Image src="img/timeline/sd-timeline-3.jpg" />
+
+---
+<Image src="img/UE4/Unreal-Fest-GOW-UE.jpg" />
+
+---
+<Image src="img/UE4/Unreal-Fest-GOW-4.jpg" />
+
+---
+<Image src="img/UE4/Unreal-Fest-GOW-5.jpg" />
+
+---
+<Image src="img/UE4/Unreal-Fest-GOW-T.jpg" />
+
+---
+<Image src="img/UE4/Unreal-Fest-Unannounced.jpg" />
 
 ---
 ## Original agenda
@@ -61,22 +86,6 @@ SYS: find solution for header/footer
 DECK: change theme to white or bigger impact black
 DECK: increase font sizes
 DECK: separate the sections with img's (badlands style) ideas: games or blurred screenshot of something u
-
----
-## Company history
-
-WORK: history timeline from marketing
-
----
-## UE4 games
-
-* Gears Ultimate Edition
-* Gears 4 and 5
-* Gears Tactics
-* Chelan
-* multiple announced titles
-
-WORK: pic montage from marketing
 
 ---
 ## Teams and Projects
