@@ -88,6 +88,11 @@ DECK: increase font sizes
 DECK: separate the sections with img's (badlands style) ideas: games or blurred screenshot of something u
 
 ---
+## Disclamer
+
+TODO: context and how these are just learnings (could have drawbacks)
+
+---
 ## Teams and Projects
 
 * how we run multiple Projects
