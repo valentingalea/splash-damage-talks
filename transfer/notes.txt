@@ -1,2 +1,73 @@
 -COOKALL -NODEV -BUILDMACHINE -DUMPALLWARNINGS -WARNINGSASERRORS
 
+SXi machines
+
+    Each hosting 2 Red VMs
+    ExsiBuild01 to ExsiBuild13
+    login to VM's using gears.infra account, to ESXi using local root account
+    ESXiBuild01
+        10.20.13.71
+        Hosts, Red-1 Red-2
+        password: usual
+        i7 16 vCore 128Gb ram 931Gb, 931Gb, 1.8Tb, 1.8Tb, 1.8Tb(dodgy) hd
+    ESXiBuild02
+        10.20.13.53
+        Hosts: Red-4, Red-5
+        password: replace ! with 99
+        i7 16 vCore 128Gb ram 931Gb, 1.8Tb, 1.8Tb, 1.8Tb hd
+    ESXiBuild03
+        10.20.12.93
+        Hosts: Red-7, Red-8
+        password: normal
+        i7 16 vCore 128Gb ram 931Gb, 1.8Tb, 1.8Tb, 1.8Tb hd
+    ESXiBuild04
+        10.20.13.236
+        Hosts: Red-9, Red-10
+        password: normal
+        i7 16 vCore 128Gb ram 931Gb, 1.8Tb, 1.8Tb, 1.8Tb hd
+    ESXiBuild05
+        10.20.12.205
+        Hosts: Red-3,Red-6
+        password: minus !
+        i7 20 vCore 128Gb ram 931Gb, 1.8Tb, 1.8Tb hd
+    ESXiBuild06
+
+        10.20.13.153
+        Hosts: Red-11, Red-12
+        password: normal
+        i7 20 vCore 128Gb ram 931Gb, 931Gb, 1.8Tb, 1.8Tb hd
+    ESXiBuild07
+        10.20.12.49
+        Hosts: Red-13, Red-14
+        password: normal
+        i7 16 vCore 96Gb ram 931Gb, 1.8Tb, 1.8Tb hd
+    ESXiBuild08
+        10.20.13.126
+        Hosts: Red-15, Red-16
+        password: normal
+        i7 16 vCore 128Gb ram 931Gb, 1.8Tb, 1.8Tb hd
+    ESXiBuild09
+        10.20.13.250
+        Hosts: Red-17, Red-18
+        password: normal
+        i9 24 vCore 64Gb ram 1.8Tb, 3.6Tb hd
+    ESXiBuild10
+        10.20.13.231
+        Hosts: Red-19, Red-20
+        password: normal
+        i9 24 vCore 64Gb ram 924Gb, 1.8Tb, 3.6Tb hd
+    ESXiBuild11
+        10.20.13.210
+        Hosts: Red-21, Red-22
+        password: normal
+        i9 24 vCore 64Gb ram 924Gb, 1.8Tb, 3.6Tb hd
+    ESXiBuild12
+        10.20.13.179
+        Hosts: Red-23, Red-24
+        password: normal
+        i9 24 vCore 64Gb ram 924Gb, 1.8Tb, 3.6Tb hd
+    ESXiBuild13
+        10.20.12.82
+        Hosts: Red-25, Red-26
+        password: normal
+        i9 24 vCore 64Gb ram 924Gb, 1.8Tb, 3.6Tb hd

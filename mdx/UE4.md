@@ -144,19 +144,15 @@ TODO: code std insert subset of separate talk
   * matches asset type against name
 - Intercept new asset creation
 
-WORK: screenshot of asset naming
-
 ---
 ## Enforcing (cont.)
 
-WORK: get JSON asset names
 SLIDE: JSON asset names code surfer
-WORK: get content folder structure
 
 ---
 ## Blueprint Standards
 
-WORK: talk to Tam if still used / any good & get screenshot 
+TODO: blueprints standards
 
 ---
 # Content Validation
@@ -179,18 +175,14 @@ WORK: talk to Tam if still used / any good & get screenshot
   - maximum number of nodes
 - Future work: leverage the Blueprint Compiler
 
-WORK: blueprint valid - what other checks / screenshot of report
-
 ---
 ## Assets Validation 
 
 - checks for bad/missing references
 - disregards *Developer*, *Test* folders
-- executed via cooking: `-COOKALL -WARNINGASERROR`
+- executed via cooking: `-COOKALL -NODEV -BUILDMACHINE -DUMPALLWARNINGS -WARNINGSASERRORS`
 
-WORK: get all cook validation flags
 SLIDE: talk about other solutions
-WORK: screenshot of content validation errors / TC report
 
 ---
 # Compilation
@@ -219,7 +211,6 @@ WORK: screenshot of content validation errors / TC report
   * TeamCity majority of projects
   * Jenkins as well
 
-WORK: what does Gander have?
 SLIDE: is it worth showing the table with hardware types / times?
 
 ---
@@ -230,8 +221,6 @@ SLIDE: is it worth showing the table with hardware types / times?
   * too bespoke for a project - cannot reuse
   * hard to debug locally
 - Now leveraging Epic's own _Buildgraph_
-
-WORK: get scr of TC big list of steps
 
 ---
 ## BuildGraph
@@ -308,14 +297,12 @@ SLIDE: refactor and expand buildgraph
 
 ![resharper](http://blogs.jetbrains.com/dotnet/wp-content/uploads/2013/03/image4.png)
 
-WORK: better/bigger Resharper pic (of our own)
+SLIDE: better/bigger Resharper pic (of our own)
 
 ---
 ## Example: Internal Tools
 
 SLIDE: pic of CVT
-
-WORK: pic of Bogdan's new tool
 
 ---
 ## Pre-Commit Backend
@@ -357,9 +344,7 @@ WORK: pic of Bogdan's new tool
   - separate standard file 
   - integrated with CI (ex: TeamCity)
 
-WORK: grab test standard
-WORK: check the SDTestHarness
-WORK: grab TC test screenshot
+SLIDE: talk about lessons (the best thing was the macros that helped iteration)
 SLIDE: talk about Importing private symbols / MODULENAME_TEST_API
 
 ---
@@ -371,8 +356,7 @@ SLIDE: talk about Importing private symbols / MODULENAME_TEST_API
 - Not network capable
   * Look into recent UE4 additions: _Gauntlet_
 
-WORK: functional test video / screenshot
-WORK: clarify if we have functional tests in code
+SLIDE: no functional in code, only unit with non-tick uworld
 
 ---
 ## UGS
@@ -414,7 +398,6 @@ TODO: should I even cover it?
 />
 
 TODO: mention automation and record gif of module creation
-WORK: get module batch file
 
 ---
 ## Splash Engine
@@ -442,7 +425,6 @@ TODO: mention across project and within projects
 TODO: example screenshots and quick notes about: PCT, CVT, Trigger
 
 WORK: talk to Mark V about TA tools
-WORK: get tools screenshots (CVT, PCT, trigger xml)
 
 ---
 # The End
