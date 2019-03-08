@@ -74,7 +74,6 @@ typings/
 .serverless
 
 # -----------------------------------------------------------------------------
-.vscode/settings.json
 
 mdx/node_modules/
 mdx/package-lock.json

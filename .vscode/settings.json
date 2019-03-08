@@ -1,0 +1,24 @@
+{
+    "spellright.language": [
+        "en"
+    ],
+    "spellright.documentTypes": [
+        "markdown",
+        "latex",
+        "plaintext",
+        "mdx"
+    ],
+    "spellright.parserByClass": {
+        "mdx": {
+            "parser": "markdown"
+        }
+    },
+    "todo-tree.tags" : [
+        "TODO",
+        "FIXME",
+        "WORK",
+        "SYS",
+        "DECK",
+        "SLIDE"
+    ]
+}
