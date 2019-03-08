@@ -84,11 +84,11 @@ SYS: find solution for incremental lists https://github.com/kyleshevlin/react-ed
 SYS: try embed code-surfer in react.js
 SYS: find solution for header/footer
 DECK: change theme to white or bigger impact black
-DECK: increase font sizes
+DECK: increase font sizes (match them to React)
 DECK: separate the sections with img's (badlands style) ideas: games or blurred screenshot of something u
 
 ---
-## Disclamer
+## Disclaimer
 
 TODO: context and how these are just learnings (could have drawbacks)
 
