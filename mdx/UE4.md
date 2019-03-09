@@ -109,7 +109,100 @@ DECK: separate the sections with img's (badlands style) ideas: games or blurred 
 ---
 # Coding Standards
 
-TODO: code std insert subset of separate talk
+---
+## About
+
+- Usually as standalone documentation (_pdf_, _wiki_, etc)
+- People are supposed to study them
+  * then apply in practice
+
+---
+## Pitfalls
+
+- Grow big / Hard to navigate
+- Get _out-of-date_ quickly
+- In separate location
+  * outside production source code
+- Only select few modify or improve them
+- Nobody has time to read documentation! 😛
+
+---
+## Splash Damage approach
+
+- Standards are **source code files** 📑
+  - you can break the build messing with the standard!
+- Created and improved through code reviews
+- A system for easy _reference_ and _searching_
+
+---
+## The Coding Standards
+
+* 2 files
+  * `SplashDamageCodingStandard.h`
+  * `SplashDamageCodingStandard.cpp`
+* Located in the main source code
+  * `ue4/Game/Source/Main/...`
+
+---
+
+![std-open](img/vs-standards-open.gif)
+
+---
+<CodeSurfer
+  title="The standard"
+  code={require("!raw-loader!../standards/snip/overview.h")}
+  lang="cpp"
+  showNumbers={false}
+  theme={vsDark}
+  steps={[
+    { notes: "the header file" },
+    { range: [ 1, 15], notes: "" },
+    { lines: [4], notes: "notice the chapter tagging system" },
+    { lines: [11] },
+    { lines: [14] },
+    { range: [15, 30] },
+    { range: [30, 45] },
+    { range: [45, 60] },
+    { range: [61, 66] },
+    { lines: [61, 63, 66] },
+    { range: [82, 90] },
+    { range: [92, 98] }
+  ]}
+/>
+
+---
+## Tagging
+
+- Inspired by the C++ ISO standard itself
+  * ex: `21.9.4  Initializer list range`
+  * `access [support.initlist.range]`
+- Allows easy _search_ and _reference_
+- Handy in code reviews
+
+---
+## Usage
+
+Applied via code reviews
+
+<br/>
+
+![review](img/review-1.png)
+
+---
+## Usage (continued)
+
+Takes the pressure off from feeling judgemental
+
+<br/>
+
+![review](img/review-2.png)
+
+---
+## Modify and Improve
+
+The standard itself is changed though reviews sent to the whole team
+
+If enough up-votes the proposal gets submitted 👍
 
 ---
 # Content Standards
