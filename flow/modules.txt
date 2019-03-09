@@ -24,5 +24,3 @@ GenericComponent
      │
      └───Public
                  GenericComponentTest.h
-
-TODO: include Dev/Editor examples

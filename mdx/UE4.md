@@ -389,6 +389,7 @@ If enough up-votes the proposal gets submitted 👍
 ## BuildGraph (example)
 
 WORK: get BuildAll.xml
+TODO: maybe talk UBT/UAT in P4 (pre-commit for them)
 
 ---
 # Pre-Commit
@@ -555,16 +556,20 @@ TODO: expand more on utilities?
 ![CI tests](img/tools/tc-tests.png)
 
 ---
-## UGS
+## Editor automation
 
-TODO: turn into Editor validation
+- UnrealGameSync (UGS)
+  * distributing Editor binaries is a more controlled manner
+  * very useful for non-programmers
+    * we stripped out the compilation support
+  * we refactored the packaging script via BuildGraph
+    * more control, adding symbols upload
+- Basic automated Editor validation
+  * build machine boots freshly compiled Editor
+  * watches for crashes by monitoring logs
 
-- how we use it
-- our modification
-- rewrote UGS script
-- code-data dependency
-
-TODO: should I even cover it?
+TODO: split in 2 slides
+WORK: get info on editor run problems
 
 ---
 # Projects Setup
@@ -572,7 +577,8 @@ TODO: should I even cover it?
 ---
 ## Game Modules
 
-- We strive to have multiple independent modules rather than 1 monolithic one
+- We strive to have multiple independent modules
+  * as opposed to 1 monolithic one
 - Beneficial for
   * encapsulation and architecture
   * faster iteration (linkage improvement for ex)
@@ -595,11 +601,28 @@ TODO: should I even cover it?
   ]}
 />
 
-TODO: mention automation and record gif of module creation
+TODO: maybe add more modules examples
 
 ---
-## Splash Engine
+<CodeSurfer
+  title="Game Module Layout Example"
+  code={require("!raw-loader!../transfer/GenerateModule.cmd")}
+  theme={vsDark}
+  lang="bash"
+  steps={[
+    { notes: "" },
+    { range: [ 4, 11], notes: "ASCII art!" },
+    { range: [23, 28], notes: "user choices" },
+    { range: [53, 58], notes: "creating folder structure" },
+    { range: [105, 114], notes: "creating build file" },
+    { range: [123, 128], notes: "creating build file" }
+  ]}
+/>
 
+---
+# Splash Engine
+
+---
 - We extract and re-use the UE work across projects into "Splash Engine"
 - Consists of:
   * game-agnostic engine changes/enhacements/fixes gathered across time
@@ -614,14 +637,6 @@ TODO: mention automation and record gif of module creation
 
 TODO: diagram of projects layout
 TODO: Epic new version example integration
-
----
-# Tools
-
-TODO: quick intro and mention how we will show them for inspiration
-TODO: mention across project and within projects
-TODO: example screenshots and quick notes about: PCT, CVT, Trigger
-
 WORK: talk to Mark V about TA tools
 
 ---
