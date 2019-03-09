@@ -146,7 +146,7 @@ DECK: increase margin for img's
 
 ---
 
-![std-open](img/vs-standards-open.gif)
+![std-open](img/code-std/vs-standards-open.gif)
 
 ---
 <CodeSurfer
@@ -187,7 +187,7 @@ Applied via code reviews
 
 <br/>
 
-![review](img/review-1.png)
+![review](img/code-std/review-1.png)
 
 ---
 ## Usage (continued)
@@ -196,7 +196,7 @@ Takes the pressure off from feeling judgemental
 
 <br/>
 
-![review](img/review-2.png)
+![review](img/code-std/review-2.png)
 
 ---
 ## Modify and Improve
@@ -259,7 +259,7 @@ If enough up-votes the proposal gets submitted 👍
 ---
 ## Enforcing (cont.)
 
-<img src="img/ue4-auto-naming.gif" alt="auto naming" width="150%"
+<img src="img/content-std/ue4-auto-naming.gif" alt="auto naming" width="150%"
   style={{marginLeft: "-25%"}} />
 
 ---
