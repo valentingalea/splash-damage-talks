@@ -265,7 +265,19 @@ If enough up-votes the proposal gets submitted 👍
 ---
 ## Blueprint Standards
 
-TODO: blueprints standards
+- Same principles as the Coding Standard
+- Live in `Game/Content/Standard/`
+- We have some basic automatic validators
+- Best gain for us:
+  * enforcing comment nodes
+
+---
+
+![blueprint std 1](img/content-std/blueprint-standard-1.png)
+
+---
+
+![blueprint std 1](img/content-std/blueprint-standard-2.png)
 
 ---
 # Content Validation
@@ -284,18 +296,24 @@ TODO: blueprints standards
 
 - Editor commandlet
 - Basic checks
-  - comment nodes present
-  - maximum number of nodes
-- Future work: leverage the Blueprint Compiler
+  * comment nodes present
+  * public functions / vars must have tooltips
+  * no functions / vars with default names
+- Future work / ideas
+  * leverage the Blueprint Compiler
+  * more complex checks
 
 ---
 ## Assets Validation 
 
-- checks for bad/missing references
-- disregards *Developer*, *Test* folders
-- executed via cooking: `-COOKALL -NODEV -BUILDMACHINE -DUMPALLWARNINGS -WARNINGSASERRORS`
-
-SLIDE: talk about other solutions
+- Checks for bad or missing references
+  * disregards *Developer*, *Test* folders
+- Executed via cooking:
+  * `-COOKALL -DUMPALLWARNINGS -WARNINGSASERRORS`
+  * ⚠️ 
+  * not viable for large projects
+    * explore other possibilities
+    * ex: dependency walker via Asset Registry
 
 ---
 # Compilation
