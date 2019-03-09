@@ -50,63 +50,15 @@ Growing a Healthy UE4 Ecosystem:<br/>How Splash Damage approaches development</d
 <Image src="img/UE4/Unreal-Fest-Unannounced.jpg" />
 
 ---
-## Original agenda
+## Agenda
 
-TODO: do properly
-
-- Quick history of the studio
-- Overview of the shipped UE games
-- Internal teams and management
-- Coding Standards and approach
-- Content Standards and enforcing
-- Engine changes
-- Game architecture / modules
-- Unit / Functional testing
-- Approach in ECS design
-- Learnings from GAS
-- Tools overview
-- Submit and review policies
-- Build pipelines / CI
-- Engine migrations and merge strategy
-- Multiple project management
-
----
-## Revised agenda
-
-- Intro & history
-- Coding & Content Standards
-  * Coding std
-  * Content std
-  * Content validators
-- Compilation / CI
-  * Build machines / hardware
-  * Build Graph
-  * Pre-Commit
-  * Triggers
-- Testing infrastructure
-- UGS
-- Project structure
-  * Module organisation
-  * Various bits like the testing macro
-- Tools & Tech Art tools
-- Multiple Projects
-- Engine updates
-
----
-## Tasks
-
-TODO: move at end
-
-SYS: theme of code-surfer better contrast of dimmed code
-SYS: find solution for incremental lists 
-SYS: try embed code-surfer in react.js
-SYS: find solution for header/footer https://github.com/kyleshevlin/react-edges
-SYS: code-surfer change font size (for H1 especially)
-DECK: change theme to white or bigger impact black
-DECK: separate the sections with img's (badlands style) ideas: games or blurred screenshot of something u
-DECK: increase margin for img's
-DECK: change anchor colors
-DECK: change `` colors
+- Teams and Projects
+- Standards
+- Validation
+- Compilation
+- Automation & Testing
+- Projects Structure
+- Splash Engine & Merges
 
 ---
 ## Disclaimer
@@ -667,3 +619,17 @@ WORK: talk to Mark V about TA tools
 />  
 
 splashdamage.com
+
+---
+## Tasks
+
+SYS: theme of code-surfer better contrast of dimmed code
+SYS: find solution for incremental lists 
+SYS: try embed code-surfer in react.js
+SYS: find solution for header/footer https://github.com/kyleshevlin/react-edges
+SYS: code-surfer change font size (for H1 especially)
+DECK: change theme to white or bigger impact black
+DECK: separate the sections with img's (badlands style) ideas: games or blurred screenshot of something u
+DECK: increase margin for img's
+DECK: change anchor colors
+DECK: change `` colors
