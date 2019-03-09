@@ -88,7 +88,7 @@ SYS: theme of code-surfer better contrast of dimmed code
 SYS: find solution for incremental lists 
 SYS: try embed code-surfer in react.js
 SYS: find solution for header/footer https://github.com/kyleshevlin/react-edges
-SYS: code-surfer change font
+SYS: code-surfer change font size (for H1 especially)
 DECK: change theme to white or bigger impact black
 DECK: separate the sections with img's (badlands style) ideas: games or blurred screenshot of something u
 DECK: increase margin for img's
@@ -544,15 +544,20 @@ TODO: expand more on utilities?
 ## Functional Testing
 
 - Blueprint actors that we embed in bespoke levels using the editor
-- Live under `Content/Test/...`
+- Live under `Game/Content/Test/...`
 - Named `FTEST_` to follow Epic's convention and for visibility
 - Not network capable
   * Look into recent UE4 additions: _Gauntlet_
 
-SLIDE: no functional in code, only unit with non-tick uworld
+---
+## CI Tests Integration
+
+![CI tests](img/tools/tc-tests.png)
 
 ---
 ## UGS
+
+TODO: turn into Editor validation
 
 - how we use it
 - our modification
