@@ -1,5 +1,8 @@
 import theme from 'mdx-deck/themes'
 
+const global_heading_size = '48px'
+const global_font_size = '44px'
+
 export default {
     // extends the default theme
     ...theme,
@@ -13,16 +16,16 @@ export default {
 
     // element styles
     h2: {
-        fontSize: '1.5em'
+        fontSize: global_heading_size
     },
     ul: {
-        fontSize: '1em'
+        fontSize: global_font_size
     },
     li: {
-        fontSize: '1em'
+        fontSize: global_font_size
     },
     p: {
-        fontSize: '1em',
+        fontSize: global_font_size,
         margin: '0'
     },
     a: {
