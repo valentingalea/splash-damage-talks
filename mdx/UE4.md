@@ -9,6 +9,8 @@ import { Image } from 'mdx-deck'
 
 <Head><title>UE4</title></Head>
 
+TODO: proper title & backgr img
+
 ---
 <Image src="img/timeline/sd-timeline-1.jpg" />
 
@@ -70,9 +72,7 @@ import { Image } from 'mdx-deck'
 - Project structure
   * Module organisation
   * Various bits like the testing macro
-- Tools
-- Tech Art tools
-  * TODO: ask Mark V
+- Tools & Tech Art tools
 - Multiple Projects
 - Engine updates
 
@@ -80,26 +80,31 @@ import { Image } from 'mdx-deck'
 ## Tasks
 
 SYS: theme of code-surfer better contrast of dimmed code
-SYS: find solution for incremental lists https://github.com/kyleshevlin/react-edges
+SYS: find solution for incremental lists 
 SYS: try embed code-surfer in react.js
-SYS: find solution for header/footer
+SYS: find solution for header/footer https://github.com/kyleshevlin/react-edges
 DECK: change theme to white or bigger impact black
-DECK: increase font sizes (match them to React)
 DECK: separate the sections with img's (badlands style) ideas: games or blurred screenshot of something u
 
 ---
 ## Disclaimer
 
-TODO: context and how these are just learnings (could have drawbacks)
+- Share our learnings
+  * what worked well 👍
+  * what didn't 👎
+- Get inspired!
 
 ---
 ## Teams and Projects
 
-* how we run multiple Projects
-* how we share information
-* splash-engine
+- 300 employees
+- Split across multiple ongoing projets
+- Most projects use **Splash Engine**
+  * vanilla UE4 + own modules and enhancements
 
-SLIDE: expand teams/prj
+![UE4](img/icon/UE4.jpg)
+
+<img src="img/icon/team.svg" alt="teams" width="128" height="128" style={{marginLeft: "32px"}}/>
 
 ---
 # Coding Standards
