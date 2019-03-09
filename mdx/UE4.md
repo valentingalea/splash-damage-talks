@@ -4,13 +4,26 @@ import vsDark from "prism-react-renderer/themes/vsDark"
 import { Appear } from 'mdx-deck'
 import { Head } from 'mdx-deck'
 import { Image } from 'mdx-deck'
+import Box from 'superbox'
 
-# UE4
+<Head><title>How Splash Damage approaches development</title></Head>
 
-<Head><title>UE4</title></Head>
-
-TODO: proper title & backgr img
-TODO: move img's to work both ways (do junction)
+<Image src="img/SD/banner.jpg">
+<Box
+  css={{
+    position: 'relative',
+    top: '50%',
+    transform: 'translateY(-50%)'
+  }}
+>
+<div style={{
+    color: 'white',
+    textShadow: '-5px 5px 0px rgba(0,0,0,0.45)',
+    fontSize: '98px',
+    fontWeight: '600'
+}}>
+Growing a Healthy UE4 Ecosystem:<br/>How Splash Damage approaches development</div>
+</Box></Image>
 
 ---
 <Image src="img/timeline/sd-timeline-1.jpg" />
@@ -640,6 +653,17 @@ TODO: Epic new version example integration
 WORK: talk to Mark V about TA tools
 
 ---
-# The End
+## The End
 
-TODO: credits & outro
+@valentin_galea
+
+<img src="img/SD/SD-logo-white-orange.svg" alt="SD" 
+  width="256" height="256"
+  style={{
+      background: 'rgba(255, 255, 255, 0.12)',
+      margin: '1em',
+      padding: '.5em'
+  }}
+/>  
+
+splashdamage.com
