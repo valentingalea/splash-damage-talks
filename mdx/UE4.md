@@ -461,7 +461,7 @@ Options to auto-commit<br/>
 only on success -----------------------------------
 </div>
 
-<img alt="resharper" src="img/pre-commit.png" width="50%"
+<img alt="resharper" src="img/tools/pre-commit.png" width="50%"
 style={{float: "right", display: "inline"}} />
 
 ---
@@ -482,16 +482,25 @@ style={{float: "right", display: "inline"}} />
 ---
 ## Workflow & Rules
 
-- Experiments with commit time-locks
-  * 9am to 6pm to decrease chances of commit  
-  * engine changes only after 5pm because they disrupt Pre-Commit cache
 - Every commit validated against:
   * Has _title_ and _description_
   * Contains at least of _tag_ like `[Feature]` `[Bug]` `[Merge]` etc
-  * Has links to _code review_ and code _buddies_
+  * Has links to _code review_ or code _buddies_
+  * Time-limits to prevent commit-and-runs
 - Some projects relax or constrain the rules more
   * example: check against known build-breaking patterns
     * (missing .h/.cpp pair)
+
+---
+## Validation
+
+![pct](img/tools/pct-tool.webp)
+
+---
+## Validation (contd.)
+
+<img alt="trigger tool" src="img/tools/trigger-tool.webp" width="150%" 
+style={{marginLeft: "-25%"}} />
 
 ---
 # Automation & Testing
