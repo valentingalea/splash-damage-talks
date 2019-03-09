@@ -85,6 +85,7 @@ SYS: try embed code-surfer in react.js
 SYS: find solution for header/footer https://github.com/kyleshevlin/react-edges
 DECK: change theme to white or bigger impact black
 DECK: separate the sections with img's (badlands style) ideas: games or blurred screenshot of something u
+DECK: increase margin for img's
 
 ---
 ## Disclaimer
@@ -210,23 +211,21 @@ If enough up-votes the proposal gets submitted 👍
 ---
 ## Motivation
 
-- Content creation and management is an integral part of development
 - Poor organisation and practices for assets
-  * compound over time
-  * waste productivity
-  * increase cooking and deployment times
+  * ...compound over time
+  * ...waste productivity
+  * ...increase cooking and deployment times
 - UE4 Editor is easy to modify to
   * improve workflows
   * enforce good practices
 
 ---
-## Definitions
+## Asset naming rules
 
 ![asset naming](img/content-std/template.png)
 
-- Asset naming rules
-  * less confusion and improves searching/browsing
-  * `Prefix` and `BaseAssetName` are mandatory
+- less confusion and improves searching & browsing
+- `Prefix` and `BaseAssetName` are mandatory
 
 ---
 ## Example
@@ -243,9 +242,25 @@ If enough up-votes the proposal gets submitted 👍
 - Intercept new asset creation
 
 ---
+<CodeSurfer
+  title="Asset naming definitions"
+  code={require("!raw-loader!../flow/asset-naming.txt")}
+  theme={vsDark}
+  lang="yaml"
+  steps={[
+    { notes: "" },
+    { range: [ 3, 6] },
+    { range: [15, 18] },
+    { range: [27, 30] },
+    { range: [43, 46] }
+  ]}
+/>
+
+---
 ## Enforcing (cont.)
 
-SLIDE: JSON asset names code surfer
+<img src="img/ue4-auto-naming.gif" alt="auto naming" width="150%"
+  style={{marginLeft: "-25%"}} />
 
 ---
 ## Blueprint Standards
