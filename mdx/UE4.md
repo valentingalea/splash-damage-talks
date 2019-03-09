@@ -92,6 +92,8 @@ SYS: code-surfer change font
 DECK: change theme to white or bigger impact black
 DECK: separate the sections with img's (badlands style) ideas: games or blurred screenshot of something u
 DECK: increase margin for img's
+DECK: change anchor colors
+DECK: change `` colors
 
 ---
 ## Disclaimer
@@ -149,6 +151,8 @@ DECK: increase margin for img's
   * `SplashDamageCodingStandard.cpp`
 * Located in the main source code
   * `ue4/Game/Source/Main/...`
+* Open Source
+  * https://github.com/splash-damage/coding-standards
 
 ---
 
