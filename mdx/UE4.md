@@ -10,6 +10,7 @@ import { Image } from 'mdx-deck'
 <Head><title>UE4</title></Head>
 
 TODO: proper title & backgr img
+TODO: move img's to work both ways (do junction)
 
 ---
 <Image src="img/timeline/sd-timeline-1.jpg" />
@@ -37,6 +38,8 @@ TODO: proper title & backgr img
 
 ---
 ## Original agenda
+
+TODO: do properly
 
 - Quick history of the studio
 - Overview of the shipped UE games
@@ -79,10 +82,13 @@ TODO: proper title & backgr img
 ---
 ## Tasks
 
+TODO: move at end
+
 SYS: theme of code-surfer better contrast of dimmed code
 SYS: find solution for incremental lists 
 SYS: try embed code-surfer in react.js
 SYS: find solution for header/footer https://github.com/kyleshevlin/react-edges
+SYS: code-surfer change font
 DECK: change theme to white or bigger impact black
 DECK: separate the sections with img's (badlands style) ideas: games or blurred screenshot of something u
 DECK: increase margin for img's
@@ -322,27 +328,24 @@ If enough up-votes the proposal gets submitted 👍
 ## Hardware
 
 - Everyday work is very CPU intensive
-- CPU cores
-  *  8 -> 16: ~95% performance increase
-  * 16 -> 32: 1.7x faster
-  * 16 -> 64: 2.1x faster
-- RAM
-  * 16-64 GB TODO: confirm
-- Disk space
-  * 1 TB SSD + 2 TB mechanical drive
-  * some projects push requirements (more SSD's, larger mechanical)
+- CPU hardware threads
+  * jump from 8 to 16 substantial (2x)
+  * same from 16 to 32
+  * dimishing returns after
+- Distributed compilation
+  * _Incredibuild_ for some projects
+  * we also tried _Fastbuild_
+    * free but more difficult to integrate
 
 ---
 ## Build Farm
 
 - Configuration / layout different per project
-- Sweetspot for price/performance for us 32 thread CPUs
-  * Good performer: 16c/32t Threadripper 1950x
+- Sweetspot price / performance for us 32 thread CPUs
+  * Good performer: 16c/32t AMD Threadripper 1950x
 - Orchestration
-  * TeamCity majority of projects
-  * Jenkins as well
-
-SLIDE: is it worth showing the table with hardware types / times?
+  * _TeamCity_ majority of projects
+  * _Jenkins_ as well
 
 ---
 ## Infrastructure-As-Code
@@ -351,21 +354,37 @@ SLIDE: is it worth showing the table with hardware types / times?
   * too tight integrated with the CI orchestrator
   * too bespoke for a project - cannot reuse
   * hard to debug locally
-- Now leveraging Epic's own _Buildgraph_
+- Now leveraging Epic's own _BuildGraph_
 
 ---
 ## BuildGraph
 
-* talk about UBT and traditional build/cook/run scripts
-* unify all paths
-* minimal solution support
-* consistent scripts
-* project files ready
-* infrastructure as code
-  * we support both TeamCity and Jenkins
-* what we modified
+- Alternative to traditional `BuildCookRun` automation commands
+- XML based scripts
 
-SLIDE: refactor and expand buildgraph
+* How we use it
+  * standardized and reusable set of scripts
+  * unifies all calling paths
+    * Visual Studio
+    * Editor - Hot Reload
+    * command line
+    * CI systems
+
+---
+## BuildGraph (cont.)
+
+- Additional benefits
+  * easier edit in Visual Studio than batch files
+  * allows build tasks parallelizing
+  * easier dependencies management
+- Our most complex use-cases:
+  * prepare Unreal Game Sync editor binaries
+  * code/data submit-dependency flagging
+
+---
+## BuildGraph (example)
+
+WORK: get BuildAll.xml
 
 ---
 # Pre-Commit
@@ -426,14 +445,24 @@ SLIDE: refactor and expand buildgraph
 ---
 ## Example: Visual Studio ReSharper
 
-![resharper](http://blogs.jetbrains.com/dotnet/wp-content/uploads/2013/03/image4.png)
+<div style={{float: "left", display: "inline", textAlign: "left"}}>
+<br/>
+<br/>
+Build configurations<br/>
+to check against ----------------------------------<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+Options to auto-commit<br/>
+only on success -----------------------------------
+</div>
 
-SLIDE: better/bigger Resharper pic (of our own)
-
----
-## Example: Internal Tools
-
-SLIDE: pic of CVT
+<img alt="resharper" src="img/pre-commit.png" width="50%"
+style={{float: "right", display: "inline"}} />
 
 ---
 ## Pre-Commit Backend
@@ -443,10 +472,10 @@ SLIDE: pic of CVT
   * more configurations -> better coverage 😊️
   * more configurations -> stress on build farm ☹️
 - Compile time-saving solution
-  * rebuild all participating configuration over nightly
+  * rebuild all participating configuration nightly
   * incremental (non-unity) builds throughout the day
   * example:
-    * Editor Dev build + Main game Dev build + PS4 build
+    * _Editor_ + _Game(PC)_ + _Game(PS4)_
     * Overnight: 1.5-2h on fastest machine
     * Daily: 5-15 min per commit check
 
@@ -461,7 +490,8 @@ SLIDE: pic of CVT
   * Contains at least of _tag_ like `[Feature]` `[Bug]` `[Merge]` etc
   * Has links to _code review_ and code _buddies_
 - Some projects relax or constrain the rules more
-  * example: check against known build-breaking patterns (missing .h/.cpp pair)
+  * example: check against known build-breaking patterns
+    * (missing .h/.cpp pair)
 
 ---
 # Automation & Testing
