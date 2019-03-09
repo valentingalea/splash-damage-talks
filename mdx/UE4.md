@@ -514,12 +514,31 @@ style={{marginLeft: "-25%"}} />
 
 - Testing plain classes and structs or single UObjects
 - Enhancements to UE4's own framework
-  - follow Given/When/Then structure
-  - separate standard file 
+  - follow Given / When / Then structure
+  - separate standards file 
   - integrated with CI (ex: TeamCity)
+  - utilities
+    * import private data from testable modules
+    * `UWorld` setup & teardown
 
-SLIDE: talk about lessons (the best thing was the macros that helped iteration)
-SLIDE: talk about Importing private symbols / MODULENAME_TEST_API
+TODO: expand more on utilities?
+
+---
+<CodeSurfer
+  title="Unit Test Example"
+  code={require("!raw-loader!../flow/testing.cpp")}
+  theme={vsDark}
+  lang="cpp"
+  steps={[
+    { notes: "" },
+    { range: [ 8, 10], notes: "syntactic sugar macros" },
+    { range: [52, 53], notes: "test names must follow specific naming" },
+    { range: [54, 58], notes: "Given..." },
+    { range: [65, 67], notes: "...When..." },
+    { range: [69, 72], notes: "...Then" },
+    { range: [77, 79], notes: "cleanup" }
+  ]}
+/>
 
 ---
 ## Functional Testing
