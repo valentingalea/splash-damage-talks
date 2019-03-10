@@ -14,6 +14,8 @@ export default {
         background: 'rgb(30, 30, 30)'
     },
 
+    monospace: "Consolas",
+
     // element styles
     h2: {
         fontSize: global_heading_size
