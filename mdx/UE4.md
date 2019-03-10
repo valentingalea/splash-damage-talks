@@ -603,21 +603,48 @@ TODO: maybe add more modules examples
 # Splash Engine
 
 ---
-- We extract and re-use the UE work across projects into "Splash Engine"
-- Consists of:
-  * game-agnostic engine changes/enhacements/fixes gathered across time
-  * re-usable mini-frameworks modules:
-    * UI components
-    * Audio thin abstractions
-    * Events, Async Tasks
-    * Utilities
-- Majority of projects get seeded from "Splash Engine"
-  * merges/integrations can happen both upstream and downstream
-- Integrates latest UE4 versions
+## About
 
-TODO: diagram of projects layout
-TODO: Epic new version example integration
-WORK: talk to Mark V about TA tools
+We extract and re-use the UE work across projects into "Splash Engine"
+
+- game-agnostic engine enhacements & fixes gathered across time
+- re-usable mini-frameworks modules
+  * UI components
+  * Audio thin abstractions
+  * Events, Async Tasks
+  * Rendering features
+  * Tech-Art utilities
+    * ex: Instance Mesh split /group
+
+---
+## Overview
+
+- Majority of projects get seeded from "Splash Engine"
+- Downstream integrations
+  * "Splash Engine" tends to be at latest UE4 version
+  * projects update at their own pace
+- Upstream integrations
+  * some projects will bubble-up important features
+
+---
+<CodeSurfer
+  title="Architecture"
+  code={require("!raw-loader!../flow/splash-engine.txt")}
+  theme={code_theme}
+  lang="yaml"
+  steps={[
+    { notes: "" },
+    {    lines: [ 1 ], notes: "master Perforce depot" },
+    {    lines: [ 3 ], notes: "engine 'vanilla' drops from Epic" },
+    {    lines: [ 6 ], notes: "Splash Engine" },
+    { range: [ 9, 11], notes: "company games/projects" },
+    { range: [22, 28], notes: "individual versions" },
+    { range: [41, 47], notes: "Splash Engine layout" },
+    {   lines: [ 43 ], notes: "'vanilla' version for merge diff" },
+    {   lines: [ 44 ], notes: "master branch" },
+    { range: [45, 47], notes: "individual project staging" }
+  ]}
+/>
 
 ---
 ## The End
@@ -651,8 +678,10 @@ DECK: increase margin for img's
 DECK: change anchor colors
 DECK: change `` colors
 
-TODO: too many Gears pics.. remove
 TODO: attrib icon
 TODO: thanks to the team
+
+WORK: talk to Mark V about TA tools
+WORK: get more/better chapter imgs
 
 <div>Icons made by <a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp">Eucalyp</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
