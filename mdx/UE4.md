@@ -571,7 +571,7 @@ TODO: maybe add more modules examples
 ---
 <CodeSurfer
   title="Game Module Layout Example"
-  code={require("!raw-loader!../transfer/GenerateModule.cmd")}
+  code={require("!raw-loader!../flow/gen-module.txt")}
   theme={vsDark}
   lang="bash"
   steps={[
