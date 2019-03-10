@@ -665,15 +665,14 @@ splashdamage.com
 ---
 ## Tasks
 
-SYS: theme of code-surfer better contrast of dimmed code
 SYS: find solution for incremental lists 
 SYS: try embed code-surfer in react.js
 SYS: find solution for header/footer https://github.com/kyleshevlin/react-edges
-SYS: code-surfer change font size (for H1 especially)
+SYS: code-surfer change font size https://github.com/pomber/code-surfer/pull/52/commits/f5a5bab0bef47a494b376f01c297c10b4614db97
+SYS: patch for W:\Dev\OpenSource\research_work\mdx\node_modules\mdx-deck-code-surfer\dist\deck-code-surfer.js line 51
 SYS: fix html export
 
 DECK: change theme to white or bigger impact black
-DECK: separate the sections with img's (badlands style) ideas: games or blurred screenshot of something u
 DECK: increase margin for img's
 DECK: change anchor colors
 DECK: change `` colors
@@ -683,5 +682,6 @@ TODO: thanks to the team
 
 WORK: talk to Mark V about TA tools
 WORK: get more/better chapter imgs
+WORK: talk to Sylvain to check on projector
 
 <div>Icons made by <a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp">Eucalyp</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
