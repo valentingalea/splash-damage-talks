@@ -502,8 +502,6 @@ style={{marginLeft: "-25%"}} />
     * import private data from testable modules
     * `UWorld` setup & teardown
 
-TODO: expand more on utilities?
-
 ---
 <CodeSurfer
   title="Unit Test Example"
@@ -548,7 +546,7 @@ TODO: expand more on utilities?
   * build machine boots freshly compiled Editor
   * watches for crashes by monitoring logs
 
-TODO: split in 2 slides
+SLIDE: split in 2 slides
 WORK: get info on editor run problems
 
 ---
@@ -581,7 +579,7 @@ WORK: get info on editor run problems
   ]}
 />
 
-TODO: maybe add more modules examples
+SLIDE: maybe add more modules examples
 
 ---
 <CodeSurfer
@@ -679,6 +677,15 @@ DECK: change `` colors
 
 TODO: attrib icon
 TODO: thanks to the team
+TODO: about me page
+TODO: more pre-amble about the coding standard -> that it's UE4 heavy
+TODO: insert back coding actor
+TODO: blueprint standard validation confusing before showing them
+TODO: move the asset naming out of def and into validation (maybe add back the dir structure)
+TODO: buildgraph code / data depend remove (too complicated to explain)
+TODO: expand more on the macro test
+TODO: hard transition from game module layout to batch file
+TODO: add more spacing for the splash engine anim
 
 WORK: talk to Mark V about TA tools
 WORK: get more/better chapter imgs
