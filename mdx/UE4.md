@@ -628,12 +628,15 @@ SYS: find solution for incremental lists
 SYS: try embed code-surfer in react.js
 SYS: find solution for header/footer https://github.com/kyleshevlin/react-edges
 SYS: code-surfer change font size (for H1 especially)
+SYS: fix html export
+
 DECK: change theme to white or bigger impact black
 DECK: separate the sections with img's (badlands style) ideas: games or blurred screenshot of something u
 DECK: increase margin for img's
 DECK: change anchor colors
 DECK: change `` colors
 
+TODO: too many Gears pics.. remove
 TODO: attrib icon
 TODO: thanks to the team
 
