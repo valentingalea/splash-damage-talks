@@ -1,10 +1,11 @@
 import { CodeSurfer } from "mdx-deck-code-surfer"
-export { default as theme } from "./theme"
-import vsDark from "prism-react-renderer/themes/vsDark"
 import { Appear } from 'mdx-deck'
 import { Head } from 'mdx-deck'
 import { Image } from 'mdx-deck'
 import Box from 'superbox'
+
+export { default as theme } from "./theme"
+import code_theme from "prism-react-renderer/themes/vsDark"
 
 <Head><title>How Splash Damage approaches development</title></Head>
 
@@ -125,7 +126,7 @@ export const title_style = {
   code={require("!raw-loader!../standards/snip/overview.h")}
   lang="cpp"
   showNumbers={false}
-  theme={vsDark}
+  theme={code_theme}
   steps={[
     { notes: "the header file" },
     { range: [ 1, 15], notes: "" },
@@ -222,7 +223,7 @@ If enough up-votes the proposal gets submitted 👍
 <CodeSurfer
   title="Asset naming definitions"
   code={require("!raw-loader!../flow/asset-naming.txt")}
-  theme={vsDark}
+  theme={code_theme}
   lang="yaml"
   steps={[
     { notes: "" },
@@ -377,7 +378,7 @@ TODO: maybe talk UBT/UAT in P4 (pre-commit for them)
 <CodeSurfer
   title="Normal Commit Flow"
   code={require("!raw-loader!../flow/submit.txt")}
-  theme={vsDark}
+  theme={code_theme}
   lang="yaml"
   steps={[
     { notes: "" },
@@ -392,7 +393,7 @@ TODO: maybe talk UBT/UAT in P4 (pre-commit for them)
 <CodeSurfer
   title="Pre-Commit Flow"
   code={require("!raw-loader!../flow/pre-submit.txt")}
-  theme={vsDark}
+  theme={code_theme}
   lang="yaml"
   steps={[
     { notes: "" },
@@ -507,7 +508,7 @@ TODO: expand more on utilities?
 <CodeSurfer
   title="Unit Test Example"
   code={require("!raw-loader!../flow/testing.cpp")}
-  theme={vsDark}
+  theme={code_theme}
   lang="cpp"
   steps={[
     { notes: "" },
@@ -568,7 +569,7 @@ WORK: get info on editor run problems
 <CodeSurfer
   title="Game Module Layout Example"
   code={require("!raw-loader!../flow/modules.txt")}
-  theme={vsDark}
+  theme={code_theme}
   lang="yaml"
   steps={[
     { notes: "" },
@@ -586,7 +587,7 @@ TODO: maybe add more modules examples
 <CodeSurfer
   title="Game Module Layout Example"
   code={require("!raw-loader!../flow/gen-module.txt")}
-  theme={vsDark}
+  theme={code_theme}
   lang="bash"
   steps={[
     { notes: "" },

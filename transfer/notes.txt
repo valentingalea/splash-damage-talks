@@ -1,3 +1,9 @@
+export const comment_block = {/*
+  mdx-deck themes: default, big, book, code, condensed, dark, future, hack, swiss, yellow -- https://github.com/jxnblk/mdx-deck/blob/master/docs/themes.md
+
+  code-surfer themes: nightOwl, duotoneDark, duotoneLight, oceanicNext, ultramin, dracula, vsDark -- https://code-surfer.netlify.com/theming/#1
+*/}
+
 -COOKALL -NODEV -BUILDMACHINE -DUMPALLWARNINGS -WARNINGSASERRORS
 
 SXi machines
