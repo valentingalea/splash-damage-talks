@@ -8,22 +8,27 @@ import Box from 'superbox'
 
 <Head><title>How Splash Damage approaches development</title></Head>
 
-<Image src="img/SD/banner.jpg">
-<Box
-  css={{
+export const center_style = {
     position: 'relative',
     top: '50%',
     transform: 'translateY(-50%)'
-  }}
->
-<div style={{
+};
+
+export const title_style = {
     color: 'white',
     textShadow: '-5px 5px 0px rgba(0,0,0,0.45)',
     fontSize: '98px',
     fontWeight: '600'
-}}>
-Growing a Healthy UE4 Ecosystem:<br/>How Splash Damage approaches development</div>
-</Box></Image>
+};
+
+<Image src="img/SD/banner.jpg">
+  <Box css={ center_style }>
+    <div style={ title_style }>
+    Growing a Healthy UE4 Ecosystem:<br/>
+    How Splash Damage approaches development
+    </div>
+  </Box>
+</Image>
 
 ---
 <Image src="img/timeline/sd-timeline-1.jpg" />
@@ -33,21 +38,6 @@ Growing a Healthy UE4 Ecosystem:<br/>How Splash Damage approaches development</d
 
 ---
 <Image src="img/timeline/sd-timeline-3.jpg" />
-
----
-<Image src="img/UE4/Unreal-Fest-GOW-UE.jpg" />
-
----
-<Image src="img/UE4/Unreal-Fest-GOW-4.jpg" />
-
----
-<Image src="img/UE4/Unreal-Fest-GOW-5.jpg" />
-
----
-<Image src="img/UE4/Unreal-Fest-GOW-T.jpg" />
-
----
-<Image src="img/UE4/Unreal-Fest-Unannounced.jpg" />
 
 ---
 ## Agenda
@@ -81,7 +71,13 @@ Growing a Healthy UE4 Ecosystem:<br/>How Splash Damage approaches development</d
 <img src="img/icon/team.svg" alt="teams" width="128" height="128" style={{marginLeft: "32px"}}/>
 
 ---
+<Image src="img/UE4/Unreal-Fest-GOW-UE.jpg">
+  <Box css={ center_style }>
+    <div style={ title_style }>
 # Coding Standards
+    </div>
+  </Box>
+</Image>
 
 ---
 ## About
@@ -181,7 +177,13 @@ The standard itself is changed though reviews sent to the whole team
 If enough up-votes the proposal gets submitted 👍
 
 ---
+<Image src="img/UE4/Unreal-Fest-GOW-4.jpg">
+  <Box css={ center_style }>
+    <div style={ title_style }>
 # Content Standards
+    </div>
+  </Box>
+</Image>
 
 ---
 ## Motivation
@@ -255,7 +257,13 @@ If enough up-votes the proposal gets submitted 👍
 ![blueprint std 1](img/content-std/blueprint-standard-2.png)
 
 ---
+<Image src="img/UE4/Unreal-Fest-GOW-5.jpg">
+  <Box css={ center_style }>
+    <div style={ title_style }>
 # Content Validation
+    </div>
+  </Box>
+</Image>
 
 ---
 ## Automated Validation
@@ -291,7 +299,13 @@ If enough up-votes the proposal gets submitted 👍
     * ex: dependency walker via Asset Registry
 
 ---
+<Image src="img/UE4/Unreal-Fest-GOW-T.jpg">
+  <Box css={ center_style }>
+    <div style={ title_style }>
 # Compilation
+    </div>
+  </Box>
+</Image>
 
 ---
 ## Hardware
@@ -313,8 +327,8 @@ If enough up-votes the proposal gets submitted 👍
 - Sweetspot price / performance for us 32 thread CPUs
   * Good performer: 16c/32t AMD Threadripper 1950x
 - Orchestration
-  * _TeamCity_ majority of projects
-  * _Jenkins_ as well
+  * _TeamCity_ - most projects
+  * _Jenkins_
 
 ---
 ## Infrastructure-As-Code
