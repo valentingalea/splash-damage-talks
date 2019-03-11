@@ -365,11 +365,22 @@ If enough up-votes the proposal gets submitted 👍
   * prepare Unreal Game Sync editor binaries
   * code/data submit-dependency flagging
 
----
-## BuildGraph (example)
-
-WORK: get BuildAll.xml
 TODO: maybe talk UBT/UAT in P4 (pre-commit for them)
+
+---
+<CodeSurfer
+  title="BuildGraph (example)"
+  code={require("!raw-loader!../flow/buildgraph.xml")}
+  theme={code_theme}
+  lang="xml"
+  steps={[
+    { notes: "" },
+    { range: [ 1,  5] },
+    { range: [10, 15] },
+    { range: [23, 28] },
+    { range: [36, 41] }
+  ]}
+/>
 
 ---
 # Pre-Commit
@@ -674,6 +685,8 @@ DECK: change theme to white or bigger impact black
 DECK: increase margin for img's
 DECK: change anchor colors
 DECK: change `` colors
+DECK: use the orange text color rule from the marketing guide
+DECK: add black box for title slides
 
 TODO: attrib icon
 TODO: thanks to the team
