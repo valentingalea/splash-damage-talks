@@ -639,6 +639,10 @@ We extract and re-use the UE work across projects into "Splash Engine"
   * some projects will bubble-up important features
 
 ---
+export const arch_A = 5
+export const arch_B = 34
+export const arch_C = 64
+
 <CodeSurfer
   title="Architecture"
   code={require("!raw-loader!../flow/splash-engine.txt")}
@@ -646,15 +650,15 @@ We extract and re-use the UE work across projects into "Splash Engine"
   lang="yaml"
   steps={[
     { notes: "" },
-    {    lines: [ 1 ], notes: "master Perforce depot" },
-    {    lines: [ 3 ], notes: "engine 'vanilla' drops from Epic" },
-    {    lines: [ 6 ], notes: "Splash Engine" },
-    { range: [ 9, 11], notes: "company games/projects" },
-    { range: [22, 28], notes: "individual versions" },
-    { range: [41, 47], notes: "Splash Engine layout" },
-    {   lines: [ 43 ], notes: "'vanilla' version for merge diff" },
-    {   lines: [ 44 ], notes: "master branch" },
-    { range: [45, 47], notes: "individual project staging" }
+    { lines: [ arch_A+0 ], notes: "master Perforce depot" },
+    { lines: [ arch_A+2 ], notes: "engine 'vanilla' drops from Epic" },
+    { lines: [ arch_A+5 ], notes: "Splash Engine" },
+    { range: [ arch_A+8, arch_A+11], notes: "company games/projects" },
+    { range: [ arch_B+2, arch_B+6 ], notes: "individual downloaded versions" },
+    { range: [ arch_C+1, arch_C+7], notes: "Splash Engine layout" },
+    {   lines: [ arch_C+3 ], notes: "'vanilla' version for merge diff" },
+    {   lines: [ arch_C+4 ], notes: "master branch" },
+    { range: [ arch_C+5, arch_C+8 ], notes: "individual project staging" }
   ]}
 />
 
@@ -701,7 +705,7 @@ TODO: move the asset naming out of def and into validation (maybe add back the d
 TODO: buildgraph code / data depend remove (too complicated to explain)
 TODO: expand more on the macro test
 TODO: hard transition from game module layout to batch file
-TODO: add more spacing for the splash engine anim
+TODO: code-surfer: change title for h2 to smaller and increase the notes font size
 
 WORK: talk to Mark V about TA tools
 WORK: get more/better chapter imgs
