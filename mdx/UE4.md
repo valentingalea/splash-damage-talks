@@ -375,10 +375,13 @@ TODO: maybe talk UBT/UAT in P4 (pre-commit for them)
   lang="xml"
   steps={[
     { notes: "" },
-    { range: [ 1,  5] },
-    { range: [10, 15] },
-    { range: [23, 28] },
-    { range: [36, 41] }
+    { range: [ 7,  8] },
+    { range: [13, 14] },
+    { range: [18, 23] },
+    { lines: [ 34 ] },
+    { range: [53, 59] },
+    { range: [73, 79] },
+    { range: [132, 141] }
   ]}
 />
 
