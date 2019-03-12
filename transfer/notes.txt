@@ -4,6 +4,26 @@ export const comment_block = {/*
   code-surfer themes: nightOwl, duotoneDark, duotoneLight, oceanicNext, ultramin, dracula, vsDark -- https://code-surfer.netlify.com/theming/#1
 */}
 
+TODO: sd-engine merges conversation with stefano
+I think the slides are missing an important trick.
+you have:
+- https://valentingalea.github.io/research_work/#66 - merge back from game into staging
+- https://valentingalea.github.io/research_work/#67 - merge the new UE from //splash/main
+While it's actually:
+- merge UE from //splash/main into staging
+- solve any conflicts
+- THEN merge back the changelists from the engine, a few at a time, until you are on par with the repo
+- then you merge back the game
+- while you do and test, you keep the engine and game up to date
+
+Valentin Galea [12:11 PM]
+yes that's true
+
+i was actually thinking to show for each branch the inside folder structure
+with Engine vs Game
+but tbh that's too complicated for the purposes of this presentation
+but I will maybe insert a slide in the middle explain the trick u mentioned
+
 -COOKALL -NODEV -BUILDMACHINE -DUMPALLWARNINGS -WARNINGSASERRORS
 
 SXi machines
