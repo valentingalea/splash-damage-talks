@@ -663,6 +663,112 @@ export const arch_C = 64
 />
 
 ---
+## Merge Scenario
+
+Updating a game project to latest UE4 version...
+
+---
+## Starting structure
+
+```
+/splash-ue4                                             
+|
+├───/clean
+│   
+│
+├───/main
+|
+|
+├───/project-A
+├───/project-B
+├───...
+```
+
+---
+```
+/splash-ue4                 |                            
+|                           |
+├───/clean  <---------------'  copy latest UE version
+│                              (allows nice incremental diffs)
+│
+├───/main
+|
+|
+├───/project-A
+├───/project-B
+├───...
+```
+
+---
+```
+/splash-ue4                                             
+|
+├───/clean -----------------.
+│                           |  merge across to main branch
+│                           |  (also update any plugins we use)
+├───/main  <----------------'
+|
+|
+├───/project-A
+├───/project-B
+├───...
+```
+
+---
+```
+/splash-ue4                                             
+|
+├───/clean
+│   
+│
+├───/main
+|
+|
+├───/project-A  <-----------. 
+├───/project-B              |
+├───...                     |  merge from main game repo
+                            |  (prepare staging area with latest game advances)
+```
+
+---
+```
+/splash-ue4                                             
+|
+├───/clean
+│   
+│
+├───/main ------------------.
+|                           |  merge latest engine to game staging
+|                           |  (solve conflicts in isolation from game project)
+├───/project-A <------------'
+├───/project-B
+├───...
+```
+
+---
+```
+/splash-ue4                                             
+|
+├───/clean
+│   
+│
+├───/main
+|
+|
+├───/project-A  >-----------. 
+├───/project-B              |
+├───...                     |  merge from staging to game project
+                            |  (game project now updated to latest UE)
+```
+
+---
+## Summary
+
+- Allows us to have quick integrations
+- Decouples main game dev work from integration work
+- Keeps "Splash Engine" updated and in good condition
+
+---
 ## The End
 
 @valentin_galea

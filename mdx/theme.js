@@ -33,6 +33,9 @@ export default {
     a: {
         textDecoration: 'none'
     },
+    pre: {
+        color: 'white'
+    },
     code: {
         color: 'grey'
     }
