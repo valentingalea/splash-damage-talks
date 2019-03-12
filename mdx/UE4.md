@@ -32,6 +32,20 @@ export const title_style = {
 </Image>
 
 ---
+## @valentin_galea
+
+More than 15 years in the industry, of which 4 at
+
+<img src="img/SD/SD-logo-white-orange.svg" alt="SD" 
+  width="200" height="200"
+  style={{
+      background: 'rgba(255, 255, 255, 0.12)',
+      margin: '1em',
+      padding: '.5em'
+  }}
+/>  
+
+---
 <Image src="img/timeline/sd-timeline-1.jpg" />
 
 ---
@@ -548,9 +562,6 @@ style={{marginLeft: "-25%"}} />
   * build machine boots freshly compiled Editor
   * watches for crashes by monitoring logs
 
-SLIDE: split in 2 slides
-WORK: get info on editor run problems
-
 ---
 # Projects Setup
 
@@ -789,9 +800,6 @@ DECK: change `` colors
 DECK: use the orange text color rule from the marketing guide
 DECK: add black box for title slides
 
-TODO: attrib icon
-TODO: thanks to the team
-TODO: about me page
 TODO: more pre-amble about the coding standard -> that it's UE4 heavy & do first a fly over
 TODO: insert back coding actor
 TODO: blueprint standard validation confusing before showing them
@@ -799,9 +807,3 @@ TODO: move the asset naming out of def and into validation (maybe add back the d
 TODO: expand more on the macro test
 TODO: hard transition from game module layout to batch file
 TODO: code-surfer: change title for h2 to smaller and increase the notes font size
-
-WORK: talk to Mark V about TA tools
-WORK: get more/better chapter imgs
-WORK: talk to Sylvain to check on projector
-
-<div>Icons made by <a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp">Eucalyp</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
