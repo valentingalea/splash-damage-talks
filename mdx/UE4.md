@@ -217,22 +217,8 @@ If enough up-votes the proposal gets submitted 👍
   * Editor commandlet
   * uses preset JSON list
   * matches asset type against name
+- Disallows names like `Test`, `Prototype`, `Error`
 - Intercept new asset creation
-
----
-<CodeSurfer
-  title="Asset naming definitions"
-  code={require("!raw-loader!../flow/asset-naming.txt")}
-  theme={code_theme}
-  lang="yaml"
-  steps={[
-    { notes: "" },
-    { range: [ 3, 6] },
-    { range: [15, 18] },
-    { range: [27, 30] },
-    { range: [43, 46] }
-  ]}
-/>
 
 ---
 ## Enforcing (cont.)
@@ -361,11 +347,13 @@ If enough up-votes the proposal gets submitted 👍
   * easier edit in Visual Studio than batch files
   * allows build tasks parallelizing
   * easier dependencies management
-- Our most complex use-cases:
-  * prepare Unreal Game Sync editor binaries
-  * code/data submit-dependency flagging
+- Our most complex use-case:
+  * prepare _UnrealGameSync_ editor binaries
+    * multi-step process, with artefact dependencies 
 
-TODO: maybe talk UBT/UAT in P4 (pre-commit for them)
+<Appear>
+<p>💡 we now build and track <b>UnrealBuildTool</b> & <b>AutomationTool</b> in Perforce</p>
+</Appear>
 
 ---
 <CodeSurfer
@@ -804,11 +792,10 @@ DECK: add black box for title slides
 TODO: attrib icon
 TODO: thanks to the team
 TODO: about me page
-TODO: more pre-amble about the coding standard -> that it's UE4 heavy
+TODO: more pre-amble about the coding standard -> that it's UE4 heavy & do first a fly over
 TODO: insert back coding actor
 TODO: blueprint standard validation confusing before showing them
 TODO: move the asset naming out of def and into validation (maybe add back the dir structure)
-TODO: buildgraph code / data depend remove (too complicated to explain)
 TODO: expand more on the macro test
 TODO: hard transition from game module layout to batch file
 TODO: code-surfer: change title for h2 to smaller and increase the notes font size
