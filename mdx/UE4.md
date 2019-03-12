@@ -97,6 +97,8 @@ More than 15 years in the industry, of which 4 at
 ---
 ## About
 
+Having good standards (and respecting them)<br/>is key to successful projects
+
 - Usually as standalone documentation (_pdf_, _wiki_, etc)
 - People are supposed to study them
   * then apply in practice
@@ -143,11 +145,14 @@ More than 15 years in the industry, of which 4 at
   theme={code_theme}
   steps={[
     { notes: "the header file" },
-    { range: [ 1, 15], notes: "" },
-    { lines: [4], notes: "notice the chapter tagging system" },
-    { lines: [11] },
-    { lines: [14] },
-    { range: [15, 30] },
+    { range: [ 1, 15] },
+    { range: [21, 28] },
+    { range: [101, 108] },
+    { range: [150, 156] },
+    { lines:  [4], notes: "notice the chapter tagging system" },
+    { lines: [11], notes: "inspired by the C++ ISO standard itself" },
+    { lines: [14], notes: "handy in searches, code reviews, etc" },
+    { range: [24, 28] },
     { range: [30, 45] },
     { range: [45, 60] },
     { range: [61, 66] },
@@ -156,15 +161,6 @@ More than 15 years in the industry, of which 4 at
     { range: [92, 98] }
   ]}
 />
-
----
-## Tagging
-
-- Inspired by the C++ ISO standard itself
-  * ex: `21.9.4  Initializer list range`
-  * `access [support.initlist.range]`
-- Allows easy _search_ and _reference_
-- Handy in code reviews
 
 ---
 ## Usage
@@ -190,6 +186,13 @@ Takes the pressure off from feeling judgemental
 The standard itself is changed though reviews sent to the whole team
 
 If enough up-votes the proposal gets submitted 👍
+
+---
+## Unintended Consequences
+
+<Appear>
+  <img src="img/code-std/coding-actor.png" alt="UE4 screenshot"/>
+</Appear>
 
 ---
 <Image src="img/UE4/Unreal-Fest-GOW-4.jpg">
@@ -799,11 +802,9 @@ DECK: change anchor colors
 DECK: change `` colors
 DECK: use the orange text color rule from the marketing guide
 DECK: add black box for title slides
+DECK: code-surfer: change title for h2 to smaller and increase the notes font size
 
-TODO: more pre-amble about the coding standard -> that it's UE4 heavy & do first a fly over
-TODO: insert back coding actor
 TODO: blueprint standard validation confusing before showing them
 TODO: move the asset naming out of def and into validation (maybe add back the dir structure)
 TODO: expand more on the macro test
 TODO: hard transition from game module layout to batch file
-TODO: code-surfer: change title for h2 to smaller and increase the notes font size
