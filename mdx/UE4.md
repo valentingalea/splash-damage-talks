@@ -77,7 +77,7 @@ More than 15 years in the industry, of which 4 at
 ## Teams and Projects
 
 - 300 employees
-- Split across multiple ongoing projets
+- Split across multiple ongoing projects
 - Most projects use **Splash Engine**
   * vanilla UE4 + own modules and enhancements
 
@@ -185,7 +185,7 @@ Takes the pressure off from feeling judgemental
 
 The standard itself is changed though reviews sent to the whole team
 
-If enough up-votes the proposal gets submitted 👍
+If enough up-votes → the proposal gets submitted 👍
 
 ---
 ## Unintended Consequences
@@ -220,28 +220,12 @@ If enough up-votes the proposal gets submitted 👍
 ![asset naming](img/content-std/template.png)
 
 - less confusion and improves searching & browsing
-- `Prefix` and `BaseAssetName` are mandatory
+- `Prefix` uses _initialism_ rules
 
 ---
 ## Example
 
 ![asset examples](img/content-std/example_1.png)
-
----
-## Enforcing
-
-- Automated checker / validator
-  * Editor commandlet
-  * uses preset JSON list
-  * matches asset type against name
-- Disallows names like `Test`, `Prototype`, `Error`
-- Intercept new asset creation
-
----
-## Enforcing (cont.)
-
-<img src="img/content-std/ue4-auto-naming.gif" alt="auto naming" width="150%"
-  style={{marginLeft: "-25%"}} />
 
 ---
 ## Blueprint Standards
@@ -275,8 +259,32 @@ If enough up-votes the proposal gets submitted 👍
 - CI (Continuous Integration) support
   * validation after submit
   * nightly builds
+- Naming Validation
 - Blueprints Validation
 - Assets Validation
+
+---
+## Asset Naming Validator
+
+- Automated checker / validator
+  * Editor commandlet
+  * _Initialism_ from asset class name
+    * extra JSON file with exceptions
+- Disallows names like `Test`, `Prototype`, `Error`
+- Intercept new asset creation
+
+---
+## Asset auto-naming on creation
+
+<img src="img/content-std/ue4-auto-naming.gif" alt="auto naming" width="150%"
+  style={{marginLeft: "-25%"}} />
+
+---
+## Asset import rule
+
+- Disallow import from non-versioned paths
+- Forbidden example:
+  * Adding data from own Desktop folder 💀
 
 ---
 ## Blueprints Validation
@@ -804,7 +812,7 @@ DECK: use the orange text color rule from the marketing guide
 DECK: add black box for title slides
 DECK: code-surfer: change title for h2 to smaller and increase the notes font size
 
-TODO: blueprint standard validation confusing before showing them
-TODO: move the asset naming out of def and into validation (maybe add back the dir structure)
 TODO: expand more on the macro test
 TODO: hard transition from game module layout to batch file
+TODO: do a spell checker pass
+TODO: address Stefano's points
