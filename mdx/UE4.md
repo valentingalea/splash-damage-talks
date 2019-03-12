@@ -17,12 +17,14 @@ export const center_style = {
 
 export const title_style = {
     color: 'white',
-    textShadow: '-5px 5px 0px rgba(0,0,0,0.45)',
+    textShadow: '-5px 5px 0px rgba(0,0,0,0.5)',
     fontSize: '98px',
-    fontWeight: '600'
+    fontWeight: '600',
+    padding: '16px',
+    background: 'rgba(0,0,0,0.75)'
 };
 
-<Image src="img/SD/banner.jpg">
+<Image src="img/cards/company.jpg">
   <Box css={ center_style }>
     <div style={ title_style }>
     Growing a Healthy UE4 Ecosystem:<br/>
@@ -86,7 +88,7 @@ More than 15 years in the industry, of which 4 at
 <img src="img/icon/team.svg" alt="teams" width="128" height="128" style={{marginLeft: "32px"}}/>
 
 ---
-<Image src="img/UE4/Unreal-Fest-GOW-UE.jpg">
+<Image src="img/cards/GOW-UE.jpg">
   <Box css={ center_style }>
     <div style={ title_style }>
 # Coding Standards
@@ -195,7 +197,7 @@ If enough up-votes → the proposal gets submitted 👍
 </Appear>
 
 ---
-<Image src="img/UE4/Unreal-Fest-GOW-4.jpg">
+<Image src="img/cards/GOW-4.jpg">
   <Box css={ center_style }>
     <div style={ title_style }>
 # Content Standards
@@ -245,7 +247,7 @@ If enough up-votes → the proposal gets submitted 👍
 ![blueprint std 1](img/content-std/blueprint-standard-2.png)
 
 ---
-<Image src="img/UE4/Unreal-Fest-GOW-5.jpg">
+<Image src="img/cards/GOW-5.jpg">
   <Box css={ center_style }>
     <div style={ title_style }>
 # Content Validation
@@ -311,7 +313,7 @@ If enough up-votes → the proposal gets submitted 👍
     * ex: dependency walker via Asset Registry
 
 ---
-<Image src="img/UE4/Unreal-Fest-GOW-T.jpg">
+<Image src="img/cards/GOW-T.jpg">
   <Box css={ center_style }>
     <div style={ title_style }>
 # Compilation
@@ -399,7 +401,13 @@ If enough up-votes → the proposal gets submitted 👍
 />
 
 ---
+<Image src="img/cards/Batman.jpg">
+  <Box css={ center_style }>
+    <div style={ title_style }>
 # Pre-Commit
+    </div>
+  </Box>
+</Image>
 
 ---
 <CodeSurfer
@@ -515,7 +523,13 @@ style={{float: "right", display: "inline"}} />
 style={{marginLeft: "-25%"}} />
 
 ---
+<Image src="img/cards/DB-1.jpg">
+  <Box css={ center_style }>
+    <div style={ title_style }>
 # Automation & Testing
+    </div>
+  </Box>
+</Image>
 
 ---
 ## Unit Testing
@@ -574,7 +588,13 @@ style={{marginLeft: "-25%"}} />
   * watches for crashes by monitoring logs
 
 ---
+<Image src="img/cards/GOW-Brumak.jpg">
+  <Box css={ center_style }>
+    <div style={ title_style }>
 # Projects Setup
+    </div>
+  </Box>
+</Image>
 
 ---
 ## Game Modules
@@ -622,7 +642,13 @@ SLIDE: maybe add more modules examples
 />
 
 ---
+<Image src="img/cards/DB-2.jpg">
+  <Box css={ center_style }>
+    <div style={ title_style }>
 # Splash Engine
+    </div>
+  </Box>
+</Image>
 
 ---
 ## About
@@ -808,8 +834,7 @@ DECK: change theme to white or bigger impact black
 DECK: increase margin for img's
 DECK: change anchor colors
 DECK: change `` colors
-DECK: use the orange text color rule from the marketing guide
-DECK: add black box for title slides
+DECK: constrain black box for title slides
 DECK: code-surfer: change title for h2 to smaller and increase the notes font size
 
 TODO: expand more on the macro test
