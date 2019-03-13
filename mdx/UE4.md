@@ -410,6 +410,8 @@ If enough up-votes → the proposal gets submitted 👍
 </Image>
 
 ---
+export const flowA = 9
+
 <CodeSurfer
   title="Normal Commit Flow"
   code={require("!raw-loader!../flow/submit.txt")}
@@ -417,14 +419,16 @@ If enough up-votes → the proposal gets submitted 👍
   lang="yaml"
   steps={[
     { notes: "" },
-    { range: [ 1,  5] },
-    { range: [10, 15] },
-    { range: [23, 28] },
-    { range: [36, 41] }
+    { range: [flowA +  1, flowA +  5] },
+    { range: [flowA + 10, flowA + 15] },
+    { range: [flowA + 23, flowA + 28] },
+    { range: [flowA + 36, flowA + 41] }
   ]}
 />
 
 ---
+export const flowB = 9
+
 <CodeSurfer
   title="Pre-Commit Flow"
   code={require("!raw-loader!../flow/pre-submit.txt")}
@@ -432,13 +436,13 @@ If enough up-votes → the proposal gets submitted 👍
   lang="yaml"
   steps={[
     { notes: "" },
-    { range: [ 1,  5] },
-    { range: [10, 15] },
-    { range: [23, 28] },
-    { range: [36, 41] },
-    { lines: [43, 47] },
-    { range: [50, 53] },
-    { range: [62, 66] },
+    { range: [flowB +  1, flowB +  5] },
+    { range: [flowB + 10, flowB + 15] },
+    { range: [flowB + 23, flowB + 28] },
+    { range: [flowB + 36, flowB + 41] },
+    { lines: [flowB + 43, flowB + 47] },
+    { range: [flowB + 50, flowB + 53] },
+    { range: [flowB + 62, flowB + 66] },
   ]}
 />
 
