@@ -617,29 +617,21 @@ style={{marginLeft: "-25%"}} />
     { notes: "" },
     { range: [ 2, 14], notes: "Runtime module" },
     { range: [16, 26], notes: "Test module" },
+    { range: [28, 30], notes: "Editor-only module" },
+    { range: [33, 35], notes: "Interface-only module" },
     { lines: [3], notes: "UBT build file" },
     { range: [5, 8], notes: "Implementation" },
     { range: [10, 14], notes: "Interface" }
   ]}
 />
 
-SLIDE: maybe add more modules examples
-
 ---
-<CodeSurfer
-  title="Game Module Layout Example"
-  code={require("!raw-loader!../flow/gen-module.txt")}
-  theme={code_theme}
-  lang="bash"
-  steps={[
-    { notes: "" },
-    { range: [ 4, 11], notes: "ASCII art!" },
-    { range: [23, 28], notes: "user choices" },
-    { range: [53, 58], notes: "creating folder structure" },
-    { range: [105, 114], notes: "creating build file" },
-    { range: [123, 128], notes: "creating build file" }
-  ]}
-/>
+## Quick & Dirty Automation
+
+- `GenerateModule.cmd`
+- Batch file script that produces
+  * folder structure
+  * initial _...build.cs_ file with good defaults for us
 
 ---
 <Image src="img/cards/DB-2.jpg">
@@ -838,6 +830,5 @@ DECK: constrain black box for title slides
 DECK: code-surfer: change title for h2 to smaller and increase the notes font size
 
 TODO: expand more on the macro test
-TODO: hard transition from game module layout to batch file
 TODO: do a spell checker pass
 TODO: address Stefano's points
