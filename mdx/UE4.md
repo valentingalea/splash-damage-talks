@@ -390,7 +390,7 @@ If enough up-votes → the proposal gets submitted 👍
   lang="xml"
   steps={[
     { notes: "" },
-    { range: [ 7,  8] },
+    { range: [ 4, 11] },
     { range: [13, 14] },
     { range: [18, 23] },
     { lines: [ 34 ] },
