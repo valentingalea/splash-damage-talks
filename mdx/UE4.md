@@ -17,12 +17,14 @@ export const center_style = {
 
 export const title_style = {
     color: 'white',
-    textShadow: '-5px 5px 0px rgba(0,0,0,0.45)',
+    textShadow: '-5px 5px 0px rgba(0,0,0,0.5)',
     fontSize: '98px',
-    fontWeight: '600'
+    fontWeight: '600',
+    padding: '16px',
+    background: 'rgba(0,0,0,0.75)'
 };
 
-<Image src="img/SD/banner.jpg">
+<Image src="img/cards/company.jpg">
   <Box css={ center_style }>
     <div style={ title_style }>
     Growing a Healthy UE4 Ecosystem:<br/>
@@ -30,6 +32,20 @@ export const title_style = {
     </div>
   </Box>
 </Image>
+
+---
+## @valentin_galea
+
+More than 15 years in the industry, of which 4 at
+
+<img src="img/SD/SD-logo-white-orange.svg" alt="SD" 
+  width="200" height="200"
+  style={{
+      background: 'rgba(255, 255, 255, 0.12)',
+      margin: '1em',
+      padding: '.5em'
+  }}
+/>  
 
 ---
 <Image src="img/timeline/sd-timeline-1.jpg" />
@@ -63,7 +79,7 @@ export const title_style = {
 ## Teams and Projects
 
 - 300 employees
-- Split across multiple ongoing projets
+- Split across multiple ongoing projects
 - Most projects use **Splash Engine**
   * vanilla UE4 + own modules and enhancements
 
@@ -72,7 +88,7 @@ export const title_style = {
 <img src="img/icon/team.svg" alt="teams" width="128" height="128" style={{marginLeft: "32px"}}/>
 
 ---
-<Image src="img/UE4/Unreal-Fest-GOW-UE.jpg">
+<Image src="img/cards/GOW-UE.jpg">
   <Box css={ center_style }>
     <div style={ title_style }>
 # Coding Standards
@@ -82,6 +98,8 @@ export const title_style = {
 
 ---
 ## About
+
+Having good standards (and respecting them)<br/>is key to successful projects
 
 - Usually as standalone documentation (_pdf_, _wiki_, etc)
 - People are supposed to study them
@@ -129,11 +147,14 @@ export const title_style = {
   theme={code_theme}
   steps={[
     { notes: "the header file" },
-    { range: [ 1, 15], notes: "" },
-    { lines: [4], notes: "notice the chapter tagging system" },
-    { lines: [11] },
-    { lines: [14] },
-    { range: [15, 30] },
+    { range: [ 1, 15] },
+    { range: [21, 28] },
+    { range: [101, 108] },
+    { range: [150, 156] },
+    { lines:  [4], notes: "notice the chapter tagging system" },
+    { lines: [11], notes: "inspired by the C++ ISO standard itself" },
+    { lines: [14], notes: "handy in searches, code reviews, etc" },
+    { range: [24, 28] },
     { range: [30, 45] },
     { range: [45, 60] },
     { range: [61, 66] },
@@ -142,15 +163,6 @@ export const title_style = {
     { range: [92, 98] }
   ]}
 />
-
----
-## Tagging
-
-- Inspired by the C++ ISO standard itself
-  * ex: `21.9.4  Initializer list range`
-  * `access [support.initlist.range]`
-- Allows easy _search_ and _reference_
-- Handy in code reviews
 
 ---
 ## Usage
@@ -175,10 +187,17 @@ Takes the pressure off from feeling judgemental
 
 The standard itself is changed though reviews sent to the whole team
 
-If enough up-votes the proposal gets submitted 👍
+If enough up-votes → the proposal gets submitted 👍
 
 ---
-<Image src="img/UE4/Unreal-Fest-GOW-4.jpg">
+## Unintended Consequences
+
+<Appear>
+  <img src="img/code-std/coding-actor.png" alt="UE4 screenshot"/>
+</Appear>
+
+---
+<Image src="img/cards/GOW-4.jpg">
   <Box css={ center_style }>
     <div style={ title_style }>
 # Content Standards
@@ -203,28 +222,12 @@ If enough up-votes the proposal gets submitted 👍
 ![asset naming](img/content-std/template.png)
 
 - less confusion and improves searching & browsing
-- `Prefix` and `BaseAssetName` are mandatory
+- `Prefix` uses _initialism_ rules
 
 ---
 ## Example
 
 ![asset examples](img/content-std/example_1.png)
-
----
-## Enforcing
-
-- Automated checker / validator
-  * Editor commandlet
-  * uses preset JSON list
-  * matches asset type against name
-- Disallows names like `Test`, `Prototype`, `Error`
-- Intercept new asset creation
-
----
-## Enforcing (cont.)
-
-<img src="img/content-std/ue4-auto-naming.gif" alt="auto naming" width="150%"
-  style={{marginLeft: "-25%"}} />
 
 ---
 ## Blueprint Standards
@@ -244,7 +247,7 @@ If enough up-votes the proposal gets submitted 👍
 ![blueprint std 1](img/content-std/blueprint-standard-2.png)
 
 ---
-<Image src="img/UE4/Unreal-Fest-GOW-5.jpg">
+<Image src="img/cards/GOW-5.jpg">
   <Box css={ center_style }>
     <div style={ title_style }>
 # Content Validation
@@ -258,8 +261,32 @@ If enough up-votes the proposal gets submitted 👍
 - CI (Continuous Integration) support
   * validation after submit
   * nightly builds
+- Naming Validation
 - Blueprints Validation
 - Assets Validation
+
+---
+## Asset Naming Validator
+
+- Automated checker / validator
+  * Editor commandlet
+  * _Initialism_ from asset class name
+    * extra JSON file with exceptions
+- Disallows names like `Test`, `Prototype`, `Error`
+- Intercept new asset creation
+
+---
+## Asset auto-naming on creation
+
+<img src="img/content-std/ue4-auto-naming.gif" alt="auto naming" width="150%"
+  style={{marginLeft: "-25%"}} />
+
+---
+## Asset import rule
+
+- Disallow import from non-versioned paths
+- Forbidden example:
+  * Adding data from own Desktop folder 💀
 
 ---
 ## Blueprints Validation
@@ -286,7 +313,7 @@ If enough up-votes the proposal gets submitted 👍
     * ex: dependency walker via Asset Registry
 
 ---
-<Image src="img/UE4/Unreal-Fest-GOW-T.jpg">
+<Image src="img/cards/GOW-T.jpg">
   <Box css={ center_style }>
     <div style={ title_style }>
 # Compilation
@@ -374,9 +401,17 @@ If enough up-votes the proposal gets submitted 👍
 />
 
 ---
+<Image src="img/cards/Batman.jpg">
+  <Box css={ center_style }>
+    <div style={ title_style }>
 # Pre-Commit
+    </div>
+  </Box>
+</Image>
 
 ---
+export const flowA = 9
+
 <CodeSurfer
   title="Normal Commit Flow"
   code={require("!raw-loader!../flow/submit.txt")}
@@ -384,14 +419,16 @@ If enough up-votes the proposal gets submitted 👍
   lang="yaml"
   steps={[
     { notes: "" },
-    { range: [ 1,  5] },
-    { range: [10, 15] },
-    { range: [23, 28] },
-    { range: [36, 41] }
+    { range: [flowA +  1, flowA +  5] },
+    { range: [flowA + 10, flowA + 15] },
+    { range: [flowA + 23, flowA + 28] },
+    { range: [flowA + 36, flowA + 41] }
   ]}
 />
 
 ---
+export const flowB = 9
+
 <CodeSurfer
   title="Pre-Commit Flow"
   code={require("!raw-loader!../flow/pre-submit.txt")}
@@ -399,13 +436,13 @@ If enough up-votes the proposal gets submitted 👍
   lang="yaml"
   steps={[
     { notes: "" },
-    { range: [ 1,  5] },
-    { range: [10, 15] },
-    { range: [23, 28] },
-    { range: [36, 41] },
-    { lines: [43, 47] },
-    { range: [50, 53] },
-    { range: [62, 66] },
+    { range: [flowB +  1, flowB +  5] },
+    { range: [flowB + 10, flowB + 15] },
+    { range: [flowB + 23, flowB + 28] },
+    { range: [flowB + 36, flowB + 41] },
+    { lines: [flowB + 43, flowB + 47] },
+    { range: [flowB + 50, flowB + 53] },
+    { range: [flowB + 62, flowB + 66] },
   ]}
 />
 
@@ -490,7 +527,13 @@ style={{float: "right", display: "inline"}} />
 style={{marginLeft: "-25%"}} />
 
 ---
+<Image src="img/cards/DB-1.jpg">
+  <Box css={ center_style }>
+    <div style={ title_style }>
 # Automation & Testing
+    </div>
+  </Box>
+</Image>
 
 ---
 ## Unit Testing
@@ -548,11 +591,14 @@ style={{marginLeft: "-25%"}} />
   * build machine boots freshly compiled Editor
   * watches for crashes by monitoring logs
 
-SLIDE: split in 2 slides
-WORK: get info on editor run problems
-
 ---
+<Image src="img/cards/GOW-Brumak.jpg">
+  <Box css={ center_style }>
+    <div style={ title_style }>
 # Projects Setup
+    </div>
+  </Box>
+</Image>
 
 ---
 ## Game Modules
@@ -575,32 +621,30 @@ WORK: get info on editor run problems
     { notes: "" },
     { range: [ 2, 14], notes: "Runtime module" },
     { range: [16, 26], notes: "Test module" },
+    { range: [28, 30], notes: "Editor-only module" },
+    { range: [33, 35], notes: "Interface-only module" },
     { lines: [3], notes: "UBT build file" },
     { range: [5, 8], notes: "Implementation" },
     { range: [10, 14], notes: "Interface" }
   ]}
 />
 
-SLIDE: maybe add more modules examples
+---
+## Quick & Dirty Automation
+
+- `GenerateModule.cmd`
+- Batch file script that produces
+  * folder structure
+  * initial _...build.cs_ file with good defaults for us
 
 ---
-<CodeSurfer
-  title="Game Module Layout Example"
-  code={require("!raw-loader!../flow/gen-module.txt")}
-  theme={code_theme}
-  lang="bash"
-  steps={[
-    { notes: "" },
-    { range: [ 4, 11], notes: "ASCII art!" },
-    { range: [23, 28], notes: "user choices" },
-    { range: [53, 58], notes: "creating folder structure" },
-    { range: [105, 114], notes: "creating build file" },
-    { range: [123, 128], notes: "creating build file" }
-  ]}
-/>
-
----
+<Image src="img/cards/DB-2.jpg">
+  <Box css={ center_style }>
+    <div style={ title_style }>
 # Splash Engine
+    </div>
+  </Box>
+</Image>
 
 ---
 ## About
@@ -786,22 +830,9 @@ DECK: change theme to white or bigger impact black
 DECK: increase margin for img's
 DECK: change anchor colors
 DECK: change `` colors
-DECK: use the orange text color rule from the marketing guide
-DECK: add black box for title slides
+DECK: constrain black box for title slides
+DECK: code-surfer: change title for h2 to smaller and increase the notes font size
 
-TODO: attrib icon
-TODO: thanks to the team
-TODO: about me page
-TODO: more pre-amble about the coding standard -> that it's UE4 heavy & do first a fly over
-TODO: insert back coding actor
-TODO: blueprint standard validation confusing before showing them
-TODO: move the asset naming out of def and into validation (maybe add back the dir structure)
 TODO: expand more on the macro test
-TODO: hard transition from game module layout to batch file
-TODO: code-surfer: change title for h2 to smaller and increase the notes font size
-
-WORK: talk to Mark V about TA tools
-WORK: get more/better chapter imgs
-WORK: talk to Sylvain to check on projector
-
-<div>Icons made by <a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp">Eucalyp</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+TODO: do a spell checker pass
+TODO: address Stefano's points
