@@ -24,7 +24,7 @@ export const title_style = {
     background: 'rgba(0,0,0,0.75)'
 };
 
-<Image src="img/cards/company.jpg">
+<Image src="img/cards/Company.jpg">
   <Box css={ center_style }>
     <div style={ title_style }>
     Growing a Healthy UE4 Ecosystem:<br/>
