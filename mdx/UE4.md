@@ -328,7 +328,7 @@ If enough up-votes → the proposal gets submitted 👍
 - CPU hardware threads
   * jump from 8 to 16 substantial (2x)
   * same from 16 to 32
-  * dimishing returns after
+  * diminishing returns after
 - Distributed compilation
   * _Incredibuild_ for some projects
   * we also tried _Fastbuild_
@@ -638,6 +638,15 @@ style={{marginLeft: "-25%"}} />
   * initial _...build.cs_ file with good defaults for us
 
 ---
+## Test Modules
+
+- Very useful to access private data from equivalent runtime module
+- Our solution: `MODULENAME_TEST_API` extension to module API specifier
+  * UnrealBuildTool modification
+  * exported as usual
+  * only modules with `bImportTestModuleSymbols` can import
+
+---
 <Image src="img/cards/DB-2.jpg">
   <Box css={ center_style }>
     <div style={ title_style }>
@@ -654,7 +663,7 @@ We extract and re-use the UE work across projects into "Splash Engine"
 - game-agnostic engine enhacements & fixes gathered across time
 - re-usable mini-frameworks modules
   * UI components
-  * Audio thin abstractions
+  * Audio utilities
   * Events, Async Tasks
   * Rendering features
   * Tech-Art utilities
@@ -814,25 +823,23 @@ Updating a game project to latest UE4 version...
   }}
 />  
 
-splashdamage.com
+[splashdamage.com](https://www.splashdamage.com)
 
 ---
 ## Tasks
 
-SYS: find solution for incremental lists 
+SYS: find solution for incremental lists
+
 SYS: try embed code-surfer in react.js
+
 SYS: find solution for header/footer https://github.com/kyleshevlin/react-edges
-SYS: code-surfer change font size https://github.com/pomber/code-surfer/pull/52/commits/f5a5bab0bef47a494b376f01c297c10b4614db97
-SYS: patch for W:\Dev\OpenSource\research_work\mdx\node_modules\mdx-deck-code-surfer\dist\deck-code-surfer.js line 51
-SYS: fix html export
 
-DECK: change theme to white or bigger impact black
-DECK: increase margin for img's
-DECK: change anchor colors
-DECK: change `` colors
-DECK: constrain black box for title slides
-DECK: code-surfer: change title for h2 to smaller and increase the notes font size
+SYS: code-surfer: custom styles https://github.com/pomber/code-surfer/pull/52/commits/f5a5bab0bef47a494b376f01c297c10b4614db97
 
-TODO: expand more on the macro test
-TODO: do a spell checker pass
+SYS: code-surfer: titles: mdx\node_modules\mdx-deck-code-surfer\dist\deck-code-surfer.js 42 h3
+
+SYS: code-surfer: notes: mdx\node_modules\mdx-deck-code-surfer\dist\deck-code-surfer.js 51 h2 
+
+TODO: constrain black box for title slides
+
 TODO: address Stefano's points

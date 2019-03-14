@@ -31,12 +31,13 @@ export default {
         margin: '0'
     },
     a: {
-        textDecoration: 'none'
+        color: 'white',
+        textDecoration: 'underline'
     },
     pre: {
         color: 'white'
     },
     code: {
-        color: 'grey'
+        color: 'rgb(86, 156, 214)'
     }
 }
