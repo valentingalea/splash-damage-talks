@@ -495,6 +495,10 @@ style={{float: "right", display: "inline"}} />
   * starts CI build configuration in isolation
   * more configurations -> better coverage 😊️
   * more configurations -> stress on build farm ☹️
+
+---
+## Pre-Commit Backend (cont.)
+
 - Compile time-saving solution
   * rebuild all participating configuration nightly
   * incremental (non-unity) builds throughout the day
@@ -516,12 +520,12 @@ style={{float: "right", display: "inline"}} />
     * (missing .h/.cpp pair)
 
 ---
-## Validation
+## Commit Preparation
 
 ![pct](img/tools/pct-tool.webp)
 
 ---
-## Validation (contd.)
+## Commit Validation
 
 <img alt="trigger tool" src="img/tools/trigger-tool.webp" width="150%" 
 style={{marginLeft: "-25%"}} />
@@ -579,17 +583,23 @@ style={{marginLeft: "-25%"}} />
 ![CI tests](img/tools/tc-tests.png)
 
 ---
-## Editor automation
+## Editor Automated Distribution
 
-- UnrealGameSync (UGS)
-  * distributing Editor binaries is a more controlled manner
-  * very useful for non-programmers
-    * we stripped out the compilation support
-  * we refactored the packaging script via BuildGraph
-    * more control, adding symbols upload
+UnrealGameSync (UGS)
+
+* distributing Editor binaries is a more controlled manner
+* very useful for non-programmers
+  * we stripped out the compilation support
+* we refactored the packaging script via BuildGraph
+  * more control, adding symbols upload
+
+---
+## Editor Build Validation
+
 - Basic automated Editor validation
   * build machine boots freshly compiled Editor
-  * watches for crashes by monitoring logs
+  * monitors error messages in the log
+  * monitors startup time (ex: no more than X sec)
 
 ---
 <Image src="img/cards/GOW-Brumak.jpg">
