@@ -1,3 +1,10 @@
+Importing private symbols
+
+If the test module needs to acces classes or functions declared in the private directory of the tested module, mark those functions with the macro <MODULENAME>_TEST_API. This is similar to <MODULENAME>_API and it is also generated automatically by UBT. The functions and classes marked with this symbol are exported as usual but only modules setting bImportTestModuleSymbols will be able to import them. This flag should only be set in test modules so that if a runtime module encounters the macro it will signal a compiler error (since it is accessing private parts of another module). This macro (and the regular <MODULENAME>_API) are completely ignored in monolithic executables (such as our Shipping Game configuration) so it is only relevant in non-monolithic builds (like our Development Editor configuration).
+
+The private directory of a module is not added to the include directories of dependent modules, so to include these files you need to specifiy the path relative to the module directory, for example:
+#include "Private/Utility/BCWeaponHelpers.h"
+
 export const comment_block = {/*
   mdx-deck themes: default, big, book, code, condensed, dark, future, hack, swiss, yellow -- https://github.com/jxnblk/mdx-deck/blob/master/docs/themes.md
 
