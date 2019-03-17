@@ -1,1 +1,1 @@
-npm install --save asciidoctor-reveal.js
+npm install --save asciidoctor-reveal.js@1.1.3
