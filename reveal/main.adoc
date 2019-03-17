@@ -1,4 +1,4 @@
-= Test
+= Growing a Healthy UE4 Ecosystem : How Splash Damage approaches development
 :revealjs_theme: black
 :revealjs_transition: fade
 :revealjs_controls: true
@@ -9,6 +9,644 @@
 :revealjs_fragments: true
 :source-highlighter: highlightjs
 :customcss: main.css
+:imagesdir: ../docs/img
+:title-slide-background-image: cards/Company.jpg
+:icons: font
+
+[%notitle]
+== About: me
+@valentin_galea
+
+More than 15 years in the industry, of which 4 at
+
+image::SD/SD-logo-white-orange.svg[SD, 200, 200]
+
+== Splash Damage History
+TODO: new SD timeline img
+
+== Agenda
+- Teams and Projects
+- Standards
+- Validation
+- Compilation
+- Automation & Testing
+- Projects Structure
+- Splash Engine & Merges
+
+
+== Disclaimer
+[.step]
+- Share our learnings
+  * what worked well 👍
+  * what didn't 👎
+- Get inspired!
+
+
+== Teams and Projects
+image:icon/UE4.jpg[UE] image:icon/team.svg[teams, 128, 128]
+
+[.step]
+- 300 employees
+- Split across multiple ongoing projects
+- Most projects use **Splash Engine**
+  * vanilla + own modules and enhancements
+
+
+[state=title_card]
+[%notile, background-image="cards/GOW-UE.jpg"]
+== Coding Standards
+
+
+== About
+Having good standards (and respecting them)<br/>is key to successful projects
+
+- Usually as standalone documentation (_pdf_, _wiki_, etc)
+- People are supposed to study them
+  * then apply in practice
+
+
+== Pitfalls
+- Grow big / Hard to navigate
+- Get _out-of-date_ quickly
+- In separate location
+  * outside production source code
+- Only select few modify or improve them
+- Nobody has time to read documentation! 😛
+
+
+== Splash Damage approach
+- Standards are **source code files** 📑
+  * you can break the build messing with the standard!
+- Created and improved through code reviews
+- A system for easy _reference_ and _searching_
+
+
+== The Coding Standards
+- 2 files
+  * `SplashDamageCodingStandard.h`
+  * `SplashDamageCodingStandard.cpp`
+- Located in the main source code
+  * `ue4/Game/Source/Main/...`
+- Open Source
+  * https://github.com/splash-damage/coding-standards
+
+
+== The Coding Standards (cont.)
+image::code-std/vs-standards-open.gif[VS code std]
+
+
+== The Coding Standards Surfer
+TODO: surf: cod std
+
+== Usage
+Applied via code reviews
+
+image::code-std/review-1.png[code review pic]
+
+
+== Usage (continued)
+Takes the pressure off from feeling judgemental
+
+image::code-std/review-2.png[code review pic]
+
+
+== Modify and Improve
+The standard itself is changed though reviews sent to the whole team
+If enough up-votes → the proposal gets submitted 👍
+
+
+== Unintended Consequences
+image::code-std/coding-actor.png[ue4 coding actor]
+
+
+== Content Standards
+TODO: backgr img
+
+
+== Motivation
+- Poor organisation and practices for assets
+  * ... compound over time
+  * ... waste productivity
+  * ... increase cooking and deployment times
+- UE4 Editor is easy to modify to
+  * improve workflows
+  * enforce good practices
+
+
+== Asset Naming Rules
+image::content-std/template.png[asset template]
+
+- less confusion and improves searching & browsing
+- `Prefix` uses _initialism_ rules
+
+
+== Asset Naming Example
+image::content-std/example_1.png[assets ex]
+
+
+== Blueprint Standards
+- Same principles as the Coding Standard
+- Live in `Game/Content/Standard/`
+- We have some basic automatic validators
+- Best gain for us:
+  * enforcing comment nodes
+
+
+[%notitle]
+== Blueprint Standards Ex. 1
+image::content-std/blueprint-standard-1.png[blueprint std ex 1]
+
+
+
+[%notitle]
+== Blueprint Standards Ex. 2
+image::content-std/blueprint-standard-2.png[blueprint std ex 2]
+
+
+== Content Validation
+TODO: backgr img
+
+
+== Automated Validation
+- CI (Continuous Integration) support
+  * validation after submit
+  * nightly builds
+- Naming Validation
+- Blueprints Validation
+- Assets Validation
+
+
+== Asset Naming Validator
+- Automated checker / validator
+  * Editor commandlet
+  * _Initialism_ from asset class name
+    * extra JSON file with exceptions
+- Disallows names like `Test`, `Prototype`, `Error`
+- Intercept new asset creation
+
+
+== Asset auto-naming on creation
+image::content-std/ue4-auto-naming.gif"[auto naming, width="150%"]
+
+
+== Asset import rule
+- Disallow import from non-versioned paths
+- Forbidden example:
+  * Adding data from own Desktop folder 💀
+
+
+== Blueprints Validation
+- Editor commandlet
+- Basic checks
+  * comment nodes present
+  * public functions / vars must have tooltips
+  * no functions / vars with default names
+- Future work / ideas
+  * leverage the Blueprint Compiler
+  * more complex checks
+
+
+== Assets Validation 
+- Checks for bad or missing references
+  * disregards *Developer*, *Test* folders
+- Executed via cooking:
+  * `-COOKALL -DUMPALLWARNINGS -WARNINGSASERRORS`
+  * ⚠️ 
+  * not viable for large projects
+    * explore other possibilities
+    * ex: dependency walker via Asset Registry
+
+
+== Compilation
+TODO: backgr img
+
+== Hardware
+- Everyday work is very CPU intensive
+- CPU hardware threads
+  * jump from 8 to 16 substantial (2x)
+  * same from 16 to 32
+  * diminishing returns after
+- Distributed compilation
+  * _Incredibuild_ for some projects
+  * we also tried _Fastbuild_
+    * free but more difficult to integrate
+
+
+== Build Farm
+- Configuration / layout different per project
+- Sweetspot price / performance for us 32 thread CPUs
+  * Good performer: 16c/32t AMD Threadripper 1950x
+- Orchestration
+  * _TeamCity_ - most projects
+  * _Jenkins_
+
+
+== Infrastructure-As-Code
+- In the past we used ad-hoc methods that didn't scale well
+  * too tight integrated with the CI orchestrator
+  * too bespoke for a project - cannot reuse
+  * hard to debug locally
+- Now leveraging Epic's own _BuildGraph_
+
+
+== BuildGraph
+- Alternative to traditional `BuildCookRun` automation commands
+- XML based scripts
+
+== BuildGraph - Our Usage
+- Standardized and reusable set of scripts
+- Unifies all calling paths
+    * Visual Studio
+    * Editor - Hot Reload
+    * command line
+    * CI systems
+
+
+== BuildGraph (cont.)
+- Additional benefits
+  * easier edit in Visual Studio than batch files
+  * allows build tasks parallelizing
+  * easier dependencies management
+- Our most complex use-case:
+  * prepare _UnrealGameSync_ editor binaries
+    * multi-step process, with artefact dependencies 
+
+
+== BuildGraph Code Surf
+TODO: surf: buildgraph
+
+
+== Pre-Commit
+TODO: backgr img
+
+== Pre-Commit Anim
+[source, xml]
+<CodeSurfer
+  title="Normal Commit Flow"
+  code={require("!raw-loader!../flow/submit.txt")}
+  theme={code_theme}
+  lang="yaml"
+  steps={[
+    { notes: "" },
+    { range: [flowA +  1, flowA +  5] },
+    { range: [flowA + 10, flowA + 15] },
+    { range: [flowA + 23, flowA + 28] },
+    { range: [flowA + 36, flowA + 41] }
+  ]}
+/>
+
+
+== Pre-Commit Anim
+[source, xml]
+<CodeSurfer
+  title="Pre-Commit Flow"
+  code={require("!raw-loader!../flow/pre-submit.txt")}
+  theme={code_theme}
+  lang="yaml"
+  steps={[
+    { notes: "" },
+    { range: [flowB +  1, flowB +  5] },
+    { range: [flowB + 10, flowB + 15] },
+    { range: [flowB + 23, flowB + 28] },
+    { range: [flowB + 36, flowB + 41] },
+    { lines: [flowB + 43, flowB + 47] },
+    { range: [flowB + 50, flowB + 53] },
+    { range: [flowB + 62, flowB + 66] },
+  ]}
+/>
+
+
+== How it works
+- Effectively 2 systems working together
+- Frontend
+  * what the devs interact with
+- Backend
+  * CI / build-machines
+
+
+== Pre-Commit Frontend
+- Tools that allow indirect submits to main code base
+- Off-the-shelf
+  * Visual Studio ReSharper Team City plugin
+  * https://www.jetbrains.com/resharper/
+- Internally developed
+  * more project specific
+  * written in C# or Python  
+
+
+== Example: Visual Studio ReSharper
+image::tools/pre-commit.png[resharper, width="50%"]
+
+== Pre-Commit Backend
+- *Personal Build* system
+  * starts CI build configuration in isolation
+  * more configurations -> better coverage 😊️
+  * more configurations -> stress on build farm ☹️
+
+
+== Pre-Commit Backend (cont.)
+- Compile time-saving solution
+  * rebuild all participating configuration nightly
+  * incremental (non-unity) builds throughout the day
+  * example:
+    * _Editor_ + _Game(PC)_ + _Game(PS4)_
+    * Overnight: 1.5-2h on fastest machine
+    * Daily: 5-15 min per commit check
+
+
+== Workflow & Rules
+- Every commit validated against:
+  * Has _title_ and _description_
+  * Contains at least of _tag_ like `[Feature]` `[Bug]` `[Merge]` etc
+  * Has links to _code review_ or code _buddies_
+  * Time-limits to prevent commit-and-runs
+- Some projects relax or constrain the rules more
+  * example: check against known build-breaking patterns
+    * (missing .h/.cpp pair)
+
+
+== Commit Preparation
+image::tools/pct-tool.webp[pct]
+
+
+== Commit Validation
+image::tools/trigger-tool.webp[trigger, width="150%"]
+
+
+== Automation & Testing
+TODO: backgr img
+
+== Unit Testing
+- Testing plain classes and structs or single UObjects
+- Enhancements to UE4's own framework
+  * follow Given / When / Then structure
+  * separate standards file 
+  * integrated with CI (ex: TeamCity)
+  * utilities
+    * import private data from testable modules
+    * `UWorld` setup & teardown
+
+
+== Unit Test Code Surf
+[source, xml]
+<CodeSurfer
+  title="Unit Test Example"
+  code={require("!raw-loader!../flow/testing.cpp")}
+  theme={code_theme}
+  lang="cpp"
+  steps={[
+    { notes: "" },
+    { range: [ 8, 10], notes: "syntactic sugar macros" },
+    { range: [52, 53], notes: "test names must follow specific naming" },
+    { range: [54, 58], notes: "Given..." },
+    { range: [65, 67], notes: "...When..." },
+    { range: [69, 72], notes: "...Then" },
+    { range: [77, 79], notes: "cleanup" }
+  ]}
+/>
+
+
+== Functional Testing
+- Blueprint actors that we embed in bespoke levels using the editor
+- Live under `Game/Content/Test/...`
+- Named `FTEST_` to follow Epic's convention and for visibility
+- Not network capable
+  * Look into recent UE4 additions: _Gauntlet_
+
+
+== CI Tests Integration
+image::tools/tc-tests.png[TC tests]
+
+
+== Editor Automated Distribution
+UnrealGameSync (UGS)
+
+- Distributing Editor binaries is a more controlled manner
+- Very useful for non-programmers
+  * we stripped out the compilation support
+- We refactored the packaging script via BuildGraph
+  * more control, adding symbols upload
+
+
+== Editor Build Validation
+- Basic automated Editor validation
+  * build machine boots freshly compiled Editor
+  * monitors error messages in the log
+  * monitors startup time (ex: no more than X sec)
+
+
+== Projects Setup
+TODO: backgr img <Image src="img/cards/GOW-Brumak.jpg">
+
+
+== Game Modules
+- We strive to have multiple independent modules
+  * as opposed to 1 monolithic one
+- Beneficial for
+  * encapsulation and architecture
+  * faster iteration (linkage improvement for ex)
+  * support for Hot-Reload
+  * re-use throughout projects
+
+
+== Game Module Code Surf
+[source, xml]
+<CodeSurfer
+  title="Game Module Layout Example"
+  code={require("!raw-loader!../flow/modules.txt")}
+  theme={code_theme}
+  lang="yaml"
+  steps={[
+    { notes: "" },
+    { range: [ 2, 14], notes: "Runtime module" },
+    { range: [16, 26], notes: "Test module" },
+    { range: [28, 30], notes: "Editor-only module" },
+    { range: [33, 35], notes: "Interface-only module" },
+    { lines: [3], notes: "UBT build file" },
+    { range: [5, 8], notes: "Implementation" },
+    { range: [10, 14], notes: "Interface" }
+  ]}
+/>
+
+
+== Quick & Dirty Automation
+- `GenerateModule.cmd`
+- Batch file script that produces
+  * folder structure
+  * initial _...build.cs_ file with good defaults for us
+
+
+== Test Modules
+- Very useful to access private data from equivalent runtime module
+- Our solution: `MODULENAME_TEST_API` extension to module API specifier
+  * UnrealBuildTool modification
+  * exported as usual
+  * only modules with `bImportTestModuleSymbols` can import
+
+
+== Splash Engine
+TODO: backgr img <Image src="img/cards/DB-2.jpg">
+
+
+== About
+We extract and re-use the UE work across projects into "Splash Engine"
+
+- game-agnostic engine enhacements & fixes gathered across time
+- re-usable mini-frameworks modules
+  * UI components
+  * Audio utilities
+  * Events, Async Tasks
+  * Rendering features
+  * Tech-Art utilities
+    * ex: Instance Mesh split /group
+
+
+== Overview
+- Majority of projects get seeded from "Splash Engine"
+- Downstream integrations
+  * "Splash Engine" tends to be at latest UE4 version
+  * projects update at their own pace
+- Upstream integrations
+  * some projects will bubble-up important features
+
+
+== SD engine Code Flow
+[source, xml]
+<CodeSurfer
+  title="Architecture"
+  code={require("!raw-loader!../flow/splash-engine.txt")}
+  theme={code_theme}
+  lang="yaml"
+  steps={[
+    { notes: "" },
+    { lines: [ arch_A+0 ], notes: "master Perforce depot" },
+    { lines: [ arch_A+2 ], notes: "engine 'vanilla' drops from Epic" },
+    { lines: [ arch_A+5 ], notes: "Splash Engine" },
+    { range: [ arch_A+8, arch_A+11], notes: "company games/projects" },
+    { range: [ arch_B+2, arch_B+6 ], notes: "individual downloaded versions" },
+    { range: [ arch_C+1, arch_C+7], notes: "Splash Engine layout" },
+    {   lines: [ arch_C+3 ], notes: "'vanilla' version for merge diff" },
+    {   lines: [ arch_C+4 ], notes: "master branch" },
+    { range: [ arch_C+5, arch_C+8 ], notes: "individual project staging" }
+  ]}
+/>
+
+
+== Merge Scenario
+Updating a game project to latest UE4 version...
+
+[%notitle]
+== splash-ue4 anim
+[source, diff]
+/splash-ue4                                             
+|
+├───/clean
+│   
+│
+├───/main
+|
+|
+├───/project-A
+├───/project-B
+├───...
+
+
+[%notitle]
+== splash-ue4 anim
+[source, diff]
+/splash-ue4                 |                            
+|                           |
+├───/clean  <---------------'  copy latest UE version
+│                              (allows nice incremental diffs)
+│
+├───/main
+|
+|
+├───/project-A
+├───/project-B
+├───...
+
+
+[%notitle]
+== splash-ue4 anim
+[source, diff]
+/splash-ue4                                             
+|
+├───/clean -----------------.
+│                           |  merge across to main branch
+│                           |  (also update any plugins we use)
+├───/main  <----------------'
+|
+|
+├───/project-A
+├───/project-B
+├───...
+
+
+[%notitle]
+== splash-ue4 anim
+[source, diff]
+/splash-ue4                                             
+|
+├───/clean
+│   
+│
+├───/main
+|
+|
+├───/project-A  <-----------. 
+├───/project-B              |
+├───...                     |  merge from main game repo
+                            |  (prepare staging area with latest game advances)
+
+
+[%notitle]
+== splash-ue4 anim
+[source, diff]
+/splash-ue4                                             
+|
+├───/clean
+│   
+│
+├───/main ------------------.
+|                           |  merge latest engine to game staging
+|                           |  (solve conflicts in isolation from game project)
+├───/project-A <------------'
+├───/project-B
+├───...
+
+
+[%notitle]
+== splash-ue4 anim
+[source, diff]
+/splash-ue4                                             
+|
+├───/clean
+│   
+│
+├───/main
+|
+|
+├───/project-A  >-----------. 
+├───/project-B              |
+├───...                     |  merge from staging to game project
+                            |  (game project now updated to latest UE)
+
+
+== Summary
+- Allows us to have quick integrations
+- Decouples main game dev work from integration work
+- Keeps "Splash Engine" updated and in good condition
+
+
+== The End
+@valentin_galea
+
+image::SD/SD-logo-white-orange.svg"[SD, width="256" height="256"]
+
+[splashdamage.com](https://www.splashdamage.com)
+
+
 
 [state=no_list_decor]
 [%notitle, background-iframe="surf/code_std/index.html", background-interactive]
@@ -25,7 +663,3 @@
 - {nbsp}
 - {nbsp}
 - {nbsp}
-
-== The end
-
-xxx

@@ -10,7 +10,7 @@ var CustomFragments = (function() {
 
 function dealWithFragments (fragment) {
     var iframe = document.querySelector("div.slide-background.present > iframe:nth-child(1)");
-    if (iframe === undefined) return;
+    if (!iframe) return;
 
     //var evt = new Event('keypress');
     //evt.keyCode = '39'; // right arrow
