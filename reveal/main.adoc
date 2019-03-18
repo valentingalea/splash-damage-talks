@@ -8,10 +8,9 @@
 :revealjs_overview: true
 :revealjs_fragments: true
 :source-highlighter: highlightjs
-:customcss: main.css
-:imagesdir: ../docs/img
+:customcss: ../docs/main.css
+:imagesdir: img
 :title-slide-background-image: cards/Company.jpg
-:icons: font
 
 == @valentin_galea
 
@@ -713,6 +712,4 @@ FIXME: replace asset image with dark variant
 
 FIXME: unify the capitalization
 
-TODO: export
-https://www.npmjs.com/package/html-inline
-https://github.com/hakimel/reveal.js/issues/788
+TODO: understand why export destroys the title cards (seems to change font)

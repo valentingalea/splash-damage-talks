@@ -80,3 +80,5 @@ mdx/package-lock.json
 
 reveal/node_modules/
 reveal/package-lock.json
+reveal/img/*
+reveal/surf/*
