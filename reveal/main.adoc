@@ -300,8 +300,17 @@ image::content-std/ue4-auto-naming.gif"[auto naming, width="150%"]
     * multi-step process, with artefact dependencies 
 
 
+[state=no_list_decor]
+[%notitle, background-iframe="surf/buildgraph/index.html"]
 == BuildGraph Code Surf
-TODO: surf: buildgraph
+[%step]
+- {nbsp}
+- {nbsp}
+- {nbsp}
+- {nbsp}
+- {nbsp}
+- {nbsp}
+- {nbsp}
 
 
 [state=title_card]
