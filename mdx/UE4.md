@@ -838,18 +838,8 @@ Updating a game project to latest UE4 version...
 ---
 ## Tasks
 
-SYS: find solution for incremental lists
-
-SYS: try embed code-surfer in react.js
-
-SYS: find solution for header/footer https://github.com/kyleshevlin/react-edges
-
 SYS: code-surfer: custom styles https://github.com/pomber/code-surfer/pull/52/commits/f5a5bab0bef47a494b376f01c297c10b4614db97
 
 SYS: code-surfer: titles: mdx\node_modules\mdx-deck-code-surfer\dist\deck-code-surfer.js 42 h3
 
 SYS: code-surfer: notes: mdx\node_modules\mdx-deck-code-surfer\dist\deck-code-surfer.js 51 h2 
-
-TODO: constrain black box for title slides
-
-TODO: address Stefano's points

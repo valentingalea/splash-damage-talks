@@ -6,7 +6,8 @@
         "markdown",
         "latex",
         "plaintext",
-        "mdx"
+        "mdx",
+        "asciidoc"
     ],
     "spellright.parserByClass": {
         "mdx": {

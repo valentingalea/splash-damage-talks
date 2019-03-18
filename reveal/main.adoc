@@ -4,7 +4,7 @@
 :revealjs_controls: true
 :revealjs_progress: true
 :revealjs_slideNumber: true
-:revealjs_history: false
+:revealjs_history: true
 :revealjs_overview: true
 :revealjs_fragments: true
 :source-highlighter: highlightjs
@@ -20,7 +20,7 @@ More than 15 years in the industry, of which 4 at
 image::SD/SD-logo-white-orange.svg[SD, 200, 200]
 
 == Splash Damage History
-TODO: new SD timeline img
+WORK: new SD timeline img
 
 == Agenda
 - Teams and Projects
@@ -37,12 +37,12 @@ TODO: new SD timeline img
 image::icon/megaphone.svg[SD, 200, 200]
 
 [float=right]
-[.step]
 - Share our learnings
   * what worked well 👍
   * what didn't 👎
 - Get inspired!
 
+TODO: rewrite this 'start with why' "if you explain to them why each part of our process in Splash, and on Leviathan in particular, was so amazing, and why they need it"
 
 == Teams and *Projects*
 image:icon/UE4.jpg[UE] image:icon/team.svg[teams, 128, 128]
@@ -60,14 +60,13 @@ image:icon/UE4.jpg[UE] image:icon/team.svg[teams, 128, 128]
 
 
 == About
-Having good standards (and respecting them)<br/>is key to successful projects
-
-- Usually as standalone documentation (_pdf_, _wiki_, etc)
-- People are supposed to study them
-  * then apply in practice
+- Splash values *MASTERY* especially in *C++*
+- We didn't have an established coding standard
+  * some attempts to document it in _wiki's_ 
 
 
 == Pitfalls
+[.step]
 - Grow big / Hard to navigate
 - Get _out-of-date_ quickly
 - In separate location
@@ -77,28 +76,31 @@ Having good standards (and respecting them)<br/>is key to successful projects
 
 
 == Splash Damage approach
+[.step]
 - Standards are **source code files** 📑
   * you can break the build messing with the standard!
 - Created and improved through code reviews
 - A system for easy _reference_ and _searching_
 
 
-== The Coding Standards
+== The Coding Standard
+[.step]
 - 2 files
   * `SplashDamageCodingStandard.h`
   * `SplashDamageCodingStandard.cpp`
 - Located in the main source code
   * `ue4/Game/Source/Main/...`
-- Open Source
+- *Open Source*
   * https://github.com/splash-damage/coding-standards
 
 
+[%notitle]
 == The Coding Standards (cont.)
 image::code-std/vs-standards-open.gif[VS code std]
 
 
 == The Coding Standards Surfer
-TODO: surf: cod std
+TODO: surf: code std
 
 == Usage
 Applied via code reviews
@@ -112,17 +114,18 @@ Takes the pressure off from feeling judgemental
 image::code-std/review-2.png[code review pic]
 
 
-== Modify and Improve
-The standard itself is changed though reviews sent to the whole team
-If enough up-votes → the proposal gets submitted 👍
+== Modify and *Improve*
+- The standard itself is changed though reviews sent to the whole team
+- If enough up-votes → the proposal gets submitted
 
 
 == Unintended Consequences
 image::code-std/coding-actor.png[ue4 coding actor]
 
 
-== Content Standards
-TODO: backgr img
+[state=title_card]
+[%notile, background-image="cards/GOW-4.jpg"]
+== Content *Standards*
 
 
 == Motivation
@@ -165,8 +168,9 @@ image::content-std/blueprint-standard-1.png[blueprint std ex 1]
 image::content-std/blueprint-standard-2.png[blueprint std ex 2]
 
 
-== Content Validation
-TODO: backgr img
+[state=title_card]
+[%notile, background-image="cards/GOW-5.jpg"]
+== Content *Standards*
 
 
 == Automated Validation
@@ -219,8 +223,9 @@ image::content-std/ue4-auto-naming.gif"[auto naming, width="150%"]
     * ex: dependency walker via Asset Registry
 
 
-== Compilation
-TODO: backgr img
+[state=title_card]
+[%notile, background-image="cards/GOW-T.jpg"]
+== *Compilation*
 
 == Hardware
 - Everyday work is very CPU intensive
@@ -278,10 +283,13 @@ TODO: backgr img
 TODO: surf: buildgraph
 
 
-== Pre-Commit
-TODO: backgr img
+[state=title_card]
+[%notile, background-image="cards/Batman.jpg"]
+== Pre-*Commit*
 
 == Pre-Commit Anim
+TODO: pre-commit anims
+
 [source, xml]
 <CodeSurfer
   title="Normal Commit Flow"
@@ -375,8 +383,9 @@ image::tools/pct-tool.webp[pct]
 image::tools/trigger-tool.webp[trigger, width="150%"]
 
 
-== Automation & Testing
-TODO: backgr img
+[state=title_card]
+[%notile, background-image="cards/DB-1.jpg"]
+== Automation & *Testing*
 
 == Unit Testing
 - Testing plain classes and structs or single UObjects
@@ -390,6 +399,8 @@ TODO: backgr img
 
 
 == Unit Test Code Surf
+TODO: surf: unit test
+
 [source, xml]
 <CodeSurfer
   title="Unit Test Example"
@@ -437,8 +448,9 @@ UnrealGameSync (UGS)
   * monitors startup time (ex: no more than X sec)
 
 
-== Projects Setup
-TODO: backgr img <Image src="img/cards/GOW-Brumak.jpg">
+[state=title_card]
+[%notile, background-image="cards/GOW-Brumak.jpg"]
+== *Projects* Setup
 
 
 == Game Modules
@@ -452,6 +464,8 @@ TODO: backgr img <Image src="img/cards/GOW-Brumak.jpg">
 
 
 == Game Module Code Surf
+TODO: surf: game modules
+
 [source, xml]
 <CodeSurfer
   title="Game Module Layout Example"
@@ -477,6 +491,8 @@ TODO: backgr img <Image src="img/cards/GOW-Brumak.jpg">
   * folder structure
   * initial _...build.cs_ file with good defaults for us
 
+WORK: open src and add link
+
 
 == Test Modules
 - Very useful to access private data from equivalent runtime module
@@ -486,8 +502,9 @@ TODO: backgr img <Image src="img/cards/GOW-Brumak.jpg">
   * only modules with `bImportTestModuleSymbols` can import
 
 
-== Splash Engine
-TODO: backgr img <Image src="img/cards/DB-2.jpg">
+[state=title_card]
+[%notile, background-image="cards/DB-2.jpg"]
+== *Splash* Engine
 
 
 == About
@@ -513,6 +530,8 @@ We extract and re-use the UE work across projects into "Splash Engine"
 
 
 == SD engine Code Flow
+TODO: surf: engine
+
 [source, xml]
 <CodeSurfer
   title="Architecture"
@@ -647,13 +666,12 @@ Updating a game project to latest UE4 version...
 image::SD/SD-logo-white-orange.svg"[SD, width="256" height="256"]
 
 [splashdamage.com](https://www.splashdamage.com)
-
+TODO: proper link
 
 
 [state=no_list_decor]
 [%notitle, background-iframe="surf/code_std/index.html", background-interactive]
 == Test
-
 [%step]
 - {nbsp}
 - {nbsp}
@@ -665,3 +683,25 @@ image::SD/SD-logo-white-orange.svg"[SD, width="256" height="256"]
 - {nbsp}
 - {nbsp}
 - {nbsp}
+
+== Tasks
+
+FIXME: cut down on blueprint comments explanations
+
+FIXME: less steps on the coding standard
+
+FIXME: "As mentioned some of the font’s could be bigger. In particular, I barely noticed the ‘Asset naming rules’ page"
+
+FIXME: pre-commit mention we are trunk-dev and more context
+
+FIXME: clean up the test example
+
+WORK: the simpligon mistake
+
+FIXME: replace asset image with dark variant
+
+FIXME: unify the capitalization
+
+TODO: export
+https://www.npmjs.com/package/html-inline
+https://github.com/hakimel/reveal.js/issues/788
