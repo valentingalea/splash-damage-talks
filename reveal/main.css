@@ -1,11 +1,42 @@
+.reveal .backgrounds {
+    background-image: url("../docs/img/icon/lines.svg");
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+}
+
 .reveal h2 {
     font-size: 1em;
+}
+.reveal h2 strong {
+    color: #FF510D;
+}
+
+.reveal section.title.present h1 {
+    color: white;
+    text-align: left;
+    background-color:rgba(0,0,0,0.75);
+    padding: .25em;
+    font-size: 2em;
+}
+section[data-state="title_card"] h2 {
+    color: white;
+    background-color:rgba(0,0,0,0.75);
+    padding: .25em;
+    font-size: 2em;   
+}
+
+.reveal ul {
+    list-style-type: square;
+}
+.reveal ul ul {
+    list-style-type: disc;
 }
 
 .reveal section img {
     border: 0;
-    padding: 0;
+    padding: 16px;
     margin: 0;
+    background: rgba(0,0,0,0.2);
 }
 
 .reveal pre {
@@ -19,25 +50,6 @@ section[data-state="no_list_decor"] ul {
     list-style-type: none;
 }
 
-.reveal section.title.present h1 {
-    color: white;
-    text-align: left;
-    text-shadow: 0px 5px 0px rgba(0,0,0,0.5);
-    background-color:rgba(0,0,0,0.75);
-    padding: .25em;
-    font-size: 2em;
-}
-
-section[data-state="title_card"] h2 {
-    color: white;
-    text-shadow: 0px 5px 0px rgba(0,0,0,0.5);
-    background-color:rgba(0,0,0,0.75);
-    padding: .25em;
-    font-size: 2em;   
-}
-
-span.image {
-    vertical-align: middle;
-    padding: 0;
-    margin: 0;
+#disclaimer > div:nth-child(2) > img:nth-child(1) {
+    margin-top: 1em;
 }

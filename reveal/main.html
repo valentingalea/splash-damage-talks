@@ -2,15 +2,15 @@
 link.rel = 'stylesheet';
 link.type = 'text/css';
 link.href = window.location.search.match( /print-pdf/gi ) ? "node_modules/reveal.js/css/print/pdf.css" : "node_modules/reveal.js/css/print/paper.css";
-document.getElementsByTagName( 'head' )[0].appendChild( link );</script><!--[if lt IE 9]><script src="node_modules/reveal.js/lib/js/html5shiv.js"></script><![endif]--><link rel="stylesheet" href="main.css"></head><body><div class="reveal"><div class="slides"><section class="title" data-state="title" data-background-image="../docs/img/cards/Company.jpg"><h1>Growing a Healthy UE4 Ecosystem </h1><h2>How Splash Damage approaches development</h2></section><section id="about_me"><div class="paragraph"><p>@valentin_galea</p></div>
-<div class="paragraph"><p>More than 15 years in the industry, of which 4 at</p></div>
+document.getElementsByTagName( 'head' )[0].appendChild( link );</script><!--[if lt IE 9]><script src="node_modules/reveal.js/lib/js/html5shiv.js"></script><![endif]--><link rel="stylesheet" href="main.css"></head><body><div class="reveal"><div class="slides"><section class="title" data-state="title" data-background-image="../docs/img/cards/Company.jpg"><h1>Growing a Healthy UE4 Ecosystem </h1><h2>How <strong>Splash Damage</strong> approaches development</h2></section><section id="valentin_galea"><h2>@valentin_galea</h2><div class="paragraph"><p>More than 15 years in the industry, of which 4 at</p></div>
 <div class="imageblock" style=""><img src="../docs/img/SD/SD-logo-white-orange.svg" alt="SD" width="200" height="200"></div></section>
 <section id="splash_damage_history"><h2>Splash Damage History</h2><div class="paragraph"><p>TODO: new SD timeline img</p></div></section>
 <section id="agenda"><h2>Agenda</h2><div class="ulist"><ul><li><p>Teams and Projects</p></li><li><p>Standards</p></li><li><p>Validation</p></li><li><p>Compilation</p></li><li><p>Automation &amp; Testing</p></li><li><p>Projects Structure</p></li><li><p>Splash Engine &amp; Merges</p></li></ul></div></section>
-<section id="disclaimer"><h2>Disclaimer</h2><div class="ulist step"><ul><li class="fragment"><p>Share our learnings</p><div class="ulist"><ul><li><p>what worked well 👍</p></li><li><p>what didn&#8217;t 👎</p></li></ul></div></li><li class="fragment"><p>Get inspired!</p></li></ul></div></section>
-<section id="teams_and_projects"><h2>Teams and Projects</h2><div class="paragraph"><p><span class="image"><img src="../docs/img/icon/UE4.jpg" alt="UE"></span> <span class="image"><img src="../docs/img/icon/team.svg" alt="teams" width="128" height="128"></span></p></div>
+<section id="disclaimer"><h2>Disclaimer</h2><div class="imageblock" style="float: left"><img src="../docs/img/icon/megaphone.svg" alt="SD" width="200" height="200"></div>
+<div class="ulist step"><ul><li class="fragment"><p>Share our learnings</p><div class="ulist"><ul><li><p>what worked well 👍</p></li><li><p>what didn&#8217;t 👎</p></li></ul></div></li><li class="fragment"><p>Get inspired!</p></li></ul></div></section>
+<section id="teams_and_strong_projects_strong"><h2>Teams and <strong>Projects</strong></h2><div class="paragraph"><p><span class="image"><img src="../docs/img/icon/UE4.jpg" alt="UE"></span> <span class="image"><img src="../docs/img/icon/team.svg" alt="teams" width="128" height="128"></span></p></div>
 <div class="ulist step"><ul><li class="fragment"><p>300 employees</p></li><li class="fragment"><p>Split across multiple ongoing projects</p></li><li class="fragment"><p>Most projects use <strong>Splash Engine</strong></p><div class="ulist"><ul><li><p>vanilla + own modules and enhancements</p></li></ul></div></li></ul></div></section>
-<section id="coding_standards" data-background-image="../docs/img/cards/GOW-UE.jpg" data-state="title_card"><h2>Coding Standards</h2></section>
+<section id="coding_strong_standards_strong" data-background-image="../docs/img/cards/GOW-UE.jpg" data-state="title_card"><h2>Coding <strong>Standards</strong></h2></section>
 <section id="about"><h2>About</h2><div class="paragraph"><p>Having good standards (and respecting them)&lt;br/&gt;is key to successful projects</p></div>
 <div class="ulist"><ul><li><p>Usually as standalone documentation (<em>pdf</em>, <em>wiki</em>, etc)</p></li><li><p>People are supposed to study them</p><div class="ulist"><ul><li><p>then apply in practice</p></li></ul></div></li></ul></div></section>
 <section id="pitfalls"><h2>Pitfalls</h2><div class="ulist"><ul><li><p>Grow big / Hard to navigate</p></li><li><p>Get <em>out-of-date</em> quickly</p></li><li><p>In separate location</p><div class="ulist"><ul><li><p>outside production source code</p></li></ul></div></li><li><p>Only select few modify or improve them</p></li><li><p>Nobody has time to read documentation! 😛</p></li></ul></div></section>
@@ -234,7 +234,7 @@ Reveal.initialize({
   // Display the page number of the current slide
   slideNumber: true,
   // Push each slide change to the browser history
-  history: true,
+  history: false,
   // Enable keyboard shortcuts for navigation
   keyboard: true,
   // Enable the slide overview mode
