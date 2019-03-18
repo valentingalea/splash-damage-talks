@@ -713,3 +713,7 @@ FIXME: replace asset image with dark variant
 FIXME: unify the capitalization
 
 TODO: understand why export destroys the title cards (seems to change font)
+
+TODO: clean up (unused imgs and transfer/)
+
+TODO: add header plugin/support
