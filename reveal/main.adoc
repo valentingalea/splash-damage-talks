@@ -694,6 +694,9 @@ TODO: proper link
 
 == Tasks
 
+FIXME: clear all images (Gears & re-record the VS standars open)
+FIXME: possibly remove all BM references
+
 FIXME: cut down on blueprint comments explanations
 
 FIXME: less steps on the coding standard
