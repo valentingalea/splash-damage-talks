@@ -15,8 +15,8 @@
     "pdf": "mdx-deck pdf UE4.md",
     "image": "mdx-deck screenshot UE4.md",
     "help": "mdx-deck",
-    "code_std": "mdx-deck code_std.mdx",
-    "code_std-build": "mdx-deck build --no-html code_std.mdx"
+    "test_code_std": "mdx-deck reveal_code_std.mdx",
+    "reveal_code_std": "mdx-deck build --no-html reveal_code_std.mdx"
   },
   "author": "Valentin Galea",
   "license": "MIT"

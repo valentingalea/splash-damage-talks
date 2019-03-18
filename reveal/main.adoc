@@ -106,8 +106,22 @@ image:icon/UE4.jpg[UE] image:icon/team.svg[teams, 128, 128]
 image::code-std/vs-standards-open.gif[VS code std]
 
 
-== The Coding Standards Surfer
-TODO: surf: code std
+[state=no_list_decor]
+[%notitle, background-iframe="surf/code_std/index.html"]
+== Coding Standard Surf
+[%step]
+- {nbsp}
+- {nbsp}
+- {nbsp}
+- {nbsp}
+- {nbsp}
+- {nbsp}
+- {nbsp}
+- {nbsp}
+- {nbsp}
+- {nbsp}
+- {nbsp}
+
 
 == Usage
 Applied via code reviews
@@ -697,8 +711,6 @@ FIXME: clear all images (Gears & re-record the VS standars open)
 FIXME: possibly remove all BM references
 
 FIXME: cut down on blueprint comments explanations
-
-FIXME: less steps on the coding standard
 
 FIXME: "As mentioned some of the font’s could be bigger. In particular, I barely noticed the ‘Asset naming rules’ page"
 
