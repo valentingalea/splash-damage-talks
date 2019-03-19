@@ -1,6 +1,6 @@
 import { CodeSurfer } from "mdx-deck-code-surfer"
 export { default as theme } from "./theme"
-import vsDark from "prism-react-renderer/themes/vsDark"
+import code_theme from "prism-react-renderer/themes/vsDark"
 
 # Code Surfer
 
@@ -12,7 +12,7 @@ NOTE: designed to be embed into reveal.js
   code={require("!raw-loader!../standards/snip/overview.h")}
   lang="cpp"
   showNumbers={false}
-  theme={vsDark}
+  theme={code_theme}
   steps={[
     { notes: "the header file" },
     { range: [ 1, 15], notes: "mix of large commented areas..." },
@@ -33,7 +33,7 @@ NOTE: designed to be embed into reveal.js
 <CodeSurfer
   title="BuildGraph (example)"
   code={require("!raw-loader!../flow/buildgraph.xml")}
-  theme={vsDark}
+  theme={code_theme}
   lang="xml"
   steps={[
     { notes: "" },
@@ -44,5 +44,100 @@ NOTE: designed to be embed into reveal.js
     { range: [53, 59] },
     { range: [73, 79] },
     { range: [132, 141] }
+  ]}
+/>
+
+---
+export const flowA = 9
+
+<CodeSurfer
+  title="Normal Commit Flow"
+  code={require("!raw-loader!../flow/submit.txt")}
+  theme={code_theme}
+  lang="yaml"
+  steps={[
+    { notes: "" },
+    { range: [flowA +  1, flowA +  5] },
+    { range: [flowA + 10, flowA + 15] },
+    { range: [flowA + 23, flowA + 28] },
+    { range: [flowA + 36, flowA + 41] }
+  ]}
+/>
+
+---
+export const flowB = 9
+
+<CodeSurfer
+  title="Pre-Commit Flow"
+  code={require("!raw-loader!../flow/pre-submit.txt")}
+  theme={code_theme}
+  lang="yaml"
+  steps={[
+    { notes: "" },
+    { range: [flowB +  1, flowB +  5] },
+    { range: [flowB + 10, flowB + 15] },
+    { range: [flowB + 23, flowB + 28] },
+    { range: [flowB + 36, flowB + 41] },
+    { lines: [flowB + 43, flowB + 47] },
+    { range: [flowB + 50, flowB + 53] },
+    { range: [flowB + 62, flowB + 66] },
+  ]}
+/>
+
+---
+<CodeSurfer
+  title="Unit Test Example"
+  code={require("!raw-loader!../flow/testing.cpp")}
+  theme={code_theme}
+  lang="cpp"
+  steps={[
+    { notes: "" },
+    { range: [ 8, 10], notes: "syntactic sugar macros" },
+    { range: [52, 53], notes: "test names must follow specific naming" },
+    { range: [54, 58], notes: "Given..." },
+    { range: [65, 67], notes: "...When..." },
+    { range: [69, 72], notes: "...Then" }
+  ]}
+/>
+
+---
+<CodeSurfer
+  title="Game Module Layout Example"
+  code={require("!raw-loader!../flow/modules.txt")}
+  theme={code_theme}
+  lang="yaml"
+  steps={[
+    { notes: "" },
+    { range: [ 2, 14], notes: "Runtime module" },
+    { range: [16, 26], notes: "Test module" },
+    { range: [28, 30], notes: "Editor-only module" },
+    { range: [33, 35], notes: "Interface-only module" },
+    { lines: [3], notes: "UBT build file" },
+    { range: [5, 8], notes: "Implementation" },
+    { range: [10, 14], notes: "Interface" }
+  ]}
+/>
+
+---
+export const arch_A = 5
+export const arch_B = 34
+export const arch_C = 64
+
+<CodeSurfer
+  title="Architecture"
+  code={require("!raw-loader!../flow/splash-engine.txt")}
+  theme={code_theme}
+  lang="yaml"
+  steps={[
+    { notes: "" },
+    { lines: [ arch_A+0 ], notes: "master Perforce depot" },
+    { lines: [ arch_A+2 ], notes: "engine 'vanilla' drops from Epic" },
+    { lines: [ arch_A+5 ], notes: "Splash Engine" },
+    { range: [ arch_A+8, arch_A+11], notes: "company games/projects" },
+    { range: [ arch_B+2, arch_B+6 ], notes: "individual downloaded versions" },
+    { range: [ arch_C+1, arch_C+7], notes: "Splash Engine layout" },
+    {   lines: [ arch_C+3 ], notes: "'vanilla' version for merge diff" },
+    {   lines: [ arch_C+4 ], notes: "master branch" },
+    { range: [ arch_C+5, arch_C+8 ], notes: "individual project staging" }
   ]}
 />
