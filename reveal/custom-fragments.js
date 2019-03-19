@@ -23,6 +23,5 @@ function dealWithFragments (fragment) {
     iframe.contentWindow.location.href = new_href;
     //console.log(new_href);
     
-    //TODO: why is this not working
     //top.postMessage('from-revealjs', '*');
 };
