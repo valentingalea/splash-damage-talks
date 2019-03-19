@@ -2,6 +2,11 @@ import { CodeSurfer } from "mdx-deck-code-surfer"
 export { default as theme } from "./theme"
 import vsDark from "prism-react-renderer/themes/vsDark"
 
+# Code Surfer
+
+NOTE: designed to be embed into reveal.js
+
+---
 <CodeSurfer
   title="The standard"
   code={require("!raw-loader!../standards/snip/overview.h")}
@@ -21,5 +26,23 @@ import vsDark from "prism-react-renderer/themes/vsDark"
     { range: [82, 90], notes: "UE4 UObjects..."},
     { range: [92, 98], notes: "replication funcs and vars..." },
     { range: [150, 156], notes: "etc" }
+  ]}
+/>
+
+---
+<CodeSurfer
+  title="BuildGraph (example)"
+  code={require("!raw-loader!../flow/buildgraph.xml")}
+  theme={vsDark}
+  lang="xml"
+  steps={[
+    { notes: "" },
+    { range: [ 4, 11] },
+    { range: [13, 14] },
+    { range: [18, 23] },
+    { lines: [ 34 ] },
+    { range: [53, 59] },
+    { range: [73, 79] },
+    { range: [132, 141] }
   ]}
 />
