@@ -9,6 +9,7 @@
 }
 strong {
     color: #FF510D;
+    text-transform: uppercase;
 }
 
 .reveal section.title.present h1 {

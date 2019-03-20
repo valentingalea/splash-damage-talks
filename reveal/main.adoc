@@ -149,6 +149,7 @@ image::code-std/coding-actor.png[ue4 coding actor]
 
 
 == Motivation
+[.step]
 - Poor organisation and practices for assets
   * ... compound over time
   * ... waste productivity
@@ -159,9 +160,10 @@ image::code-std/coding-actor.png[ue4 coding actor]
 
 
 == Asset Naming Rules
-image::content-std/template.png[asset template]
+image::content-std/template.png[asset template, width="125%"]
 
-- less confusion and improves searching & browsing
+[.step]
+- Less confusion and improves searching & browsing
 - `Prefix` uses _initialism_ rules
 
 
@@ -172,9 +174,6 @@ image::content-std/example_1.png[assets ex]
 == Blueprint Standards
 - Same principles as the Coding Standard
 - Live in `Game/Content/Standard/`
-- We have some basic automatic validators
-- Best gain for us:
-  * enforcing comment nodes
 
 
 [%notitle]
@@ -188,59 +187,74 @@ image::content-std/blueprint-standard-1.png[blueprint std ex 1]
 image::content-std/blueprint-standard-2.png[blueprint std ex 2]
 
 
+== Blueprint Standards (cont.)
+- We have some basic automatic validators
+- Best gain for us:
+  * enforcing comment nodes
+
+
 [state=title_card]
 [%notile, background-image="cards/GOW-5.jpg"]
 == Content *Standards*
 
 
 == Automated Validation
+[.step]
 - CI (Continuous Integration) support
   * validation after submit
   * nightly builds
-- Naming Validation
-- Blueprints Validation
-- Assets Validation
+- *Naming* Validation
+- *Blueprints* Validation
+- *Assets* Validation
 
 
-== Asset Naming Validator
+== *Naming* Validation
+[.step]
 - Automated checker / validator
   * Editor commandlet
   * _Initialism_ from asset class name
     * extra JSON file with exceptions
-- Disallows names like `Test`, `Prototype`, `Error`
-- Intercept new asset creation
+- Disallow names like `Test`, `Prototype`, `Error`
+- Intercept new asset creation...
 
 
 == Asset auto-naming on creation
 image::content-std/ue4-auto-naming.gif"[auto naming, width="150%"]
 
 
-== Asset import rule
-- Disallow import from non-versioned paths
+== *Asset import* rule
+- Disallow import from _non-versioned_ paths
 - Forbidden example:
-  * Adding data from own Desktop folder 💀
+  * adding data from own Desktop folder 💀
 
 
-== Blueprints Validation
+== *Blueprints* Validation
+[.step]
 - Editor commandlet
 - Basic checks
-  * comment nodes present
-  * public functions / vars must have tooltips
-  * no functions / vars with default names
-- Future work / ideas
-  * leverage the Blueprint Compiler
+  * _comment_ nodes present
+  * public functions / vars must have _tooltips_
+  * no functions / vars with _default names_
+- Future work & ideas
+  * leverage the engine Blueprint Compiler
   * more complex checks
 
 
-== Assets Validation 
-- Checks for bad or missing references
-  * disregards *Developer*, *Test* folders
-- Executed via cooking:
+== *Assets* Validation
+[.step]
+- For all content - done in CI system
+- Check for missing or bad references
+- Disregard/Disallow `Developer`, `Test` folders
+  * historically a major pain point for us
+
+== *Assets* Validation (cont.)
+[.step]
+- How it works
+  * leverage the cooking process
   * `-COOKALL -DUMPALLWARNINGS -WARNINGSASERRORS`
-  * ⚠️ 
-  * not viable for large projects
-    * explore other possibilities
-    * ex: dependency walker via Asset Registry
+- Not viable for large projects ⚠️
+  * explore other possibilities
+  * ex: dependency walker via Editor Asset Registry
 
 
 [state=title_card]
@@ -248,48 +262,58 @@ image::content-std/ue4-auto-naming.gif"[auto naming, width="150%"]
 == *Compilation*
 
 == Hardware
+[.step]
 - Everyday work is very CPU intensive
 - CPU hardware threads
   * jump from 8 to 16 substantial (2x)
   * same from 16 to 32
   * diminishing returns after
-- Distributed compilation
-  * _Incredibuild_ for some projects
-  * we also tried _Fastbuild_
-    * free but more difficult to integrate
+
+== *Distributed* compilation
+[.step]
+-  _Incredibuild_ for some projects
+  * expensive - needs to be budgeted for
+- We also tried _Fastbuild_
+  * free but more difficult to integrate
 
 
-== Build Farm
-- Configuration / layout different per project
-- Sweetspot price / performance for us 32 thread CPUs
-  * Good performer: 16c/32t AMD Threadripper 1950x
+== *Build Farm*
+[.step]
+- Different config and layout _per project_
+- Best performer machine
+  * AMD Threadripper 1950x (16c/32t)
+  * full Editor rebuild in ~15min
 - Orchestration
   * _TeamCity_ - most projects
   * _Jenkins_
 
 
-== Infrastructure-As-Code
+== Infrastructure-*As-Code*
+[.step]
 - In the past we used ad-hoc methods that didn't scale well
-  * too tight integrated with the CI orchestrator
-  * too bespoke for a project - cannot reuse
-  * hard to debug locally
-- Now leveraging Epic's own _BuildGraph_
+- Too tight integrated with the CI orchestrator ❌
+- Too bespoke for a project - cannot reuse ❌
+- Hard to debug locally ❌
+- Now leveraging Epic's own _BuildGraph_ ✅
 
 
-== BuildGraph
-- Alternative to traditional `BuildCookRun` automation commands
+== *BuildGraph*
+- Alternative to traditional `BuildCookRun` batch commands
 - XML based scripts
 
-== BuildGraph - Our Usage
-- Standardized and reusable set of scripts
+
+== *BuildGraph* - Our Usage
+[.step]
+- Standardized and reusable set of scripts 📑
 - Unifies all calling paths
-    * Visual Studio
-    * Editor - Hot Reload
-    * command line
-    * CI systems
+  * Visual Studio
+  * Editor - Hot Reload
+  * command line
+  * CI systems
 
 
-== BuildGraph (cont.)
+== *BuildGraph* (cont.)
+[.step]
 - Additional benefits
   * easier edit in Visual Studio than batch files
   * allows build tasks parallelizing
