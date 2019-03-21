@@ -5,6 +5,11 @@ var Header = (function() {
     div.appendChild(text);
     div.appendChild(logo);
     select('.reveal').appendChild(div);
+
+    Reveal.addEventListener('slidechanged', function(event) {
+        div.style.visibility = event.currentSlide.id == 'the_end' ?
+            'hidden' : 'visible';
+    });
 })();
 
 function create(tagName, attrs, content) {

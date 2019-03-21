@@ -726,7 +726,6 @@ TODO: address feedback:
 
 FIXME: clear all images (Gears & re-record the VS standars open)
 FIXME: possibly remove all BM references
-FIXME: add header plugin/support
 FIXME: patch up CodeSurfer
 FIXME: solve offline support (do like shaderbox) / if using html-inline understand why export destroys the title cards (seems to change font)
 FIXME: clean up (unused imgs and transfer/)
