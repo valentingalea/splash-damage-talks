@@ -724,9 +724,6 @@ TODO: address feedback:
 - if you explain to them why each part of our process in Splash, and on Leviathan in particular, was so amazing, and why they need it"
 - reframe disclamer
 
-TODO: publish the gen-module on github and insert link
-TODO: write email to Github
-
 FIXME: clear all images (Gears & re-record the VS standars open)
 FIXME: possibly remove all BM references
 FIXME: add header plugin/support
