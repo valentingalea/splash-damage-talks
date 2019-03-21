@@ -46,7 +46,7 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );</script><!--[if 
 <section id="infrastructure_strong_as_code_strong"><h2>Infrastructure-<strong>As-Code</strong></h2><div class="ulist step"><ul><li class="fragment"><p>In the past we used ad-hoc methods that didn&#8217;t scale well</p></li><li class="fragment"><p>Too tight integrated with the CI orchestrator ❌</p></li><li class="fragment"><p>Too bespoke for a project - cannot reuse ❌</p></li><li class="fragment"><p>Hard to debug locally ❌</p></li><li class="fragment"><p>Now leveraging Epic&#8217;s own <em>BuildGraph</em> ✅</p></li></ul></div></section>
 <section id="strong_buildgraph_strong"><h2><strong>BuildGraph</strong></h2><div class="ulist"><ul><li><p>Alternative to traditional <code>BuildCookRun</code> batch commands</p></li><li><p>XML based scripts</p></li></ul></div></section>
 <section id="strong_buildgraph_strong_our_usage"><h2><strong>BuildGraph</strong> - Our Usage</h2><div class="ulist step"><ul><li class="fragment"><p>Standardized and reusable set of scripts 📑</p></li><li class="fragment"><p>Unifies all calling paths</p><div class="ulist"><ul><li><p>Visual Studio</p></li><li><p>Editor - Hot Reload</p></li><li><p>command line</p></li><li><p>CI systems</p></li></ul></div></li></ul></div></section>
-<section id="strong_buildgraph_strong_cont"><h2><strong>BuildGraph</strong> (cont.)</h2><div class="ulist step"><ul><li class="fragment"><p>Additional benefits</p><div class="ulist"><ul><li><p>easier edit in Visual Studio than batch files</p></li><li><p>allows build tasks parallelizing</p></li><li><p>easier dependencies management</p></li></ul></div></li><li class="fragment"><p>Our most complex use-case:</p><div class="ulist"><ul><li><p>prepare <em>UnrealGameSync</em> editor binaries</p></li><li><p>multi-step process, with artefact dependencies</p></li></ul></div></li></ul></div></section>
+<section id="strong_buildgraph_strong_cont"><h2><strong>BuildGraph</strong> (cont.)</h2><div class="ulist step"><ul><li class="fragment"><p>Powerful out of the box</p><div class="ulist"><ul><li><p>some good examples in the Engine</p></li></ul></div></li><li class="fragment"><p>We modified it quite a lot</p></li><li class="fragment"><p>Our most complex use-case:</p><div class="ulist"><ul><li><p>prepare zipped Editor binaries</p></li></ul></div></li></ul></div></section>
 <section id="buildgraph_code_surf" data-background-iframe="surf/index.html#2" data-state="no_list_decor"><div class="ulist"><ul><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li></ul></div></section>
 <section id="pre_strong_commit_strong" data-background-image="img/cards/Batman.jpg" data-state="title_card"><h2>Pre-<strong>Commit</strong></h2></section>
 <section id="context"><h2>Context</h2><div class="ulist step"><ul><li class="fragment"><p>We follow <em>"trunk-based-development"</em></p></li><li class="fragment"><p>Only one main dev branch (per project)</p><div class="ulist"><ul><li><p>split off only for major releases</p></li></ul></div></li><li class="fragment"><p>Everybody submits collaboratively</p><div class="ulist"><ul><li><p>less overhead, fast iteration 👍</p></li><li><p>breakages have large impact 👎</p></li></ul></div></li></ul></div></section>
@@ -66,72 +66,27 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );</script><!--[if 
 <section id="strong_unit_strong_testing"><h2><strong>Unit</strong> Testing</h2><div class="paragraph"><p>Testing plain classes and structs or single UObjects</p></div>
 <div class="paragraph"><p>We enhanced UE4&#8217;s own framework</p></div>
 <div class="ulist step"><ul><li class="fragment"><p>follow Given / When / Then structure</p></li><li class="fragment"><p>separate standards file</p></li><li class="fragment"><p>integrated with CI (ex: TeamCity)</p></li><li class="fragment"><p>setup &amp; tear-down support</p></li></ul></div></section>
-<section id="unit_test_code_surf"><h2>Unit Test Code Surf</h2><div class="paragraph"><p>TODO: surf: unit test</p></div>
-<div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="xml language-xml">&lt;CodeSurfer
-  title="Unit Test Example"
-  code={require("!raw-loader!../flow/testing.cpp")}
-  theme={code_theme}
-  lang="cpp"
-  steps={[
-    { notes: "" },
-    { range: [ 8, 10], notes: "syntactic sugar macros" },
-    { range: [52, 53], notes: "test names must follow specific naming" },
-    { range: [54, 58], notes: "Given..." },
-    { range: [65, 67], notes: "...When..." },
-    { range: [69, 72], notes: "...Then" },
-    { range: [77, 79], notes: "cleanup" }
-  ]}
-/&gt;</code></pre></div></div></section>
-<section id="functional_testing"><h2>Functional Testing</h2><div class="ulist"><ul><li><p>Blueprint actors that we embed in bespoke levels using the editor</p></li><li><p>Live under <code>Game/Content/Test/&#8230;&#8203;</code></p></li><li><p>Named <code>FTEST_</code> to follow Epic&#8217;s convention and for visibility</p></li><li><p>Not network capable</p><div class="ulist"><ul><li><p>Look into recent UE4 additions: <em>Gauntlet</em></p></li></ul></div></li></ul></div></section>
-<section id="ci_tests_integration"><h2>CI Tests Integration</h2><div class="imageblock" style=""><img src="img/tools/tc-tests.png" alt="TC tests"></div></section>
-<section id="editor_automated_distribution"><h2>Editor Automated Distribution</h2><div class="paragraph"><p>UnrealGameSync (UGS)</p></div>
-<div class="ulist"><ul><li><p>Distributing Editor binaries is a more controlled manner</p></li><li><p>Very useful for non-programmers</p><div class="ulist"><ul><li><p>we stripped out the compilation support</p></li></ul></div></li><li><p>We refactored the packaging script via BuildGraph</p><div class="ulist"><ul><li><p>more control, adding symbols upload</p></li></ul></div></li></ul></div></section>
-<section id="editor_build_validation"><h2>Editor Build Validation</h2><div class="ulist"><ul><li><p>Basic automated Editor validation</p><div class="ulist"><ul><li><p>build machine boots freshly compiled Editor</p></li><li><p>monitors error messages in the log</p></li><li><p>monitors startup time (ex: no more than X sec)</p></li></ul></div></li></ul></div></section>
+<section id="unit_test_code_surf" data-background-iframe="surf/index.html#5" data-state="no_list_decor"><div class="ulist"><ul><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li></ul></div></section>
+<section id="strong_functional_strong_testing"><h2><strong>Functional</strong> Testing</h2><div class="paragraph"><p>Blueprint actors in special setup levels to test more complex interactions</p></div>
+<div class="ulist step"><ul><li class="fragment"><p>Live under <code>Game/Content/Test/&#8230;&#8203;</code></p></li><li class="fragment"><p>Named <code>FTEST_</code> to follow Epic&#8217;s convention and for visibility</p></li><li class="fragment"><p>Not network capable</p><div class="ulist"><ul><li><p>Look into recent UE4 additions: <em>Gauntlet</em></p></li></ul></div></li></ul></div></section>
+<section id="ci_tests_integration"><div class="imageblock" style=""><img src="img/tools/tc-tests.png" alt="TC tests"></div></section>
+<section id="editor_automated_strong_distribution_strong"><h2>Editor Automated <strong>Distribution</strong></h2><div class="paragraph"><p>UnrealGameSync (UGS)</p></div>
+<div class="imageblock" style=""><img src="img/tools/UGS.png" alt="UGS"></div></section>
+<section id="unrealgamesync"><h2>UnrealGameSync</h2><div class="ulist step"><ul><li class="fragment"><p>The concept of <strong>Last-Known-Good</strong> Editor build</p></li><li class="fragment"><p>Very useful for non-programmers</p><div class="ulist"><ul><li><p>we stripped out the compilation support</p></li></ul></div></li><li class="fragment"><p>We refactored the packaging script via BuildGraph</p><div class="ulist"><ul><li><p>more control, adding debug symbols upload</p></li></ul></div></li></ul></div></section>
+<section id="strong_takeaway_strong_2"><h2><strong>Takeaway</strong></h2><div class="ulist"><ul><li><p>Automation is an worthwhile investment</p></li><li><p>Must be done early in lifetime of projects</p></li></ul></div></section>
 <section id="strong_projects_strong_setup" data-background-image="img/cards/GOW-Brumak.jpg" data-state="title_card"><h2><strong>Projects</strong> Setup</h2></section>
-<section id="game_modules"><h2>Game Modules</h2><div class="ulist"><ul><li><p>We strive to have multiple independent modules</p><div class="ulist"><ul><li><p>as opposed to 1 monolithic one</p></li></ul></div></li><li><p>Beneficial for</p><div class="ulist"><ul><li><p>encapsulation and architecture</p></li><li><p>faster iteration (linkage improvement for ex)</p></li><li><p>support for Hot-Reload</p></li><li><p>re-use throughout projects</p></li></ul></div></li></ul></div></section>
-<section id="game_module_code_surf"><h2>Game Module Code Surf</h2><div class="paragraph"><p>TODO: surf: game modules</p></div>
-<div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="xml language-xml">&lt;CodeSurfer
-  title="Game Module Layout Example"
-  code={require("!raw-loader!../flow/modules.txt")}
-  theme={code_theme}
-  lang="yaml"
-  steps={[
-    { notes: "" },
-    { range: [ 2, 14], notes: "Runtime module" },
-    { range: [16, 26], notes: "Test module" },
-    { range: [28, 30], notes: "Editor-only module" },
-    { range: [33, 35], notes: "Interface-only module" },
-    { lines: [3], notes: "UBT build file" },
-    { range: [5, 8], notes: "Implementation" },
-    { range: [10, 14], notes: "Interface" }
-  ]}
-/&gt;</code></pre></div></div></section>
-<section id="quick_dirty_automation"><h2>Quick &amp; Dirty Automation</h2><div class="ulist"><ul><li><p><code>GenerateModule.cmd</code></p></li><li><p>Batch file script that produces</p><div class="ulist"><ul><li><p>folder structure</p></li><li><p>initial <em>&#8230;&#8203;build.cs</em> file with good defaults for us</p></li></ul></div></li></ul></div></section>
-<section id="test_modules"><h2>Test Modules</h2><div class="ulist"><ul><li><p>Very useful to access private data from equivalent runtime module</p></li><li><p>Our solution: <code>MODULENAME_TEST_API</code> extension to module API specifier</p><div class="ulist"><ul><li><p>UnrealBuildTool modification</p></li><li><p>exported as usual</p></li><li><p>only modules with <code>bImportTestModuleSymbols</code> can import</p></li></ul></div></li></ul></div></section>
+<section id="game_strong_modules_strong"><h2>Game <strong>Modules</strong></h2><div class="paragraph"><p>We strive to have multiple independent modules (as opposed to 1 monolithic one)</p></div>
+<div class="ulist step"><ul><li class="fragment"><p>Helps with encapsulation and architecture</p></li><li class="fragment"><p>Allows faster iteration</p><div class="ulist"><ul><li><p>linkage improvements</p></li><li><p>Editor Hot-Reload</p></li></ul></div></li><li class="fragment"><p>Promotes re-use throughout projects</p></li></ul></div></section>
+<section id="game_module_code_surf" data-background-iframe="surf/index.html#6" data-state="no_list_decor"><div class="ulist"><ul><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li></ul></div></section>
+<section id="strong_quick_dirty_strong_automation"><h2><strong>Quick &amp; Dirty</strong> Automation</h2><div class="ulist"><ul><li><p><code>GenerateModule.cmd</code></p></li><li><p>Batch file script that produces</p><div class="ulist"><ul><li><p>folder structure</p></li><li><p>initial <em>&#8230;&#8203;build.cs</em> file with good defaults for us</p></li></ul></div></li></ul></div></section>
+<section id="strong_test_modules_strong"><h2><strong>Test Modules</strong></h2><div class="paragraph"><p>Very useful to access private data from equivalent runtime module</p></div>
+<div class="ulist"><ul><li><p>Our solution: <code>MODULENAME_TEST_API</code> extension to module API specifier</p><div class="ulist"><ul><li><p>UnrealBuildTool modification</p></li><li><p>exported as usual</p></li><li><p>only modules with <code>bImportTestModuleSymbols</code> can import</p></li></ul></div></li></ul></div></section>
 <section id="strong_splash_strong_engine" data-background-image="img/cards/DB-2.jpg" data-state="title_card"><h2><strong>Splash</strong> Engine</h2></section>
-<section id="about_2"><h2>About</h2><div class="paragraph"><p>We extract and re-use the UE work across projects into "Splash Engine"</p></div>
-<div class="ulist"><ul><li><p>game-agnostic engine enhacements &amp; fixes gathered across time</p></li><li><p>re-usable mini-frameworks modules</p><div class="ulist"><ul><li><p>UI components</p></li><li><p>Audio utilities</p></li><li><p>Events, Async Tasks</p></li><li><p>Rendering features</p></li><li><p>Tech-Art utilities</p></li><li><p>ex: Instance Mesh split /group</p></li></ul></div></li></ul></div></section>
-<section id="overview"><h2>Overview</h2><div class="ulist"><ul><li><p>Majority of projects get seeded from "Splash Engine"</p></li><li><p>Downstream integrations</p><div class="ulist"><ul><li><p>"Splash Engine" tends to be at latest UE4 version</p></li><li><p>projects update at their own pace</p></li></ul></div></li><li><p>Upstream integrations</p><div class="ulist"><ul><li><p>some projects will bubble-up important features</p></li></ul></div></li></ul></div></section>
-<section id="sd_engine_code_flow"><h2>SD engine Code Flow</h2><div class="paragraph"><p>TODO: surf: engine</p></div>
-<div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="xml language-xml">&lt;CodeSurfer
-  title="Architecture"
-  code={require("!raw-loader!../flow/splash-engine.txt")}
-  theme={code_theme}
-  lang="yaml"
-  steps={[
-    { notes: "" },
-    { lines: [ arch_A+0 ], notes: "master Perforce depot" },
-    { lines: [ arch_A+2 ], notes: "engine 'vanilla' drops from Epic" },
-    { lines: [ arch_A+5 ], notes: "Splash Engine" },
-    { range: [ arch_A+8, arch_A+11], notes: "company games/projects" },
-    { range: [ arch_B+2, arch_B+6 ], notes: "individual downloaded versions" },
-    { range: [ arch_C+1, arch_C+7], notes: "Splash Engine layout" },
-    {   lines: [ arch_C+3 ], notes: "'vanilla' version for merge diff" },
-    {   lines: [ arch_C+4 ], notes: "master branch" },
-    { range: [ arch_C+5, arch_C+8 ], notes: "individual project staging" }
-  ]}
-/&gt;</code></pre></div></div></section>
-<section id="merge_scenario"><h2>Merge Scenario</h2><div class="paragraph"><p>Updating a game project to latest UE4 version&#8230;&#8203;</p></div></section>
+<section id="about_2"><div class="paragraph"><p>We extract and re-use the UE work across projects into <strong>Splash Engine</strong></p></div>
+<div class="ulist step"><ul><li class="fragment"><p>game-agnostic engine enhancements &amp; fixes gathered across time</p></li><li class="fragment"><p>UI components library</p></li><li class="fragment"><p>Audio utilities</p></li><li class="fragment"><p>Events, Async Tasks library</p></li><li class="fragment"><p>Rendering features</p></li><li class="fragment"><p>Tech-Art utilities (instancing, decal manager, etc)</p></li></ul></div></section>
+<section id="overview"><h2>Overview</h2><div class="ulist step"><ul><li class="fragment"><p>Majority of projects get seeded from <strong>Splash Engine</strong></p></li><li class="fragment"><p>Downstream integrations</p><div class="ulist"><ul><li><p>"Engine" tends to be at latest UE4 version</p></li><li><p>projects update at their own pace</p></li></ul></div></li><li class="fragment"><p>Upstream integrations</p><div class="ulist"><ul><li><p>some projects will bubble-up important features</p></li></ul></div></li></ul></div></section>
+<section id="sd_engine_code_flow" data-background-iframe="surf/index.html#7" data-state="no_list_decor"><div class="ulist"><ul><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li></ul></div></section>
+<section id="merge_strong_scenario_strong"><h2>Merge <strong>Scenario</strong></h2><div class="paragraph"><p>Updating a game project to latest UE4 version&#8230;&#8203;</p></div></section>
 <section id="splash_ue4_anim"><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="diff language-diff">/splash-ue4
 |
 ├───/clean
@@ -200,14 +155,11 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );</script><!--[if 
 ├───/project-B              |
 ├───...                     |  merge from staging to game project
                             |  (game project now updated to latest UE)</code></pre></div></div></section>
-<section id="summary"><h2>Summary</h2><div class="ulist"><ul><li><p>Allows us to have quick integrations</p></li><li><p>Decouples main game dev work from integration work</p></li><li><p>Keeps "Splash Engine" updated and in good condition</p></li></ul></div></section>
+<section id="strong_takeaway_strong_3"><h2><strong>Takeaway</strong></h2><div class="ulist"><ul><li><p>Allows us to have quick integrations</p></li><li><p>Decouples main game dev work from integration work</p></li><li><p>Needs dedicated resources otherwise it atrophies</p><div class="ulist"><ul><li><p>we have small <strong>Tech Sharing</strong> group</p></li></ul></div></li></ul></div></section>
 <section id="the_end"><h2>The End</h2><div class="paragraph"><p>@valentin_galea</p></div>
 <div class="imageblock" style=""><img src="img/SD/SD-logo-white-orange.svg"" alt="SD" width="256" height="256"></div>
-<div class="paragraph"><p>[splashdamage.com](<a href="https://www.splashdamage.com" class="bare">https://www.splashdamage.com</a>)
-TODO: proper link</p></div></section>
-<section id="test" data-background-iframe="surf/code_std/index.html" data-state="no_list_decor"><div class="ulist"><ul><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li></ul></div></section>
-<section id="tasks"><h2>Tasks</h2><div class="paragraph"><p>TODO: finish rewrite and transfer from mdx-deck (publish from home until I patch code surf)</p></div>
-<div class="paragraph"><p>TODO: address feedback:
+<div class="paragraph"><p><a href="https://www.splashdamage.com">splashdamage.com</a></p></div></section>
+<section id="tasks"><h2>Tasks</h2><div class="paragraph"><p>TODO: address feedback:
 - if you explain to them why each part of our process in Splash, and on Leviathan in particular, was so amazing, and why they need it"
 - reframe disclamer
 - cut down on blueprint comments explanations
@@ -307,11 +259,34 @@ Reveal.initialize({
   maxScale: 1.5,
 
   // Optional libraries used to extend on reveal.js
+// https://github.com/denehyg/reveal.js-menu
+menu: {
+    side: 'left',
+    width: 'normal',
+    numbers: true,
+    useTextContentForMissingTitles: true,
+    hideMissingTitles: false,
+    markers: true,
+    custom: false,
+    themes: false,
+    themesPath: 'css/theme/',
+    transitions: true,
+    openButton: true,
+    openSlideNumber: false,
+    keyboard: true,
+    sticky: false,
+    autoOpen: true,
+    delayInit: false,
+    openOnInit: false,
+    loadIcons: true
+},
+
 //
 // plugins
 //
 dependencies: [
-    { src: 'custom-fragments.js' }
+     { src: 'custom-fragments.js' }
+    ,{ src: 'node_modules/reveal.js-menu/menu.js' }
 
     , // default plugins past this point; also add new-line
       { src: 'node_modules/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },

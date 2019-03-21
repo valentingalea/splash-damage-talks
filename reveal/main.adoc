@@ -456,54 +456,49 @@ We enhanced UE4's own framework
 - setup & tear-down support
 
 
+[state=no_list_decor]
+[%notitle, background-iframe="surf/index.html#5"]
 == Unit Test Code Surf
-TODO: surf: unit test
-
-[source, xml]
-<CodeSurfer
-  title="Unit Test Example"
-  code={require("!raw-loader!../flow/testing.cpp")}
-  theme={code_theme}
-  lang="cpp"
-  steps={[
-    { notes: "" },
-    { range: [ 8, 10], notes: "syntactic sugar macros" },
-    { range: [52, 53], notes: "test names must follow specific naming" },
-    { range: [54, 58], notes: "Given..." },
-    { range: [65, 67], notes: "...When..." },
-    { range: [69, 72], notes: "...Then" },
-    { range: [77, 79], notes: "cleanup" }
-  ]}
-/>
+[%step]
+- {nbsp}
+- {nbsp}
+- {nbsp}
+- {nbsp}
+- {nbsp}
 
 
-== Functional Testing
-- Blueprint actors that we embed in bespoke levels using the editor
+== *Functional* Testing
+Blueprint actors in special setup levels to test more complex interactions
+
+[.step]
 - Live under `Game/Content/Test/...`
 - Named `FTEST_` to follow Epic's convention and for visibility
 - Not network capable
   * Look into recent UE4 additions: _Gauntlet_
 
 
+[%notitle]
 == CI Tests Integration
 image::tools/tc-tests.png[TC tests]
 
 
-== Editor Automated Distribution
+== Editor Automated *Distribution*
 UnrealGameSync (UGS)
 
-- Distributing Editor binaries is a more controlled manner
+image::tools/UGS.png[UGS]
+
+== UnrealGameSync
+[.step]
+- The concept of *Last-Known-Good* Editor build
 - Very useful for non-programmers
   * we stripped out the compilation support
 - We refactored the packaging script via BuildGraph
-  * more control, adding symbols upload
+  * more control, adding debug symbols upload
 
 
-== Editor Build Validation
-- Basic automated Editor validation
-  * build machine boots freshly compiled Editor
-  * monitors error messages in the log
-  * monitors startup time (ex: no more than X sec)
+== *Takeaway*
+- Automation is an worthwhile investment
+- Must be done early in lifetime of projects
 
 
 [state=title_card]
@@ -511,47 +506,40 @@ UnrealGameSync (UGS)
 == *Projects* Setup
 
 
-== Game Modules
-- We strive to have multiple independent modules
-  * as opposed to 1 monolithic one
-- Beneficial for
-  * encapsulation and architecture
-  * faster iteration (linkage improvement for ex)
-  * support for Hot-Reload
-  * re-use throughout projects
+== Game *Modules*
+We strive to have multiple independent modules (as opposed to 1 monolithic one)
+
+[.step]
+- Helps with encapsulation and architecture
+- Allows faster iteration
+  * linkage improvements
+  * Editor Hot-Reload
+- Promotes re-use throughout projects
 
 
+[state=no_list_decor]
+[%notitle, background-iframe="surf/index.html#6"]
 == Game Module Code Surf
-TODO: surf: game modules
-
-[source, xml]
-<CodeSurfer
-  title="Game Module Layout Example"
-  code={require("!raw-loader!../flow/modules.txt")}
-  theme={code_theme}
-  lang="yaml"
-  steps={[
-    { notes: "" },
-    { range: [ 2, 14], notes: "Runtime module" },
-    { range: [16, 26], notes: "Test module" },
-    { range: [28, 30], notes: "Editor-only module" },
-    { range: [33, 35], notes: "Interface-only module" },
-    { lines: [3], notes: "UBT build file" },
-    { range: [5, 8], notes: "Implementation" },
-    { range: [10, 14], notes: "Interface" }
-  ]}
-/>
+[%step]
+- {nbsp}
+- {nbsp}
+- {nbsp}
+- {nbsp}
+- {nbsp}
+- {nbsp}
+- {nbsp}
 
 
-== Quick & Dirty Automation
+== *Quick & Dirty* Automation
 - `GenerateModule.cmd`
 - Batch file script that produces
   * folder structure
   * initial _...build.cs_ file with good defaults for us
 
 
-== Test Modules
-- Very useful to access private data from equivalent runtime module
+== *Test Modules*
+Very useful to access private data from equivalent runtime module
+
 - Our solution: `MODULENAME_TEST_API` extension to module API specifier
   * UnrealBuildTool modification
   * exported as usual
@@ -562,54 +550,45 @@ TODO: surf: game modules
 [%notile, background-image="cards/DB-2.jpg"]
 == *Splash* Engine
 
-
+[%notitle]
 == About
-We extract and re-use the UE work across projects into "Splash Engine"
+We extract and re-use the UE work across projects into *Splash Engine*
 
-- game-agnostic engine enhacements & fixes gathered across time
-- re-usable mini-frameworks modules
-  * UI components
-  * Audio utilities
-  * Events, Async Tasks
-  * Rendering features
-  * Tech-Art utilities
-    * ex: Instance Mesh split /group
+[.step]
+- game-agnostic engine enhancements & fixes gathered across time
+- UI components library
+- Audio utilities
+- Events, Async Tasks library
+- Rendering features
+- Tech-Art utilities (instancing, decal manager, etc)
 
 
 == Overview
-- Majority of projects get seeded from "Splash Engine"
+[.step]
+- Majority of projects get seeded from *Splash Engine*
 - Downstream integrations
-  * "Splash Engine" tends to be at latest UE4 version
+  * "Engine" tends to be at latest UE4 version
   * projects update at their own pace
 - Upstream integrations
   * some projects will bubble-up important features
 
 
+[state=no_list_decor]
+[%notitle, background-iframe="surf/index.html#7"]
 == SD engine Code Flow
-TODO: surf: engine
-
-[source, xml]
-<CodeSurfer
-  title="Architecture"
-  code={require("!raw-loader!../flow/splash-engine.txt")}
-  theme={code_theme}
-  lang="yaml"
-  steps={[
-    { notes: "" },
-    { lines: [ arch_A+0 ], notes: "master Perforce depot" },
-    { lines: [ arch_A+2 ], notes: "engine 'vanilla' drops from Epic" },
-    { lines: [ arch_A+5 ], notes: "Splash Engine" },
-    { range: [ arch_A+8, arch_A+11], notes: "company games/projects" },
-    { range: [ arch_B+2, arch_B+6 ], notes: "individual downloaded versions" },
-    { range: [ arch_C+1, arch_C+7], notes: "Splash Engine layout" },
-    {   lines: [ arch_C+3 ], notes: "'vanilla' version for merge diff" },
-    {   lines: [ arch_C+4 ], notes: "master branch" },
-    { range: [ arch_C+5, arch_C+8 ], notes: "individual project staging" }
-  ]}
-/>
+[%step]
+- {nbsp}
+- {nbsp}
+- {nbsp}
+- {nbsp}
+- {nbsp}
+- {nbsp}
+- {nbsp} 
+- {nbsp}
+- {nbsp}
 
 
-== Merge Scenario
+== Merge *Scenario*
 Updating a game project to latest UE4 version...
 
 [%notitle]
@@ -710,10 +689,11 @@ Updating a game project to latest UE4 version...
                             |  (game project now updated to latest UE)
 
 
-== Summary
+== *Takeaway*
 - Allows us to have quick integrations
 - Decouples main game dev work from integration work
-- Keeps "Splash Engine" updated and in good condition
+- Needs dedicated resources otherwise it atrophies
+  * we have small *Tech Sharing* group 
 
 
 == The End
@@ -721,28 +701,10 @@ Updating a game project to latest UE4 version...
 
 image::SD/SD-logo-white-orange.svg"[SD, width="256" height="256"]
 
-[splashdamage.com](https://www.splashdamage.com)
-TODO: proper link
+https://www.splashdamage.com[splashdamage.com]
 
-
-[state=no_list_decor]
-[%notitle, background-iframe="surf/code_std/index.html", background-interactive]
-== Test
-[%step]
-- {nbsp}
-- {nbsp}
-- {nbsp}
-- {nbsp}
-- {nbsp}
-- {nbsp}
-- {nbsp}
-- {nbsp}
-- {nbsp}
-- {nbsp}
 
 == Tasks
-
-TODO: finish rewrite and transfer from mdx-deck (publish from home until I patch code surf)
 
 TODO: address feedback:
 - if you explain to them why each part of our process in Splash, and on Leviathan in particular, was so amazing, and why they need it"
