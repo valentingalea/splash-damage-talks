@@ -56,3 +56,17 @@ section[data-state="no_list_decor"] ul {
 #disclaimer > div:nth-child(2) > img:nth-child(1) {
     margin-top: 1em;
 }
+
+.reveal .header {
+    position: fixed;
+    right: 32px;
+    top: 32px;
+    font-size: 32px;
+}
+
+.reveal .header img {
+    width: 70px;
+    height: 70px;
+    vertical-align: middle;
+    margin-left: .5em;
+}

@@ -25,6 +25,7 @@ menu: {
 //
 dependencies: [
      { src: 'custom-fragments.js' }
+    ,{ src: 'header.js' }
     ,{ src: 'node_modules/reveal.js-menu/menu.js' }
 
     , // default plugins past this point; also add new-line

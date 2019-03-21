@@ -156,20 +156,15 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );</script><!--[if 
 ├───...                     |  merge from staging to game project
                             |  (game project now updated to latest UE)</code></pre></div></div></section>
 <section id="strong_takeaway_strong_3"><h2><strong>Takeaway</strong></h2><div class="ulist"><ul><li><p>Allows us to have quick integrations</p></li><li><p>Decouples main game dev work from integration work</p></li><li><p>Needs dedicated resources otherwise it atrophies</p><div class="ulist"><ul><li><p>we have small <strong>Tech Sharing</strong> group</p></li></ul></div></li></ul></div></section>
-<section id="the_end"><h2>The End</h2><div class="paragraph"><p>@valentin_galea</p></div>
+<section id="word_of_caution"><h2>Word of Caution</h2><div class="ulist step"><ul><li class="fragment"><p>We did the UE4 4.21 integration following all this</p></li><li class="fragment"><p>&#8230;&#8203;Pre-commit everything</p></li><li class="fragment"><p>&#8230;&#8203;Unit test good coverage</p></li><li class="fragment"><p>and then when opening the Editor&#8230;&#8203;</p></li></ul></div></section>
+<section id="word_of_caution_cont"><div class="paragraph"><p>WORK: search thru old BM presentations</p></div></section>
+<section id="the_end"><div class="paragraph"><p><strong>@valentin_galea</strong></p></div>
+<div class="paragraph"><p>Thanks to my Core-Tech team, the BM/LV team and the rest of</p></div>
 <div class="imageblock" style=""><img src="img/SD/SD-logo-white-orange.svg"" alt="SD" width="256" height="256"></div>
 <div class="paragraph"><p><a href="https://www.splashdamage.com">splashdamage.com</a></p></div></section>
 <section id="tasks"><h2>Tasks</h2><div class="paragraph"><p>TODO: address feedback:
 - if you explain to them why each part of our process in Splash, and on Leviathan in particular, was so amazing, and why they need it"
-- reframe disclamer
-- cut down on blueprint comments explanations
-- "As mentioned some of the font’s could be bigger. In particular, I barely noticed the ‘Asset naming rules’ page"
-- pre-commit mention we are trunk-dev and more context
-- add info abou Simplygon mistake and how it&#8217;s important to test
-- replace asset image with dark variant
-- unify the capitalization</p></div>
-<div class="paragraph"><p>TODO: publish the gen-module on github and insert link
-TODO: write email to Github</p></div>
+- reframe disclamer</p></div>
 <div class="paragraph"><p>FIXME: clear all images (Gears &amp; re-record the VS standars open)
 FIXME: possibly remove all BM references
 FIXME: add header plugin/support
@@ -286,6 +281,7 @@ menu: {
 //
 dependencies: [
      { src: 'custom-fragments.js' }
+    ,{ src: 'header.js' }
     ,{ src: 'node_modules/reveal.js-menu/menu.js' }
 
     , // default plugins past this point; also add new-line
