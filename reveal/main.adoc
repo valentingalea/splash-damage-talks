@@ -695,6 +695,17 @@ Updating a game project to latest UE4 version...
 - Needs dedicated resources otherwise it atrophies
   * we have small *Tech Sharing* group 
 
+== Word of Caution
+[.step]
+- We did the UE4 4.21 integration following all this
+- ...Pre-commit everything
+- ...Unit test good coverage
+- and then when opening the Editor...
+
+[%notitle]
+== Word of Caution (cont.)
+
+WORK: search thru old BM presentations
 
 [%notitle]
 == The End
@@ -712,12 +723,6 @@ https://www.splashdamage.com[splashdamage.com]
 TODO: address feedback:
 - if you explain to them why each part of our process in Splash, and on Leviathan in particular, was so amazing, and why they need it"
 - reframe disclamer
-- cut down on blueprint comments explanations
-- "As mentioned some of the font’s could be bigger. In particular, I barely noticed the ‘Asset naming rules’ page"
-- pre-commit mention we are trunk-dev and more context
-- add info abou Simplygon mistake and how it's important to test
-- replace asset image with dark variant
-- unify the capitalization
 
 TODO: publish the gen-module on github and insert link
 TODO: write email to Github
