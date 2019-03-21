@@ -696,8 +696,11 @@ Updating a game project to latest UE4 version...
   * we have small *Tech Sharing* group 
 
 
+[%notitle]
 == The End
-@valentin_galea
+*@valentin_galea*
+
+Thanks to my Core-Tech team, the BM/LV team and the rest of
 
 image::SD/SD-logo-white-orange.svg"[SD, width="256" height="256"]
 
