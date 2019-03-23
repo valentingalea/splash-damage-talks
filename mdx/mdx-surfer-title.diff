@@ -1,0 +1,20 @@
+--- node_modules/mdx-deck-code-surfer/dist/deck-code-surfer.js	2019-03-23 14:43:56.915538500 +0000
++++ deck-code-surfer.js	2019-03-23 14:45:52.937860500 +0000
+@@ -39,7 +39,7 @@
+ var Notes = function Notes(_ref) {
+   var notes = _ref.notes;
+   return !notes || typeof notes === "string" ? _react2.default.createElement(
+-    "p",
++    "h3",
+     { style: { height: "50px" } },
+     notes || "\xA0"
+   ) : notes();
+@@ -48,7 +48,7 @@
+ var Title = function Title(_ref2) {
+   var title = _ref2.title;
+   return typeof title === "string" ? _react2.default.createElement(
+-    "h1",
++    "h2",
+     null,
+     title
+   ) : title();

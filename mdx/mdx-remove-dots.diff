@@ -1,0 +1,19 @@
+--- node_modules/mdx-deck/dist/Provider.js	2019-03-23 14:04:38.442839700 +0000
++++ Provider.js	2019-03-23 14:02:42.633700500 +0000
+@@ -90,15 +90,7 @@
+         _react2.default.createElement(
+           Bottom,
+           null,
+-          _react2.default.createElement(_Dots2.default, {
+-            mx: 'auto',
+-            mb: 2,
+-            index: index,
+-            length: length,
+-            onClick: function onClick(index) {
+-              update({ index: index });
+-            }
+-          })
++          null
+         ),
+         _react2.default.createElement(Previous, {
+           role: 'button',
