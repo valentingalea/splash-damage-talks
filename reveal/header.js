@@ -7,8 +7,12 @@ var Header = (function() {
     select('.reveal').appendChild(div);
 
     Reveal.addEventListener('slidechanged', function(event) {
-        div.style.visibility = event.currentSlide.id == 'the_end' ?
-            'hidden' : 'visible';
+        if (event.currentSlide.id == 'the_end' ||
+            event.indexh < 3) {
+            div.style.visibility = 'hidden';
+        } else {
+            div.style.visibility = 'visible';
+        }
     });
 })();
 
