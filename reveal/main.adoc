@@ -8,7 +8,7 @@
 :revealjs_overview: true
 :revealjs_fragments: true
 :source-highlighter: highlightjs
-:customcss: ../docs/main.css
+:customcss: main.css
 :imagesdir: img
 :title-slide-background-image: cards/Company.jpg
 

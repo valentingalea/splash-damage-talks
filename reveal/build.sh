@@ -6,4 +6,4 @@ node convert.js
 # so I cheated and created my own mini mechanism
 sed -e '/dependencies:/ {' -e 'r plugins.js' -e 'd }' -i main.html
 
-#html-inline -i main.html -o ../docs/index.html --ignore-images
+mv main.html ../docs/index.html
