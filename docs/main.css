@@ -54,7 +54,7 @@ section[data-state="no_list_decor"] ul {
 }
 
 #disclaimer > div:nth-child(2) > img:nth-child(1) {
-    margin-top: 1em;
+    margin-top: 2em;
 }
 
 .reveal .header {
