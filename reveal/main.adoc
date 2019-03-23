@@ -718,15 +718,7 @@ image::SD/SD-logo-white-orange.svg"[SD, width="256" height="256"]
 https://www.splashdamage.com[splashdamage.com]
 
 
-== Tasks
+== Attribution
+All images unless noted (C) Splash Damage
 
-TODO: address feedback:
-- if you explain to them why each part of our process in Splash, and on Leviathan in particular, was so amazing, and why they need it"
-- reframe disclamer
-
-FIXME: clear all images (Gears & re-record the VS standars open)
-FIXME: possibly remove all BM references
-FIXME: patch up CodeSurfer
-FIXME: solve offline support (do like shaderbox) / if using html-inline understand why export destroys the title cards (seems to change font)
-FIXME: clean up (unused imgs and transfer/)
-FIXME: publish and see if problem and then ask for help with the postMessage stuff
+"Megaphone" and "Teams" icons by https://www.flaticon.com/authors/eucalyp under `Creative Commons BY 3.0`
