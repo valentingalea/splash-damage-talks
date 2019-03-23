@@ -76,7 +76,4 @@ typings/
 # -----------------------------------------------------------------------------
 
 mdx/node_modules/
-
 reveal/node_modules/
-reveal/img/*
-reveal/surf/*

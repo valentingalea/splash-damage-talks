@@ -838,10 +838,4 @@ Updating a game project to latest UE4 version...
 ---
 ## Tasks
 
-SYS: code-surfer: remove dots
-SYS: code-surfer: increase font size -- maybe custom styles https://github.com/pomber/code-surfer/pull/52/commits/f5a5bab0bef47a494b376f01c297c10b4614db97
-SYS: code-surfer: create patch with all modif 
-
-Reference of modif:
-title: mdx\node_modules\mdx-deck-code-surfer\dist\deck-code-surfer.js 42 h3
-notes: mdx\node_modules\mdx-deck-code-surfer\dist\deck-code-surfer.js 51 h2 
+TODO: code-surfer: increase font size -- maybe custom styles https://github.com/pomber/code-surfer/pull/52/commits/f5a5bab0bef47a494b376f01c297c10b4614db97
