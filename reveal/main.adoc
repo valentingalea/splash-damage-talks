@@ -695,17 +695,19 @@ Updating a game project to latest UE4 version...
 - Needs dedicated resources otherwise it atrophies
   * we have small *Tech Sharing* group 
 
-== Word of Caution
+
+== One Last Thing
 [.step]
 - We did the UE4 4.21 integration following all this
-- ...Pre-commit everything
-- ...Unit test good coverage
+- ...pre-commit everything
+- ...ran all the CI tests
 - and then when opening the Editor...
+
 
 [%notitle]
 == Word of Caution (cont.)
+image::tools/ue4-merge-error.png[merge error]
 
-WORK: search thru old BM presentations
 
 [%notitle]
 == The End
