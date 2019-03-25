@@ -428,7 +428,7 @@ image::tools/pre-commit.png[resharper]
 
 
 == Commit Preparation (cont.)
-image::tools/pct-tool.webp[pct]
+image::tools/pct-tool.png[pct]
 
 
 == Commit Validation
