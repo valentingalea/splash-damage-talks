@@ -215,7 +215,7 @@ image::content-std/blueprint-standard-2.png[blueprint std ex 2]
 
 
 == Asset auto-naming on creation
-image::content-std/ue4-auto-naming.gif"[auto naming, width="150%"]
+image::content-std/ue4-auto-naming.gif[auto naming, width="150%"]
 
 
 == *Asset import* rule
@@ -715,7 +715,7 @@ image::tools/ue4-merge-error.png[merge error]
 
 Thanks to my Core-Tech team, the BM/LV team and the rest of
 
-image::SD/SD-logo-white-orange.svg"[SD, width="256" height="256"]
+image::SD/SD-logo-white-orange.svg[SD, width="256" height="256"]
 
 https://www.splashdamage.com[splashdamage.com]
 
