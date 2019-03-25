@@ -191,7 +191,7 @@ image::content-std/blueprint-standard-2.png[blueprint std ex 2]
 
 [state=title_card]
 [%notile, background-image="cards/GOW-5.jpg"]
-== Content *Standards*
+== Content *Validation*
 
 
 == Automated Validation
