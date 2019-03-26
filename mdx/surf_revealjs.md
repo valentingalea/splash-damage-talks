@@ -32,7 +32,7 @@ NOTE: designed to be embed into reveal.js
 ---
 <CodeSurfer
   title="BuildGraph (example)"
-  code={require("!raw-loader!../flow/buildgraph.xml")}
+  code={require("!raw-loader!../surf/buildgraph.xml")}
   theme={code_theme}
   lang="xml"
   steps={[
@@ -52,7 +52,7 @@ export const flowA = 9
 
 <CodeSurfer
   title="Normal Commit Flow"
-  code={require("!raw-loader!../flow/submit.txt")}
+  code={require("!raw-loader!../surf/submit.txt")}
   theme={code_theme}
   lang="yaml"
   steps={[
@@ -69,7 +69,7 @@ export const flowB = 9
 
 <CodeSurfer
   title="Pre-Commit Flow"
-  code={require("!raw-loader!../flow/pre-submit.txt")}
+  code={require("!raw-loader!../surf/pre-submit.txt")}
   theme={code_theme}
   lang="yaml"
   steps={[
@@ -87,7 +87,7 @@ export const flowB = 9
 ---
 <CodeSurfer
   title="Unit Test Example"
-  code={require("!raw-loader!../flow/testing.cpp")}
+  code={require("!raw-loader!../surf/testing.cpp")}
   theme={code_theme}
   lang="cpp"
   steps={[
@@ -103,7 +103,7 @@ export const flowB = 9
 ---
 <CodeSurfer
   title="Game Module Layout Example"
-  code={require("!raw-loader!../flow/modules.txt")}
+  code={require("!raw-loader!../surf/modules.txt")}
   theme={code_theme}
   lang="yaml"
   steps={[
@@ -126,7 +126,7 @@ export const arch_C = 64
 
 <CodeSurfer
   title="Architecture"
-  code={require("!raw-loader!../flow/splash-engine.txt")}
+  code={require("!raw-loader!../surf/splash-engine.txt")}
   theme={code_theme}
   lang="yaml"
   steps={[
