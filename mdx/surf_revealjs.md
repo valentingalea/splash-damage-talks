@@ -108,13 +108,14 @@ export const flowB = 9
   lang="yaml"
   steps={[
     { notes: "" },
-    { range: [ 2, 14], notes: "Runtime module" },
-    { range: [16, 26], notes: "Test module" },
-    { range: [28, 30], notes: "Editor-only module" },
-    { range: [33, 35], notes: "Interface-only module" },
-    { lines: [3], notes: "UBT build file" },
-    { range: [5, 8], notes: "Implementation" },
-    { range: [10, 14], notes: "Interface" }
+    { range: [ 3, 16], notes: "Game-logic module" },
+    { range: [19, 29], notes: "Testing module" },
+    { range: [32, 34], notes: "Editor-only module" },
+    { range: [37, 39], notes: "Interface-only module" },
+    { range: [ 3, 16], notes: "Game-logic module" },
+    { lines: [ 4 ], notes: "UnrealBuildTool spec file" },
+    { range: [ 6, 10], notes: "Implementation (*.cpp)" },
+    { range: [12, 16], notes: "Interface (*.h)" }
   ]}
 />
 

@@ -1,18 +1,21 @@
 GenericComponent
+|
 ├───Runtime
 │   │   GenericComponent.Build.cs
 │   │
 │   ├───Private
 │   │   │   GenericComponent.cpp
-│   │   ├───Health
-│   │   │       HealthComponent.cpp
+|   |   |
+│   │   └───Health
+│   │           HealthComponent.cpp
 │   │
 │   └───Public
 │       │   GenericComponent.h
 │       │
-│       ├───Health
-│       │       HealthComponent.h
+│       └────Health
+│               HealthComponent.h
 │
+|
 ├───Test
 │    │   GenericComponentTest.Build.cs
 │    │
@@ -25,6 +28,7 @@ GenericComponent
 │    └───Public
 │                GenericComponentTest.h
 │
+|
 ├───Editor
 |     |
 |     ...
