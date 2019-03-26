@@ -80,48 +80,21 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );</script><!--[if 
 <section id="game_module_code_surf" data-background-iframe="surf/index.html#6" data-state="no_list_decor"><div class="ulist"><ul><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li></ul></div></section>
 <section id="strong_quick_dirty_strong_automation"><h2><strong>Quick &amp; Dirty</strong> Automation</h2><div class="ulist"><ul><li><p><code>GenerateModule.cmd</code></p></li><li><p>Batch file script that produces</p><div class="ulist"><ul><li><p>folder structure</p></li><li><p>initial <em>&#8230;&#8203;build.cs</em> file with good defaults for us</p></li></ul></div></li></ul></div></section>
 <section id="strong_test_modules_strong"><h2><strong>Test Modules</strong></h2><div class="paragraph"><p>Very useful to access private data from equivalent runtime module</p></div>
-<div class="ulist"><ul><li><p>Our solution: <code>MODULENAME_TEST_API</code> extension to module API specifier</p><div class="ulist"><ul><li><p>UnrealBuildTool modification</p></li><li><p>exported as usual</p></li><li><p>only modules with <code>bImportTestModuleSymbols</code> can import</p></li></ul></div></li></ul></div>
-<div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape>D:\Gamedev\blackmass\ue4\BlackMass\Source\Player\Runtime\Private\Components\BMPlayerCameraTargetComponent.h
-
-UCLASS()
-class PLAYER_TEST_API UBMPlayerCameraTargetComponent :
-	public UActorComponent,
-	public IBICameraTarget
+<div class="ulist step"><ul><li class="fragment"><p>Our solution</p><div class="ulist"><ul><li><p><code>MODULENAME_TEST_API</code> extension to API specifier macros</p></li></ul></div></li></ul></div></section>
+<section id="strong_test_modules_strong_cont"><h2><strong>Test Modules</strong> (cont.)</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="cpp language-cpp">Player\Runtime\Private\Components\BMPlayerCameraTargetComponent.h</code></pre></div></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="cpp language-cpp">UCLASS()
+class PLAYER_TEST_API USDPlayerCameraTargetComponent :
+    public UActorComponent,
+    public IBICameraTarget
 {
-	GENERATED_BODY()
-
-public:
-	UBMPlayerCameraTargetComponent();
-
-	// Begin UActorComponent override
-	virtual void InitializeComponent() override;
-	// End UObject override
-
-
-
-D:\Gamedev\blackmass\ue4\BlackMass\Source\Player\Test\Private\BMPlayerCameraTargetComponentTest.cpp
-
-IMPLEMENT_MODULE_TEST(FAttachedToPlayer_GettingAttachmentInfo_ReturnsCameraRootWithSocketName)
+...</code></pre></div></div></section>
+<section id="strong_test_modules_strong_cont_2"><h2><strong>Test Modules</strong> (cont.)</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="cpp language-cpp">Player\Test\Private\SDPlayerCameraTargetComponentTest.cpp</code></pre></div></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="cpp language-cpp">IMPLEMENT_MODULE_TEST(FAttachedToPlayer_GettingAttachmentInfo_ReturnsCameraRootW
 {
-	ATBMPlayerCameraTargetOwner* Player = BMPlayerCameraTargetComponentTestHelpers::CreateTestActor(CreateWorld());
-
-	// Given a camera target component attacher to a player with attachment socket name set
-	UBMPlayerCameraTargetComponent* CameraTargetComponent = Player-&gt;CameraTargetComponent;
-	CameraTargetComponent-&gt;SetSocketName(BMPlayerCameraTargetComponentTestHelpers::SocketName);
-
-	// When Getting attachment info
-	const FBCCameraAttachmentInfo AttachmentInfo = CameraTargetComponent-&gt;GetCameraAttachmentInfo();
-
-	// Then the component should be the CameraRoot component
-	TestTrue(TEXT("FBMCameraAttachmentInfo.Component is the set CameraRootComponent"),
-		AttachmentInfo.Component == Player-&gt;GetRootComponent());
-
-	// And the socket name is the one set
-	TestEqual(TEXT("FBMCameraAttachmentInfo.SocketName is the same as the one set"),
-		AttachmentInfo.SocketName, BMPlayerCameraTargetComponentTestHelpers::SocketName);
-
-	return true;
-}</code></pre></div></div></section>
+    // Given a camera target component attacher to a player with attachment sock
+    USDPlayerCameraTargetComponent* CameraTargetComponent = Player-&gt;CameraTarget
+    CameraTargetComponent-&gt;SetSocketName(SDPlayerCameraTargetComponentTestHelper
+...</code></pre></div></div></section>
 <section id="strong_splash_strong_engine" data-background-image="img/cards/DB-2.jpg" data-state="title_card"><h2><strong>Splash</strong> Engine</h2></section>
 <section id="about_2"><div class="paragraph"><p>We extract and re-use the UE work across projects into <strong>Splash Engine</strong></p></div>
 <div class="ulist step"><ul><li class="fragment"><p>game-agnostic engine enhancements &amp; fixes gathered across time</p></li><li class="fragment"><p>UI components library</p></li><li class="fragment"><p>Audio utilities</p></li><li class="fragment"><p>Events, Async Tasks library</p></li><li class="fragment"><p>Rendering features</p></li><li class="fragment"><p>Tech-Art utilities (instancing, decal manager, etc)</p></li></ul></div></section>
