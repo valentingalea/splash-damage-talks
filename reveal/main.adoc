@@ -60,6 +60,63 @@ image:icon/UE4.jpg[UE] image:icon/team.svg[teams, 128, 128]
 - Some projects use **Splash Engine**
   * vanilla + own modules and enhancements
 
+[state=no_list_decor]
+== *Projects* Layout
+[.step]
+- {blank}
+[source, cpp]
+\Perforce                // master depo
+|
+- {blank}
+[source, cpp]
+├───Project-A           // game project
+│   ├───docs
+│   ├───raw
+│   └───ue4
+│       ├───Engine
+│       └───Project-A
+│       ...
+- {blank}
+[source, cpp]
+│
+├───Project-B   // another game project
+│   ...
+- {blank}
+[source, cpp]
+│
+├───splash-ue4         // Splash Engine
+│   ...
+
+== Game *Modules*
+We strive to have multiple independent modules (as opposed to 1 monolithic one)
+
+[.step]
+- Helps with encapsulation and architecture
+- Allows faster iteration
+  * linkage improvements
+  * Editor Hot-Reload
+- Promotes re-use throughout projects
+
+
+[state=no_list_decor]
+[%notitle, background-iframe="surf/index.html#6"]
+== Game Module Code Surf
+[%step]
+- {nbsp}
+- {nbsp}
+- {nbsp}
+- {nbsp}
+- {nbsp}
+- {nbsp}
+- {nbsp}
+
+
+== *Quick & Dirty* Automation
+- `GenerateModule.cmd`
+- Batch file script that produces
+  * folder structure
+  * initial _...build.cs_ file with good defaults for us
+
 
 [state=title_card]
 [%notile, background-image="cards/GOW-UE.jpg"]
@@ -506,35 +563,7 @@ image::tools/UGS.png[UGS]
 == *Projects* Setup
 
 
-== Game *Modules*
-We strive to have multiple independent modules (as opposed to 1 monolithic one)
 
-[.step]
-- Helps with encapsulation and architecture
-- Allows faster iteration
-  * linkage improvements
-  * Editor Hot-Reload
-- Promotes re-use throughout projects
-
-
-[state=no_list_decor]
-[%notitle, background-iframe="surf/index.html#6"]
-== Game Module Code Surf
-[%step]
-- {nbsp}
-- {nbsp}
-- {nbsp}
-- {nbsp}
-- {nbsp}
-- {nbsp}
-- {nbsp}
-
-
-== *Quick & Dirty* Automation
-- `GenerateModule.cmd`
-- Batch file script that produces
-  * folder structure
-  * initial _...build.cs_ file with good defaults for us
 
 
 == *Test Modules*

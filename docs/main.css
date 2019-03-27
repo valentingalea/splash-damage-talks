@@ -70,3 +70,11 @@ section[data-state="no_list_decor"] ul {
     vertical-align: middle;
     margin-left: .5em;
 }
+
+section[id="strong_projects_strong_layout"] p {
+    margin: 0;
+}
+
+section[id="strong_projects_strong_layout"] pre {
+    margin: 0;
+}
