@@ -35,7 +35,6 @@ image::SD/SD-logo-white-orange.svg[SD, 200, 200]
 - Validation
 - Compilation
 - Automation & Testing
-- Projects Structure
 - Splash Engine & Merges
 
 
@@ -534,38 +533,6 @@ Blueprint actors in special setup levels to test more complex interactions
   * Look into recent UE4 additions: _Gauntlet_
 
 
-[%notitle]
-== CI Tests Integration
-image::tools/tc-tests.png[TC tests]
-
-
-== Editor Automated *Distribution*
-UnrealGameSync (UGS)
-
-image::tools/UGS.png[UGS]
-
-== UnrealGameSync
-[.step]
-- The concept of *Last-Known-Good* Editor build
-- Very useful for non-programmers
-  * we stripped out the compilation support
-- We refactored the packaging script via BuildGraph
-  * more control, adding debug symbols upload
-
-
-== *Takeaway*
-- Automation is an worthwhile investment
-- Must be done early in lifetime of projects
-
-
-[state=title_card]
-[%notile, background-image="cards/GOW-Brumak.jpg"]
-== *Projects* Setup
-
-
-
-
-
 == *Test Modules*
 Very useful to access private data from equivalent runtime module
 
@@ -600,6 +567,30 @@ IMPLEMENT_MODULE_TEST(FAttachedToPlayer_GettingAttachmentInfo_ReturnsCameraRootW
     CameraTargetComponent->SetSocketName(SDPlayerCameraTargetComponentTestHelper
 ...
 -----
+
+
+[%notitle]
+== CI Tests Integration
+image::tools/tc-tests.png[TC tests]
+
+
+== Editor Automated *Distribution*
+UnrealGameSync (UGS)
+
+image::tools/UGS.png[UGS]
+
+== UnrealGameSync
+[.step]
+- The concept of *Last-Known-Good* Editor build
+- Very useful for non-programmers
+  * we stripped out the compilation support
+- We refactored the packaging script via BuildGraph
+  * more control, adding debug symbols upload
+
+
+== *Takeaway*
+- Automation is an worthwhile investment
+- Must be done early in lifetime of projects
 
 
 [state=title_card]
