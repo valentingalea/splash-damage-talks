@@ -88,7 +88,7 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );</script><!--[if 
 <div class="ulist step"><ul><li class="fragment"><p>Live under <code>Game/Content/Test/&#8230;&#8203;</code></p></li><li class="fragment"><p>Named <code>FTEST_</code> to follow Epic&#8217;s convention and for visibility</p></li><li class="fragment"><p>Not network capable</p><div class="ulist"><ul><li><p>Look into recent UE4 additions: <em>Gauntlet</em></p></li></ul></div></li></ul></div></section>
 <section id="strong_test_modules_strong"><h2><strong>Test Modules</strong></h2><div class="paragraph"><p>Very useful to access private data from equivalent runtime module</p></div>
 <div class="ulist step"><ul><li class="fragment"><p>Our solution</p><div class="ulist"><ul><li><p><code>MODULENAME_TEST_API</code> extension to API specifier macros</p></li></ul></div></li></ul></div></section>
-<section id="strong_test_modules_strong_cont"><h2><strong>Test Modules</strong> (cont.)</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="cpp language-cpp">Player\Runtime\Private\Components\BMPlayerCameraTargetComponent.h</code></pre></div></div>
+<section id="strong_test_modules_strong_cont"><h2><strong>Test Modules</strong> (cont.)</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="cpp language-cpp">Player\Runtime\Private\Components\SDPlayerCameraTargetComponent.h</code></pre></div></div>
 <div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="cpp language-cpp">UCLASS()
 class PLAYER_TEST_API USDPlayerCameraTargetComponent :
     public UActorComponent,
@@ -294,12 +294,18 @@ menu: {
     loadIcons: false
 },
 
+// https://github.com/tkrkt/reveal.js-elapsed-time-bar
+allottedTime: 40 * 60 * 1000, // minutes
+progressBarHeight: 5,
+barColor: 'rgb(66, 175, 250)',
+
 //
 // plugins
 //
 dependencies: [
      { src: 'plugins/custom-fragments.js' }
     ,{ src: 'plugins/header.js' }
+    ,{ src: 'plugins/elapsed-time-bar.js' }
     ,{ src: 'plugins/reveal.js-menu/menu.js' }
 
     , // default plugins past this point; also add new-line
