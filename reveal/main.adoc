@@ -192,6 +192,10 @@ image::code-std/review-2.png[code review pic]
 
 
 == Unintended Consequences
+...
+
+
+== Unintended Consequences
 image::code-std/coding-actor.png[ue4 coding actor]
 
 
@@ -542,7 +546,7 @@ Very useful to access private data from equivalent runtime module
 
 == *Test Modules* (cont.)
 [source, cpp]
-Player\Runtime\Private\Components\BMPlayerCameraTargetComponent.h
+Player\Runtime\Private\Components\SDPlayerCameraTargetComponent.h
 
 [source, cpp]
 -----
