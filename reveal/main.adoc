@@ -765,14 +765,16 @@ image::tools/ue4-merge-error.png[merge error]
 == The End
 *@valentin_galea*
 
-Thanks to my Core-Tech team, the BM/LV team and the rest of
+We're hiring!
 
 image::SD/SD-logo-white-orange.svg[SD, width="256" height="256"]
 
-https://www.splashdamage.com[splashdamage.com]
+https://github.com/splash-damage/coding-standards[github.com/splash-damage/coding-standards]
 
 
 == Attribution
-All images unless noted (C) Splash Damage
+Special thanks to my Core-Tech team and the BM/LV team
+
+All images and material (C) Splash Damage
 
 "Megaphone" and "Teams" icons by https://www.flaticon.com/authors/eucalyp under `Creative Commons BY 3.0`
