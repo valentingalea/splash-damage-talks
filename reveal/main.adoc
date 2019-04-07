@@ -19,14 +19,14 @@ More than 15 years in the industry, of which 4 at
 image::SD/SD-logo-white-orange.svg[SD, 200, 200]
 
 
-[state=no_list_decor]
-[%notile, background-image="timeline/sd-timeline-all.jpg"]
-== *Splash Damage* History
-- {nbsp}
-- {nbsp}
-- {nbsp}
-- {nbsp}
-- {nbsp}
+[%notitle, background-image="timeline/sd-timeline-1.jpg"]
+== Splash Damage History
+
+[%notitle, background-image="timeline/sd-timeline-2.jpg"]
+== Splash Damage History
+
+[%notitle, background-image="timeline/sd-timeline-3.jpg"]
+== Splash Damage History
 
 
 == Agenda

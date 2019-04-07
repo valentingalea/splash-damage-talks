@@ -8,7 +8,7 @@ var Header = (function() {
 
     Reveal.addEventListener('slidechanged', function(event) {
         if (event.currentSlide.id == 'the_end' ||
-            event.indexh < 3) {
+            event.indexh < 5) {
             div.style.visibility = 'hidden';
         } else {
             div.style.visibility = 'visible';
