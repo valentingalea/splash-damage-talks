@@ -769,7 +769,9 @@ We're hiring!
 
 image::SD/SD-logo-white-orange.svg[SD, width="256" height="256"]
 
-https://github.com/splash-damage/coding-standards[github.com/splash-damage/coding-standards]
+https://github.com/splash-damage/coding-standards[github.com/splash-damage]
+
+https://www.splashdamage.com/careers/[splashdamage.com/careers]
 
 
 == Attribution
