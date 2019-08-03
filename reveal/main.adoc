@@ -25,10 +25,31 @@ image::SD/SD-logo-white-orange.svg[SD, 200, 200]
 - Integration across projects
 
 
-== About
-- Splash values *MASTERY* especially in *C++*
-- We didn't have an established coding standard
-  * some attempts to document it in _wiki's_ 
+== What are Coding Standards
+[quote, Wikipedia]
+Coding conventions are a set of guidelines for a specific programming language that recommend programming style, practices, and methods for each aspect of a program written in that language
+
+
+== What are Coding Standards (cont.)
+Formally adopted coding conventions become _standards_
+
+
+== Examples
+[.step]
+- C++ ISO Standard - promotes specific styles
+  * ex: all `std::` types/functions are _snake_case_
+- C++ Core Guidelines
+- Google style guide
+- Unreal Engine 4
+
+
+== Enforcing / Adoption
+[.step]
+- Normally presented as standalone documentation
+  * ex: PDF, wiki's, etc
+- People are supposed to study then apply in practice
+- Usually _not_ machine readable
+  * somewhat exception: Visual Studio Code Guidelines checker
 
 
 == Pitfalls
@@ -47,6 +68,11 @@ image::SD/SD-logo-white-orange.svg[SD, 200, 200]
   * you can break the build messing with the standard!
 - Created and improved through code reviews
 - A system for easy _reference_ and _searching_
+
+
+[%notitle]
+== Search
+image:code-std/vs-standards-open.gif[VS]
 
 
 == The Coding Standard
@@ -100,6 +126,13 @@ image::code-std/review-2.png[code review pic]
 
 == Unintended Consequences
 image::code-std/coding-actor.png[ue4 coding actor]
+
+
+== TODO
+- detail of sections
+- how it was created in one team
+- how it grew across / ambassadors 
+- github and PR's
 
 
 [%notitle]
