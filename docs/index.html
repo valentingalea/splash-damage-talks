@@ -1,34 +1,10 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Growing a Healthy UE4 Ecosystem : How Splash Damage approaches development</title><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport"><link href="node_modules/reveal.js/css/reveal.css" rel="stylesheet"><link rel="stylesheet" href="node_modules/reveal.js/css/theme/black.css" id="theme"><link href="node_modules/reveal.js/lib/css/zenburn.css" rel="stylesheet"><script>var link = document.createElement( 'link' );
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Compiled C++ Standards</title><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport"><link href="node_modules/reveal.js/css/reveal.css" rel="stylesheet"><link rel="stylesheet" href="node_modules/reveal.js/css/theme/black.css" id="theme"><link href="node_modules/reveal.js/lib/css/zenburn.css" rel="stylesheet"><script>var link = document.createElement( 'link' );
 link.rel = 'stylesheet';
 link.type = 'text/css';
 link.href = window.location.search.match( /print-pdf/gi ) ? "node_modules/reveal.js/css/print/pdf.css" : "node_modules/reveal.js/css/print/paper.css";
-document.getElementsByTagName( 'head' )[0].appendChild( link );</script><!--[if lt IE 9]><script src="node_modules/reveal.js/lib/js/html5shiv.js"></script><![endif]--><link rel="stylesheet" href="main.css"></head><body><div class="reveal"><div class="slides"><section class="title" data-state="title" data-background-image="img/cards/Company.jpg"><h1>Growing a Healthy UE4 Ecosystem </h1><h2>How <strong>Splash Damage</strong> approaches development</h2></section><section id="valentin_galea"><h2>@valentin_galea</h2><div class="paragraph"><p>More than 10 years in the industry, of which 4 at</p></div>
+document.getElementsByTagName( 'head' )[0].appendChild( link );</script><!--[if lt IE 9]><script src="node_modules/reveal.js/lib/js/html5shiv.js"></script><![endif]--><link rel="stylesheet" href="main.css"></head><body><div class="reveal"><div class="slides"><section class="title" data-state="title"><h1>Compiled C++ Standards</h1></section><section id="valentin_galea"><h2>@valentin_galea</h2><div class="paragraph"><p>More than 10 years in the industry, of which 4 at</p></div>
 <div class="imageblock" style=""><img src="img/SD/SD-logo-white-orange.svg" alt="SD" width="200" height="200"></div></section>
-<section id="splash_damage_history" data-background-image="img/timeline/sd-timeline-1.jpg"></section>
-<section id="splash_damage_history_2" data-background-image="img/timeline/sd-timeline-2.jpg"></section>
-<section id="splash_damage_history_3" data-background-image="img/timeline/sd-timeline-3.jpg"></section>
-<section id="agenda"><h2>Agenda</h2><div class="ulist"><ul><li><p>Teams and Projects</p></li><li><p>Standards</p></li><li><p>Validation</p></li><li><p>Compilation</p></li><li><p>Automation &amp; Testing</p></li><li><p>Splash Engine &amp; Merges</p></li></ul></div></section>
-<section id="disclaimer"><h2>Disclaimer</h2><div class="imageblock" style="float: left"><img src="img/icon/megaphone.svg" alt="SD" width="200" height="200"></div>
-<div class="ulist"><ul><li><p>Share our learnings</p><div class="ulist"><ul><li><p>from some AAA projects</p></li><li><p>mostly from prototypes</p></li><li><p>years of UE4 work</p></li></ul></div></li><li><p>Find your inspiration!</p></li></ul></div></section>
-<section id="teams_and_strong_projects_strong"><h2>Teams and <strong>Projects</strong></h2><div class="paragraph"><p><span class="image"><img src="img/icon/UE4.jpg" alt="UE"></span> <span class="image"><img src="img/icon/team.svg" alt="teams" width="128" height="128"></span></p></div>
-<div class="ulist step"><ul><li class="fragment"><p>300 employees</p></li><li class="fragment"><p>Split across multiple ongoing projects</p></li><li class="fragment"><p>Some projects use <strong>Splash Engine</strong></p><div class="ulist"><ul><li><p>vanilla + own modules and enhancements</p></li></ul></div></li></ul></div></section>
-<section id="strong_projects_strong_layout" data-state="no_list_decor"><h2><strong>Projects</strong> Layout</h2><div class="ulist step"><ul><li class="fragment"><p></p><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="cpp language-cpp">\Perforce                // master depo
-|</code></pre></div></div></li><li class="fragment"><p></p><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="cpp language-cpp">├───Project-A           // game project
-│   ├───docs
-│   ├───raw
-│   └───ue4
-│       ├───Engine
-│       └───Project-A
-│       ...</code></pre></div></div></li><li class="fragment"><p></p><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="cpp language-cpp">│
-├───Project-B   // another game project
-│   ...</code></pre></div></div></li><li class="fragment"><p></p><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="cpp language-cpp">│
-├───splash-ue4         // Splash Engine
-│   ...</code></pre></div></div></li></ul></div></section>
-<section id="game_strong_modules_strong"><h2>Game <strong>Modules</strong></h2><div class="paragraph"><p>We strive to have multiple independent modules (as opposed to 1 monolithic one)</p></div>
-<div class="ulist step"><ul><li class="fragment"><p>Helps with encapsulation and architecture</p></li><li class="fragment"><p>Allows faster iteration</p><div class="ulist"><ul><li><p>linkage improvements</p></li><li><p>Editor Hot-Reload</p></li></ul></div></li><li class="fragment"><p>Promotes re-use throughout projects</p></li></ul></div></section>
-<section id="game_module_code_surf" data-background-iframe="surf/index.html#6" data-state="no_list_decor"><div class="ulist"><ul><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li></ul></div></section>
-<section id="strong_quick_dirty_strong_automation"><h2><strong>Quick &amp; Dirty</strong> Automation</h2><div class="ulist"><ul><li><p><code>GenerateModule.cmd</code></p></li><li><p>Batch file script that produces</p><div class="ulist"><ul><li><p>folder structure</p></li><li><p>initial <em>&#8230;&#8203;build.cs</em> file with good defaults for us</p></li></ul></div></li></ul></div></section>
-<section id="coding_strong_standards_strong" data-background-image="img/cards/GOW-UE.jpg" data-state="title_card"><h2>Coding <strong>Standards</strong></h2></section>
+<section id="agenda"><h2>Agenda</h2><div class="ulist"><ul><li><p>Intro to Coding Standards</p></li><li><p>Splash Damage approach</p></li><li><p>Integration into a team</p></li><li><p>Integration across projects</p></li></ul></div></section>
 <section id="about"><h2>About</h2><div class="ulist"><ul><li><p>Splash values <strong>MASTERY</strong> especially in <strong>C++</strong></p></li><li><p>We didn&#8217;t have an established coding standard</p><div class="ulist"><ul><li><p>some attempts to document it in <em>wiki&#8217;s</em></p></li></ul></div></li></ul></div></section>
 <section id="pitfalls"><h2>Pitfalls</h2><div class="ulist step"><ul><li class="fragment"><p>Grow big / Hard to navigate</p></li><li class="fragment"><p>Get <em>out-of-date</em> quickly</p></li><li class="fragment"><p>In separate location</p><div class="ulist"><ul><li><p>outside production source code</p></li></ul></div></li><li class="fragment"><p>Only select few modify or improve them</p></li><li class="fragment"><p>Nobody has time to read documentation! 😛</p></li></ul></div></section>
 <section id="splash_damage_approach"><h2>Splash Damage approach</h2><div class="ulist step"><ul><li class="fragment"><p>Standards are <strong>source code files</strong> 📑</p><div class="ulist"><ul><li><p>you can break the build messing with the standard!</p></li></ul></div></li><li class="fragment"><p>Created and improved through code reviews</p></li><li class="fragment"><p>A system for easy <em>reference</em> and <em>searching</em></p></li></ul></div></section>
@@ -41,159 +17,12 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );</script><!--[if 
 <section id="modify_and_strong_improve_strong"><h2>Modify and <strong>Improve</strong></h2><div class="ulist"><ul><li><p>The standard itself is changed though reviews sent to the whole team</p></li><li><p>If enough up-votes → the proposal gets submitted</p></li></ul></div></section>
 <section id="unintended_consequences"><h2>Unintended Consequences</h2><div class="paragraph"><p>&#8230;&#8203;</p></div></section>
 <section id="unintended_consequences_2"><h2>Unintended Consequences</h2><div class="imageblock" style=""><img src="img/code-std/coding-actor.png" alt="ue4 coding actor"></div></section>
-<section id="content_strong_standards_strong" data-background-image="img/cards/GOW-4.jpg" data-state="title_card"><h2>Content <strong>Standards</strong></h2></section>
-<section id="motivation"><h2>Motivation</h2><div class="ulist step"><ul><li class="fragment"><p>Poor organisation and practices for assets</p><div class="ulist"><ul><li><p>&#8230;&#8203; compound over time</p></li><li><p>&#8230;&#8203; waste productivity</p></li><li><p>&#8230;&#8203; increase cooking and deployment times</p></li></ul></div></li><li class="fragment"><p>UE4 Editor is easy to modify to</p><div class="ulist"><ul><li><p>improve workflows</p></li><li><p>enforce good practices</p></li></ul></div></li></ul></div></section>
-<section id="asset_naming_rules"><h2>Asset Naming Rules</h2><div class="imageblock" style=""><img src="img/content-std/template.png" alt="asset template" width="125%"></div>
-<div class="ulist step"><ul><li class="fragment"><p>Less confusion and improves searching &amp; browsing</p></li><li class="fragment"><p><code>Prefix</code> uses <em>initialism</em> rules</p></li></ul></div></section>
-<section id="asset_naming_example"><h2>Asset Naming Example</h2><div class="imageblock" style=""><img src="img/content-std/example_1.png" alt="assets ex"></div></section>
-<section id="blueprint_standards"><h2>Blueprint Standards</h2><div class="ulist"><ul><li><p>Same principles as the Coding Standard</p></li><li><p>Live in <code>Game/Content/Standard/</code></p></li></ul></div></section>
-<section id="blueprint_standards_ex_1"><div class="imageblock" style=""><img src="img/content-std/blueprint-standard-1.png" alt="blueprint std ex 1"></div></section>
-<section id="blueprint_standards_ex_2"><div class="imageblock" style=""><img src="img/content-std/blueprint-standard-2.png" alt="blueprint std ex 2"></div></section>
-<section id="blueprint_standards_cont"><h2>Blueprint Standards (cont.)</h2><div class="ulist"><ul><li><p>We have some basic automatic validators</p></li><li><p>Best gain for us:</p><div class="ulist"><ul><li><p>enforcing comment nodes</p></li></ul></div></li></ul></div></section>
-<section id="content_strong_validation_strong" data-background-image="img/cards/GOW-5.jpg" data-state="title_card"><h2>Content <strong>Validation</strong></h2></section>
-<section id="automated_validation"><h2>Automated Validation</h2><div class="ulist step"><ul><li class="fragment"><p>CI (Continuous Integration) support</p><div class="ulist"><ul><li><p>validation after submit</p></li><li><p>nightly builds</p></li></ul></div></li><li class="fragment"><p><strong>Naming</strong> Validation</p></li><li class="fragment"><p><strong>Blueprints</strong> Validation</p></li><li class="fragment"><p><strong>Assets</strong> Validation</p></li></ul></div></section>
-<section id="strong_naming_strong_validation"><h2><strong>Naming</strong> Validation</h2><div class="ulist step"><ul><li class="fragment"><p>Automated checker / validator</p><div class="ulist"><ul><li><p>Editor commandlet</p></li><li><p><em>Initialism</em> from asset class name</p></li><li><p>extra JSON file with exceptions</p></li></ul></div></li><li class="fragment"><p>Disallow names like <code>Test</code>, <code>Prototype</code>, <code>Error</code></p></li><li class="fragment"><p>Intercept new asset creation&#8230;&#8203;</p></li></ul></div></section>
-<section id="asset_auto_naming_on_creation"><h2>Asset auto-naming on creation</h2><div class="imageblock" style=""><img src="img/content-std/ue4-auto-naming.gif" alt="auto naming" width="150%"></div></section>
-<section id="strong_asset_import_strong_rule"><h2><strong>Asset import</strong> rule</h2><div class="ulist"><ul><li><p>Disallow import from <em>non-versioned</em> paths</p></li><li><p>Forbidden example:</p><div class="ulist"><ul><li><p>adding data from own Desktop folder 💀</p></li></ul></div></li></ul></div></section>
-<section id="strong_blueprints_strong_validation"><h2><strong>Blueprints</strong> Validation</h2><div class="ulist step"><ul><li class="fragment"><p>Editor commandlet</p></li><li class="fragment"><p>Basic checks</p><div class="ulist"><ul><li><p><em>comment</em> nodes present</p></li><li><p>public functions / vars must have <em>tooltips</em></p></li><li><p>no functions / vars with <em>default names</em></p></li></ul></div></li><li class="fragment"><p>Future work &amp; ideas</p><div class="ulist"><ul><li><p>leverage the engine Blueprint Compiler</p></li><li><p>more complex checks</p></li></ul></div></li></ul></div></section>
-<section id="strong_assets_strong_validation"><h2><strong>Assets</strong> Validation</h2><div class="ulist step"><ul><li class="fragment"><p>For all content - done in CI system</p></li><li class="fragment"><p>Check for missing or bad references</p></li><li class="fragment"><p>Disregard/Disallow <code>Developer</code>, <code>Test</code> folders</p><div class="ulist"><ul><li><p>historically a major pain point for us</p></li></ul></div></li></ul></div></section>
-<section id="strong_assets_strong_validation_cont"><h2><strong>Assets</strong> Validation (cont.)</h2><div class="ulist step"><ul><li class="fragment"><p>How it works</p><div class="ulist"><ul><li><p>leverage the cooking process</p></li><li><p><code>-COOKALL -DUMPALLWARNINGS -WARNINGSASERRORS</code></p></li></ul></div></li><li class="fragment"><p>Not viable for large projects ⚠️</p><div class="ulist"><ul><li><p>explore other possibilities</p></li><li><p>ex: dependency walker via Editor Asset Registry</p></li></ul></div></li></ul></div></section>
-<section id="strong_compilation_strong" data-background-image="img/cards/GOW-T.jpg" data-state="title_card"><h2><strong>Compilation</strong></h2></section>
-<section id="hardware"><h2>Hardware</h2><div class="ulist step"><ul><li class="fragment"><p>Everyday work is very CPU intensive</p></li><li class="fragment"><p>CPU hardware threads</p><div class="ulist"><ul><li><p>jump from 8 to 16 substantial (2x)</p></li><li><p>same from 16 to 32</p></li><li><p>diminishing returns after</p></li></ul></div></li></ul></div></section>
-<section id="strong_distributed_strong_compilation"><h2><strong>Distributed</strong> compilation</h2><div class="ulist step"><ul><li class="fragment"><p><em>Incredibuild</em> for some projects</p><div class="ulist"><ul><li><p>expensive - needs to be budgeted for</p></li></ul></div></li><li class="fragment"><p>We also tried <em>Fastbuild</em></p><div class="ulist"><ul><li><p>free but more difficult to integrate</p></li></ul></div></li></ul></div></section>
-<section id="strong_build_farm_strong"><h2><strong>Build Farm</strong></h2><div class="ulist step"><ul><li class="fragment"><p>Different config and layout <em>per project</em></p></li><li class="fragment"><p>Best performer machine</p><div class="ulist"><ul><li><p>AMD Threadripper 1950x (16c/32t)</p></li><li><p>full Editor rebuild in ~15min</p></li></ul></div></li><li class="fragment"><p>Orchestration</p><div class="ulist"><ul><li><p><em>TeamCity</em> - most projects</p></li><li><p><em>Jenkins</em></p></li></ul></div></li></ul></div></section>
-<section id="infrastructure_strong_as_code_strong"><h2>Infrastructure-<strong>As-Code</strong></h2><div class="ulist step"><ul><li class="fragment"><p>In the past we used ad-hoc methods that didn&#8217;t scale well</p></li><li class="fragment"><p>Too tight integrated with the CI orchestrator ❌</p></li><li class="fragment"><p>Too bespoke for a project - cannot reuse ❌</p></li><li class="fragment"><p>Hard to debug locally ❌</p></li><li class="fragment"><p>Now leveraging Epic&#8217;s own <em>BuildGraph</em> ✅</p></li></ul></div></section>
-<section id="strong_buildgraph_strong"><h2><strong>BuildGraph</strong></h2><div class="ulist"><ul><li><p>Alternative to traditional <code>BuildCookRun</code> batch commands</p></li><li><p>XML based scripts</p></li></ul></div></section>
-<section id="strong_buildgraph_strong_our_usage"><h2><strong>BuildGraph</strong> - Our Usage</h2><div class="ulist step"><ul><li class="fragment"><p>Standardized and reusable set of scripts 📑</p></li><li class="fragment"><p>Unifies all calling paths</p><div class="ulist"><ul><li><p>Visual Studio</p></li><li><p>Editor - Hot Reload</p></li><li><p>command line</p></li><li><p>CI systems</p></li></ul></div></li></ul></div></section>
-<section id="strong_buildgraph_strong_cont"><h2><strong>BuildGraph</strong> (cont.)</h2><div class="ulist step"><ul><li class="fragment"><p>Powerful out of the box</p><div class="ulist"><ul><li><p>some good examples in the Engine</p></li></ul></div></li><li class="fragment"><p>We modified it quite a lot</p></li><li class="fragment"><p>Our most complex use-case:</p><div class="ulist"><ul><li><p>prepare zipped Editor binaries</p></li></ul></div></li></ul></div></section>
-<section id="buildgraph_code_surf" data-background-iframe="surf/index.html#2" data-state="no_list_decor"><div class="ulist"><ul><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li></ul></div></section>
-<section id="pre_strong_commit_strong" data-background-image="img/cards/Batman.jpg" data-state="title_card"><h2>Pre-<strong>Commit</strong></h2></section>
-<section id="context"><h2>Context</h2><div class="ulist step"><ul><li class="fragment"><p>We follow <em>"trunk-based-development"</em></p></li><li class="fragment"><p>Only one main dev branch (per project)</p><div class="ulist"><ul><li><p>split off only for major releases</p></li></ul></div></li><li class="fragment"><p>Everybody submits collaboratively</p><div class="ulist"><ul><li><p>less overhead, fast iteration 👍</p></li><li><p>breakages have large impact 👎</p></li></ul></div></li></ul></div></section>
-<section id="pre_commit_anim" data-background-iframe="surf/index.html#3" data-state="no_list_decor"><div class="ulist"><ul><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li></ul></div></section>
-<section id="pre_commit_anim_2" data-background-iframe="surf/index.html#4" data-state="no_list_decor"><div class="ulist"><ul><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li></ul></div></section>
-<section id="how_it_works"><h2>How it works</h2><div class="ulist"><ul><li><p>Effectively 2 systems working together</p></li><li><p><strong>Frontend</strong></p><div class="ulist"><ul><li><p>what the devs interact with</p></li></ul></div></li><li><p><strong>Backend</strong></p><div class="ulist"><ul><li><p>CI / build-machines</p></li></ul></div></li></ul></div></section>
-<section id="pre_commit_strong_frontend_strong"><h2>Pre-Commit <strong>Frontend</strong></h2><div class="ulist step"><ul><li class="fragment"><p>Tools that allow indirect submits to main code base</p></li><li class="fragment"><p>Off-the-shelf</p><div class="ulist"><ul><li><p>Visual Studio ReSharper Team City plugin</p></li><li><p><a href="https://www.jetbrains.com/resharper/" class="bare">https://www.jetbrains.com/resharper/</a></p></li></ul></div></li><li class="fragment"><p>Internally developed</p><div class="ulist"><ul><li><p>more project specific</p></li><li><p>written in C# or Python</p></li></ul></div></li></ul></div></section>
-<section id="strong_example_strong_visual_studio_resharper"><h2><strong>Example</strong>: Visual Studio ReSharper</h2><div class="imageblock" style=""><img src="img/tools/pre-commit.png" alt="resharper"></div></section>
-<section id="pre_commit_strong_backend_strong"><h2>Pre-Commit <strong>Backend</strong></h2><div class="ulist"><ul><li><p><em>Personal Build</em> system</p><div class="ulist"><ul><li><p>starts CI build configuration in isolation</p></li><li><p>more configurations &#8594; better coverage 😊️</p></li><li><p>more configurations &#8594; stress on build farm ☹️</p></li></ul></div></li></ul></div></section>
-<section id="pre_commit_strong_backend_strong_cont"><h2>Pre-Commit <strong>Backend</strong> (cont.)</h2><div class="ulist step"><ul><li class="fragment"><p>We came up with compile time-saving solution</p><div class="ulist"><ul><li><p>rebuild all participating configurations nightly</p></li><li><p>incremental (non-unity) builds throughout the day</p></li></ul></div></li><li class="fragment"><p>Example:</p><div class="ulist"><ul><li><p><em>Editor</em> + <em>Game(PC)</em> + <em>Game(PS4)</em></p></li><li><p>Overnight: 1.5-2h on fastest machine</p></li><li><p>Daily: <strong>5-15 min</strong> per commit check</p></li></ul></div></li></ul></div></section>
-<section id="strong_takeaway_strong"><h2><strong>Takeaway</strong></h2><div class="ulist"><ul><li><p>Major productivity booster</p></li><li><p>Pioneered in one project for 1 year</p><div class="ulist"><ul><li><p>spreading it to others</p></li></ul></div></li><li><p>Not a silver bullet</p></li></ul></div></section>
-<section id="automation_strong_testing_strong" data-background-image="img/cards/DB-1.jpg" data-state="title_card"><h2>Automation &amp; <strong>Testing</strong></h2></section>
-<section id="commit_preparation"><h2>Commit Preparation</h2><div class="ulist step"><ul><li class="fragment"><p><strong>Perforce Changelist</strong> descriptions</p><div class="ulist"><ul><li><p>Being verbose is very useful but tiring</p></li></ul></div></li><li class="fragment"><p>We developed tools that assist in:</p><div class="ulist"><ul><li><p>writing <em>title</em> and <em>description</em></p></li><li><p>adding  <em>tags</em> like <code>[Feature]</code> <code>[BugFix]</code> etc</p></li><li><p>links to <em>code reviews</em> or JIRA</p></li></ul></div></li></ul></div></section>
-<section id="commit_preparation_cont"><h2>Commit Preparation (cont.)</h2><div class="imageblock" style=""><img src="img/tools/pct-tool.png" alt="pct"></div></section>
-<section id="commit_validation"><h2>Commit Validation</h2><div class="ulist step"><ul><li class="fragment"><p><strong>Perforce Submit</strong> validation tool</p></li><li class="fragment"><p>Changelist formatting</p></li><li class="fragment"><p>Time of day</p><div class="ulist"><ul><li><p>to allow time for tests</p></li></ul></div></li><li class="fragment"><p>No commits when build is broken</p><div class="ulist"><ul><li><p>unless special <code>[BuildFix]</code> token</p></li></ul></div></li></ul></div></section>
-<section id="commit_validation_cont"><h2>Commit Validation (cont.)</h2><div class="imageblock" style=""><img src="img/tools/trigger-tool.webp" alt="trigger" width="85%"></div></section>
-<section id="strong_unit_strong_testing"><h2><strong>Unit</strong> Testing</h2><div class="paragraph"><p>Testing plain classes and structs or single UObjects</p></div>
-<div class="paragraph"><p>We enhanced UE4&#8217;s own framework</p></div>
-<div class="ulist step"><ul><li class="fragment"><p>follow Given / When / Then structure</p></li><li class="fragment"><p>separate standards file</p></li><li class="fragment"><p>integrated with CI (ex: TeamCity)</p></li><li class="fragment"><p>setup &amp; tear-down support</p></li></ul></div></section>
-<section id="unit_test_code_surf" data-background-iframe="surf/index.html#5" data-state="no_list_decor"><div class="ulist"><ul><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li></ul></div></section>
-<section id="strong_functional_strong_testing"><h2><strong>Functional</strong> Testing</h2><div class="paragraph"><p>Blueprint actors in special setup levels to test more complex interactions</p></div>
-<div class="ulist step"><ul><li class="fragment"><p>Live under <code>Game/Content/Test/&#8230;&#8203;</code></p></li><li class="fragment"><p>Named <code>FTEST_</code> to follow Epic&#8217;s convention and for visibility</p></li><li class="fragment"><p>Not network capable</p><div class="ulist"><ul><li><p>Look into recent UE4 additions: <em>Gauntlet</em></p></li></ul></div></li></ul></div></section>
-<section id="strong_test_modules_strong"><h2><strong>Test Modules</strong></h2><div class="paragraph"><p>Very useful to access private data from equivalent runtime module</p></div>
-<div class="ulist step"><ul><li class="fragment"><p>Our solution</p><div class="ulist"><ul><li><p><code>MODULENAME_TEST_API</code> extension to API specifier macros</p></li></ul></div></li></ul></div></section>
-<section id="strong_test_modules_strong_cont"><h2><strong>Test Modules</strong> (cont.)</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="cpp language-cpp">Player\Runtime\Private\Components\SDPlayerCameraTargetComponent.h</code></pre></div></div>
-<div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="cpp language-cpp">UCLASS()
-class PLAYER_TEST_API USDPlayerCameraTargetComponent :
-    public UActorComponent,
-    public IBICameraTarget
-{
-...</code></pre></div></div></section>
-<section id="strong_test_modules_strong_cont_2"><h2><strong>Test Modules</strong> (cont.)</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="cpp language-cpp">Player\Test\Private\SDPlayerCameraTargetComponentTest.cpp</code></pre></div></div>
-<div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="cpp language-cpp">IMPLEMENT_MODULE_TEST(FAttachedToPlayer_GettingAttachmentInfo_ReturnsCameraRootW
-{
-    // Given a camera target component attacher to a player with attachment sock
-    USDPlayerCameraTargetComponent* CameraTargetComponent = Player-&gt;CameraTarget
-    CameraTargetComponent-&gt;SetSocketName(SDPlayerCameraTargetComponentTestHelper
-...</code></pre></div></div></section>
-<section id="ci_tests_integration"><div class="imageblock" style=""><img src="img/tools/tc-tests.png" alt="TC tests"></div></section>
-<section id="editor_automated_strong_distribution_strong"><h2>Editor Automated <strong>Distribution</strong></h2><div class="paragraph"><p>UnrealGameSync (UGS)</p></div>
-<div class="imageblock" style=""><img src="img/tools/UGS.png" alt="UGS"></div></section>
-<section id="unrealgamesync"><h2>UnrealGameSync</h2><div class="ulist step"><ul><li class="fragment"><p>The concept of <strong>Last-Known-Good</strong> Editor build</p></li><li class="fragment"><p>Very useful for non-programmers</p><div class="ulist"><ul><li><p>we stripped out the compilation support</p></li></ul></div></li><li class="fragment"><p>We refactored the packaging script via BuildGraph</p><div class="ulist"><ul><li><p>more control, adding debug symbols upload</p></li></ul></div></li></ul></div></section>
-<section id="strong_takeaway_strong_2"><h2><strong>Takeaway</strong></h2><div class="ulist"><ul><li><p>Automation is an worthwhile investment</p></li><li><p>Must be done early in lifetime of projects</p></li></ul></div></section>
-<section id="strong_splash_strong_engine" data-background-image="img/cards/DB-2.jpg" data-state="title_card"><h2><strong>Splash</strong> Engine</h2></section>
-<section id="about_2"><div class="paragraph"><p>We extract and re-use the UE work across projects into <strong>Splash Engine</strong></p></div>
-<div class="ulist step"><ul><li class="fragment"><p>game-agnostic engine enhancements &amp; fixes gathered across time</p></li><li class="fragment"><p>UI components library</p></li><li class="fragment"><p>Audio utilities</p></li><li class="fragment"><p>Events, Async Tasks library</p></li><li class="fragment"><p>Rendering features</p></li><li class="fragment"><p>Tech-Art utilities (instancing, decal manager, etc)</p></li></ul></div></section>
-<section id="overview"><h2>Overview</h2><div class="ulist step"><ul><li class="fragment"><p>Majority of projects get seeded from <strong>Splash Engine</strong></p></li><li class="fragment"><p>Downstream integrations</p><div class="ulist"><ul><li><p>"Engine" tends to be at latest UE4 version</p></li><li><p>projects update at their own pace</p></li></ul></div></li><li class="fragment"><p>Upstream integrations</p><div class="ulist"><ul><li><p>some projects will bubble-up important features</p></li></ul></div></li></ul></div></section>
-<section id="sd_engine_code_flow" data-background-iframe="surf/index.html#7" data-state="no_list_decor"><div class="ulist"><ul><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li><li class="fragment"><p>&#160;</p></li></ul></div></section>
-<section id="merge_strong_scenario_strong"><h2>Merge <strong>Scenario</strong></h2><div class="paragraph"><p>Updating a game project to latest UE4 version&#8230;&#8203;</p></div></section>
-<section id="splash_ue4_anim"><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="diff language-diff">/splash-ue4
-|
-├───/clean
-│
-│
-├───/main
-|
-|
-├───/project-A
-├───/project-B
-├───...</code></pre></div></div></section>
-<section id="splash_ue4_anim_2"><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="diff language-diff">/splash-ue4                 |
-|                           |
-├───/clean  &lt;---------------'  copy latest UE version
-│                              (allows nice incremental diffs)
-│
-├───/main
-|
-|
-├───/project-A
-├───/project-B
-├───...</code></pre></div></div></section>
-<section id="splash_ue4_anim_3"><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="diff language-diff">/splash-ue4
-|
-├───/clean -----------------.
-│                           |  merge across to main branch
-│                           |  (also update any plugins we use)
-├───/main  &lt;----------------'
-|
-|
-├───/project-A
-├───/project-B
-├───...</code></pre></div></div></section>
-<section id="splash_ue4_anim_4"><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="diff language-diff">/splash-ue4
-|
-├───/clean
-│
-│
-├───/main
-|
-|
-├───/project-A  &lt;-----------.
-├───/project-B              |
-├───...                     |  merge from main game repo
-                            |  (prepare staging area with latest game advances)</code></pre></div></div></section>
-<section id="splash_ue4_anim_5"><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="diff language-diff">/splash-ue4
-|
-├───/clean
-│
-│
-├───/main ------------------.
-|                           |  merge latest engine to game staging
-|                           |  (solve conflicts in isolation from game project)
-├───/project-A &lt;------------'
-├───/project-B
-├───...</code></pre></div></div></section>
-<section id="splash_ue4_anim_6"><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="diff language-diff">/splash-ue4
-|
-├───/clean
-│
-│
-├───/main
-|
-|
-├───/project-A  &gt;-----------.
-├───/project-B              |
-├───...                     |  merge from staging to game project
-                            |  (game project now updated to latest UE)</code></pre></div></div></section>
-<section id="strong_takeaway_strong_3"><h2><strong>Takeaway</strong></h2><div class="ulist"><ul><li><p>Allows us to have quick integrations</p></li><li><p>Decouples main game dev work from integration work</p></li><li><p>Needs dedicated resources otherwise it atrophies</p><div class="ulist"><ul><li><p>we have small <strong>Tech Sharing</strong> group</p></li></ul></div></li></ul></div></section>
-<section id="one_last_thing"><h2>One Last Thing</h2><div class="ulist step"><ul><li class="fragment"><p>We did the UE4 4.21 integration following all this</p></li><li class="fragment"><p>&#8230;&#8203;pre-commit everything</p></li><li class="fragment"><p>&#8230;&#8203;ran all the CI tests</p></li><li class="fragment"><p>and then when opening the Editor&#8230;&#8203;</p></li></ul></div></section>
-<section id="word_of_caution_cont"><div class="imageblock" style=""><img src="img/tools/ue4-merge-error.png" alt="merge error"></div></section>
 <section id="the_end"><div class="paragraph"><p><strong>@valentin_galea</strong></p></div>
 <div class="paragraph"><p>We&#8217;re hiring!</p></div>
 <div class="imageblock" style=""><img src="img/SD/SD-logo-white-orange.svg" alt="SD" width="256" height="256"></div>
 <div class="paragraph"><p><a href="https://github.com/splash-damage/coding-standards">github.com/splash-damage</a></p></div>
 <div class="paragraph"><p><a href="https://www.splashdamage.com/careers/">splashdamage.com/careers</a></p></div></section>
-<section id="attribution"><h2>Attribution</h2><div class="paragraph"><p>Special thanks to my Core-Tech team and the BM/LV team</p></div>
-<div class="paragraph"><p>All images and material &#169; Splash Damage</p></div>
-<div class="paragraph"><p>"Megaphone" and "Teams" icons by <a href="https://www.flaticon.com/authors/eucalyp" class="bare">https://www.flaticon.com/authors/eucalyp</a> under <code>Creative Commons BY 3.0</code></p></div></section></div></div><script src="node_modules/reveal.js/lib/js/head.min.js"></script><script src="node_modules/reveal.js/js/reveal.js"></script><script>// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
+<section id="attribution"><h2>Attribution</h2><div class="paragraph"><p>All images and material &#169; Splash Damage</p></div></section></div></div><script src="node_modules/reveal.js/lib/js/head.min.js"></script><script src="node_modules/reveal.js/js/reveal.js"></script><script>// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
 Reveal.initialize({
   // Display controls in the bottom right corner
   controls: true,
