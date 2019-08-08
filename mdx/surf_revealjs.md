@@ -31,114 +31,55 @@ NOTE: designed to be embed into reveal.js
 
 ---
 <CodeSurfer
-  title="BuildGraph (example)"
-  code={require("!raw-loader!../surf/buildgraph.xml")}
-  theme={code_theme}
-  lang="xml"
-  steps={[
-    { notes: "" },
-    { range: [ 4, 11] },
-    { range: [13, 14] },
-    { range: [18, 23] },
-    { lines: [ 34 ] },
-    { range: [53, 59] },
-    { range: [73, 79] },
-    { range: [132, 141] }
-  ]}
-/>
-
----
-export const flowA = 9
-
-<CodeSurfer
-  title="Normal Commit Flow"
-  code={require("!raw-loader!../surf/submit.txt")}
-  theme={code_theme}
-  lang="yaml"
-  steps={[
-    { notes: "" },
-    { range: [flowA +  1, flowA +  5] },
-    { range: [flowA + 10, flowA + 15] },
-    { range: [flowA + 23, flowA + 28] },
-    { range: [flowA + 36, flowA + 41] }
-  ]}
-/>
-
----
-export const flowB = 9
-
-<CodeSurfer
-  title="Pre-Commit Flow"
-  code={require("!raw-loader!../surf/pre-submit.txt")}
-  theme={code_theme}
-  lang="yaml"
-  steps={[
-    { notes: "" },
-    { range: [flowB +  1, flowB +  5] },
-    { range: [flowB + 10, flowB + 15] },
-    { range: [flowB + 23, flowB + 28] },
-    { range: [flowB + 36, flowB + 41] },
-    { lines: [flowB + 43, flowB + 47] },
-    { range: [flowB + 50, flowB + 53] },
-    { range: [flowB + 62, flowB + 66] },
-  ]}
-/>
-
----
-<CodeSurfer
-  title="Unit Test Example"
-  code={require("!raw-loader!../surf/testing.cpp")}
-  theme={code_theme}
+  title="Section: Layout"
+  code={require("!raw-loader!../standards/snip/layout.cpp")}
   lang="cpp"
+  theme={code_theme}
   steps={[
-    { notes: "" },
-    { range: [ 8, 10], notes: "syntactic sugar macros" },
-    { range: [52, 53], notes: "test names must follow specific naming" },
-    { range: [54, 58], notes: "Given..." },
-    { range: [65, 67], notes: "...When..." },
-    { range: [69, 72], notes: "...Then" }
+    { notes: " " },
   ]}
 />
 
 ---
 <CodeSurfer
-  title="Game Module Layout Example"
-  code={require("!raw-loader!../surf/modules.txt")}
+  title="Section: Braces"
+  code={require("!raw-loader!../standards/snip/braces.cpp")}
+  lang="cpp"
   theme={code_theme}
-  lang="yaml"
   steps={[
-    { notes: "" },
-    { range: [ 3, 16], notes: "Game-logic module" },
-    { range: [19, 29], notes: "Testing module" },
-    { range: [32, 34], notes: "Editor-only module" },
-    { range: [37, 39], notes: "Interface-only module" },
-    { range: [ 3, 16], notes: "Game-logic module" },
-    { lines: [ 4 ], notes: "UnrealBuildTool spec file" },
-    { range: [ 6, 10], notes: "Implementation (*.cpp)" },
-    { range: [12, 16], notes: "Interface (*.h)" }
+    { notes: " " },
+    { range: [ 8, 24], notes: "" },
+    { range: [34, 47] }
   ]}
 />
 
 ---
-export const arch_A = 5
-export const arch_B = 34
-export const arch_C = 64
-
 <CodeSurfer
-  title="Architecture"
-  code={require("!raw-loader!../surf/splash-engine.txt")}
+  title="Section: auto"
+  code={require("!raw-loader!../standards/snip/auto.cpp")}
+  lang="cpp"
   theme={code_theme}
-  lang="yaml"
   steps={[
-    { notes: "" },
-    { lines: [ arch_A+0 ], notes: "master Perforce depot" },
-    { lines: [ arch_A+2 ], notes: "engine 'vanilla' drops from Epic" },
-    { lines: [ arch_A+5 ], notes: "Splash Engine" },
-    { range: [ arch_A+8, arch_A+11], notes: "company games/projects" },
-    { range: [ arch_B+2, arch_B+6 ], notes: "individual downloaded versions" },
-    { range: [ arch_C+1, arch_C+7], notes: "Splash Engine layout" },
-    {   lines: [ arch_C+3 ], notes: "'vanilla' version for merge diff" },
-    {   lines: [ arch_C+4 ], notes: "master branch" },
-    { range: [ arch_C+5, arch_C+8 ], notes: "individual project staging" }
+    { notes: " " },
+    { range: [ 6, 12], notes: "" },
+    { range: [17, 19] },
+    { range: [21, 27] },
+    { range: [29, 40] },
+    { range: [46, 53] }
+  ]}
+/>
+
+---
+<CodeSurfer
+  title="Section: lambda"
+  code={require("!raw-loader!../standards/snip/lambda.cpp")}
+  lang="cpp"
+  theme={code_theme}
+  steps={[
+    { notes: " " },
+    { range: [ 3,  8], notes: "" },
+    { range: [17, 22] },
+    { range: [24, 28] },
+    { range: [34, 43] }
   ]}
 />

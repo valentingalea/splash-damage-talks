@@ -10,13 +10,11 @@
     "raw-loader": "^1.0.0"
   },
   "scripts": {
-    "start": "mdx-deck UE4.md",
-    "build": "mdx-deck build --no-html UE4.md",
-    "pdf": "mdx-deck pdf UE4.md",
-    "image": "mdx-deck screenshot UE4.md",
-    "help": "mdx-deck",
-    "test_revealjs": "mdx-deck surf_revealjs.md",
-    "build_revealjs": "mdx-deck build --no-html surf_revealjs.md"
+    "start": "mdx-deck surf_revealjs.md",
+    "build": "mdx-deck build --no-html surf_revealjs.md",
+    "pdf": "mdx-deck pdf surf_revealjs.md",
+    "image": "mdx-deck screenshot surf_revealjs.md",
+    "help": "mdx-deck"
   },
   "author": "Valentin Galea",
   "license": "MIT"

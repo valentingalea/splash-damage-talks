@@ -128,11 +128,37 @@ image::code-std/review-2.png[code review pic]
 image::code-std/coding-actor.png[ue4 coding actor]
 
 
-== TODO
-- detail of sections
-- how it was created in one team
-- how it grew across / ambassadors 
-- github and PR's
+== Sections Walkthrough
+- More architectural than strict rule-sets
+- Very *Unreal Engine 4* focused
+- Must cater to all experience levels
+
+
+[state=no_list_decor]
+[%notitle, background-iframe="surf/index.html#2"]
+== Surf: Layout
+
+
+[state=no_list_decor]
+[%notitle, background-iframe="surf/index.html#3"]
+== Surf: Brace
+
+
+[state=no_list_decor]
+[%notitle, background-iframe="surf/index.html#4"]
+== Surf: auto
+
+
+[state=no_list_decor]
+[%notitle, background-iframe="surf/index.html#5"]
+== Surf: Lambda
+
+
+== Roadmap
+TODO: merge detail of sections into 1 surf?
+TODO: how it was created in one team
+TODO: how it grew across / ambassadors 
+TODO: github and PR's
 
 
 [%notitle]
