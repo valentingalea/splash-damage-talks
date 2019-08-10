@@ -87,7 +87,7 @@ image:code-std/vs-standards-open.gif[VS]
 
 
 [state=no_list_decor]
-[%notitle, background-iframe="surf/index.html#1"]
+[%notitle, background-iframe="surf_std/index.html#1"]
 == Coding Standard Surf
 [%step]
 - {nbsp}
@@ -135,23 +135,37 @@ image::code-std/coding-actor.png[ue4 coding actor]
 
 
 [state=no_list_decor]
-[%notitle, background-iframe="surf/index.html#2"]
+[%notitle, background-iframe="surf_std_layout/index.html#1"]
 == Surf: Layout
 
 
 [state=no_list_decor]
-[%notitle, background-iframe="surf/index.html#3"]
-== Surf: Brace
+[%notitle, background-iframe="surf_std_braces/index.html#1"]
+== Surf: Braces
+[%step]
+- {nbsp}
+- {nbsp}
 
 
 [state=no_list_decor]
-[%notitle, background-iframe="surf/index.html#4"]
+[%notitle, background-iframe="surf_std_auto/index.html#1"]
 == Surf: auto
+[%step]
+- {nbsp}
+- {nbsp}
+- {nbsp}
+- {nbsp}
+- {nbsp}
 
 
 [state=no_list_decor]
-[%notitle, background-iframe="surf/index.html#5"]
+[%notitle, background-iframe="surf_std_lambda/index.html#1"]
 == Surf: Lambda
+[%step]
+- {nbsp}
+- {nbsp}
+- {nbsp}
+- {nbsp}
 
 
 == Roadmap
