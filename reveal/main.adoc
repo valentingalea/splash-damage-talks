@@ -180,6 +180,44 @@ image::code-std/coding-actor.png[ue4 coding actor]
 - {nbsp}
 
 
+== Adoption
+- *Splash Damage* has multiple projects ongoing
+- Originally standard was created in one project
+  * really took off
+  * people embraced the idea & spirit
+- How to distribute to all?
+
+
+== Obstacles
+- Each project is unique in challenges
+- Differences in
+  * version of UE4
+  * servers and repositories
+  * contracts and legal
+
+
+== Solution
+[%step]
+- Open Source under permissive licence
+  * BSD 3-clause
+- Small core of maintainers across projects
+  * image:sd-team.png[]
+
+
+== Solution (cont.)
+- Core team has multiple responsibilities
+- Discusses major changes
+- Reviews and approves `PR` 's
+- Integrates latest into own project
+
+
+== Ambassadors
+- Interested people from projects
+- Spread awareness of standard
+- Call it in reviews, encourage use throughout
+- Meet with Core Team 
+- add `PR` 's
+
 == Roadmap
 TODO: review .h surf
 TODO: how it was created in one team
