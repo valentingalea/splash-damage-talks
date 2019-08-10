@@ -16,7 +16,8 @@
     "build_std_layout": "mdx-deck build -d surf_std_layout --no-html surf_std_layout.md",
     "build_std_braces": "mdx-deck build -d surf_std_braces --no-html surf_std_braces.md",
     "build_std_auto"  : "mdx-deck build -d surf_std_auto   --no-html surf_std_auto.md",
-    "build_std_lambda": "mdx-deck build -d surf_std_lambda --no-html surf_std_lambda.md"
+    "build_std_lambda": "mdx-deck build -d surf_std_lambda --no-html surf_std_lambda.md",
+    "build_std_memory": "mdx-deck build -d surf_std_memory --no-html surf_std_memory.md"
   },
   "author": "Valentin Galea",
   "license": "MIT"

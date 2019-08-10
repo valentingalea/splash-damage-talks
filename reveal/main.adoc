@@ -130,8 +130,9 @@ image::code-std/coding-actor.png[ue4 coding actor]
 
 == Sections Walkthrough
 - More architectural than strict rule-sets
-- Very *Unreal Engine 4* focused
-- Must cater to all experience levels
+- Mostly *Unreal Engine 4* focused rather than `std::`
+- Try to cater to all experience levels
+  * from Juniors to Principals
 
 
 [state=no_list_decor]
@@ -168,8 +169,19 @@ image::code-std/coding-actor.png[ue4 coding actor]
 - {nbsp}
 
 
+[state=no_list_decor]
+[%notitle, background-iframe="surf_std_memory/index.html#1"]
+== Surf: Memory
+[%step]
+- {nbsp}
+- {nbsp}
+- {nbsp}
+- {nbsp}
+- {nbsp}
+
+
 == Roadmap
-TODO: merge detail of sections into 1 surf?
+TODO: review .h surf
 TODO: how it was created in one team
 TODO: how it grew across / ambassadors 
 TODO: github and PR's
