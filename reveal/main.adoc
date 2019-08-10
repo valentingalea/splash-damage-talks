@@ -21,8 +21,9 @@ image::SD/SD-logo-white-orange.svg[SD, 200, 200]
 == Agenda
 - Intro to Coding Standards
 - Splash Damage approach
-- Integration into a team
-- Integration across projects
+  * preview of our standards 
+- Integration and Adoption
+  * across different teams and projects
 
 
 == What are Coding Standards
@@ -121,18 +122,16 @@ image::code-std/review-2.png[code review pic]
 
 
 == Unintended Consequences
-...
-
-
-== Unintended Consequences
-image::code-std/coding-actor.png[ue4 coding actor]
+[.step]
+- image:code-std/coding-actor.png[ue4 coding actor]
 
 
 == Sections Walkthrough
+[.step]
 - More architectural than strict rule-sets
 - Mostly *Unreal Engine 4* focused rather than `std::`
 - Try to cater to all experience levels
-  * from Juniors to Principals
+  * from _Juniors_ to _Principals_
 
 
 [state=no_list_decor]
@@ -181,6 +180,7 @@ image::code-std/coding-actor.png[ue4 coding actor]
 
 
 == Adoption
+[.step]
 - *Splash Damage* has multiple projects ongoing
 - Originally standard was created in one project
   * really took off
@@ -189,40 +189,47 @@ image::code-std/coding-actor.png[ue4 coding actor]
 
 
 == Obstacles
+[.step]
 - Each project is unique in challenges
-- Differences in
-  * version of UE4
-  * servers and repositories
-  * contracts and legal
+- Differences across
+- -> Version of UE4
+- -> servers and repositories
+- -> contracts and legal
 
 
 == Solution
-[%step]
+[.step]
+- Move to 'outside' - *GITHUB*
 - Open Source under permissive licence
   * BSD 3-clause
 - Small core of maintainers across projects
   * image:sd-team.png[]
 
 
-== Solution (cont.)
-- Core team has multiple responsibilities
+== Solution: *Core Team*
+[.step]
+- Share multiple responsibilities
 - Discusses major changes
 - Reviews and approves `PR` 's
 - Integrates latest into own project
 
 
-== Ambassadors
+== Solution: *Ambassadors*
+[.step]
 - Interested people from projects
 - Spread awareness of standard
 - Call it in reviews, encourage use throughout
 - Meet with Core Team 
 - add `PR` 's
 
-== Roadmap
-TODO: review .h surf
-TODO: how it was created in one team
-TODO: how it grew across / ambassadors 
-TODO: github and PR's
+
+== Future
+[.step]
+- More avenues for teaching / advocacy / adoption
+- Styling can be checked by tools
+  * `clang format` etc
+- Techniques... harder
+  * machine learning from commits?
 
 
 [%notitle]
@@ -240,3 +247,8 @@ https://www.splashdamage.com/careers/[splashdamage.com/careers]
 
 == Attribution
 All images and material (C) Splash Damage
+
+
+== TODO
+TODO: review .h surf
+
