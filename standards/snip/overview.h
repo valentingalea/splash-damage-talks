@@ -11,12 +11,13 @@
 // [header.iwyu] we shall use IWYU (Include-What-You-Use)
 #include "CoreMinimal.h"
 
-// [header.rule.incl] list all the dependencies
-#include "GameFramework/Character.h"
-#include "GameFramework/Pawn.h"
-//    group and separate them by shared logic/purpose
-#include "GameFramework/HUD.h"
-#include "GameFramework/HUDHitBox.h"
+// [header.engine.incl] list all the Engine dependencies with angle brackets
+#include <GameFramework/Character.h>
+#include <GameFramework/Pawn.h>
+//  group and separate them by shared logic or purpose
+//  use full relative path (in relation to Engine/Classes folders)
+#include <GameFramework/HUD.h>
+#include <GameFramework/HUDHitBox.h>
 
 // [header.rule.gen] always have the .generated files last
 #include "SplashDamageCodingStandard.generated.h"
@@ -79,15 +80,12 @@ protected:
     //    avoid creating monolithic giant classes!
     // [header.rule.fwd] example of in-place forward declaration
 
-    // [ue.ecs.gc] never use naked pointers to UObject's, always have UPROPERTY 
-    // or equivalent UE smart pointers
-    //    - For storing pointers to classes you don't own, use TWeakObjectPtr
-    //    - Don't initialise TWeakObjectPtr as it will force you to headers!
-    TWeakObjectPtr<USkeletalMeshComponent> OtherMesh; /* <- GOOD */
-    //TWeakObjectPtr<USkeletalMeshComponent> AnotherMesh = nullptr; /* <- BAD */
-    //    - For storing pointers to classes you do own, use UPROPERTY() w. init
+    // [ue.ecs.gc] never use naked pointers to UObject's, always have UPROPERTY
+    //  Generally, for storing pointers to classes you don't own, use TWeakObjec
+    TWeakObjectPtr<const USkeletalMeshComponent> OtherMesh = nullptr;
+    //  Generally, for storing pointers to classes you do own, use UPROPERTY()
     UPROPERTY(BlueprintReadOnly, Category = Mesh)
-    USkeletalMeshComponent* MyMesh = nullptr;
+    const USkeletalMeshComponent* MyMesh = nullptr;
 
     // [class.order.replication] As an exception to [class.ordering], 
     // declare replication functions next to the variable that used them to
@@ -181,7 +179,7 @@ public:
     //  as it provides the most flexibility with operands order and usage
     //  If they needs to access private members 
     //  make them `friend` and respect [class.inline.good]
-    friend inline bool operator == (
+    friend bool operator == (
         const USDCodingStandardExampleComponent &lhs,
         const USDCodingStandardExampleComponent &rhs);
 
