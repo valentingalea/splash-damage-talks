@@ -147,6 +147,13 @@ image::code-std/review-2.png[code review pic]
 - {nbsp}
 
 
+== Automation
+[%step]
+- Layout style can be enforced with tools
+- We do offer `clang-format` support
+- We don't enforce it
+  * prefer to use as teaching material
+
 [state=no_list_decor]
 [%notitle, background-iframe="surf_std_auto/index.html#1"]
 == Surf: auto
