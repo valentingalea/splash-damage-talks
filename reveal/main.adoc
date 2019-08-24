@@ -222,6 +222,17 @@ image::code-std/review-2.png[code review pic]
 - add `PR` 's
 
 
+== Conclusion
+[listing]
+                           Projects
+                       /              \
+                      /                \
+                  Core Team         Ambassadors
+                      \                /
+                       \              /
+                       github/standards
+
+
 == Future
 [.step]
 - More avenues for teaching / advocacy / adoption
