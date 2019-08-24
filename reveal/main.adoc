@@ -28,12 +28,28 @@ Formally adopted coding conventions become _standards_
 
 
 == Examples
-[.step]
-- C++ ISO Standard - promotes specific styles
-  * ex: all `std::` types/functions are _snake_case_
-- C++ Core Guidelines
-- Google style guide
-- Unreal Engine 4
+
+
+== C++ ISO Standard
+[%left]
+image::examples/iso.png[iso, float="left"]
+
+[%right]
+`-` actual spec +
+`-` promotes specific styles +
+ex: all `std::` types / functions are _snake_case_
+
+
+== C++ Core Guidelines
+image::examples/cpp_core_guide.png[core]
+
+
+== Google C++ Style Guide
+image::examples/google.png[goog]
+
+
+== Unreal Engine 4
+image::examples/ue4.png[ue4]
 
 
 == Enforcing / Adoption

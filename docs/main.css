@@ -77,3 +77,7 @@ section[id="strong_projects_strong_layout"] p {
 section[id="strong_projects_strong_layout"] pre {
     margin: 0;
 }
+
+section[id="c_iso_standard"] img {
+    padding: 1em;
+}
