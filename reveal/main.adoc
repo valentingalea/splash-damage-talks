@@ -13,17 +13,9 @@
 
 == @valentin_galea
 
-More than 10 years in the industry, of which 4 at
+More than 12 years in the industry, of which 4 at
 
 image::SD/SD-logo-white-orange.svg[SD, 200, 200]
-
-
-== Agenda
-- Intro to Coding Standards
-- Splash Damage approach
-  * preview of our standards 
-- Integration and Adoption
-  * across different teams and projects
 
 
 == What are Coding Standards
@@ -50,7 +42,7 @@ Formally adopted coding conventions become _standards_
   * ex: PDF, wiki's, etc
 - People are supposed to study then apply in practice
 - Usually _not_ machine readable
-  * somewhat exception: Visual Studio Code Guidelines checker
+  * somewhat exception: Visual Studio _Core Guidelines_ checker
 
 
 == Pitfalls
@@ -254,8 +246,3 @@ https://www.splashdamage.com/careers/[splashdamage.com/careers]
 
 == Attribution
 All images and material (C) Splash Damage
-
-
-== TODO
-TODO: review .h surf
-
