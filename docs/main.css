@@ -81,3 +81,7 @@ section[id="strong_projects_strong_layout"] pre {
 section[id="c_iso_standard"] img {
     padding: 1em;
 }
+
+section[id="c_iso_standard"] p {
+    text-align: left;
+}

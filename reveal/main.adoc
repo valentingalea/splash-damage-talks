@@ -31,10 +31,8 @@ Formally adopted coding conventions become _standards_
 
 
 == C++ ISO Standard
-[%left]
-image::examples/iso.png[iso, float="left"]
+image::examples/iso.png[iso, float="right"]
 
-[%right]
 `-` actual spec +
 `-` promotes specific styles +
 ex: all `std::` types / functions are _snake_case_
