@@ -39,6 +39,9 @@ ex: all `std::` types / functions are _snake_case_
 
 
 == C++ Core Guidelines
+http://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines
+
+== C++ Core Guidelines (cont.)
 image::examples/core_guide_1.png[core]
 
 == C++ Core Guidelines (cont.)
@@ -46,6 +49,9 @@ image::examples/core_guide_2.png[core]
 
 
 == Google C++ Style Guide
+https://google.github.io/styleguide/cppguide.html
+
+== Google C++ Style Guide (cont.)
 image::examples/google_1.png[goog]
 
 == Google C++ Style Guide (cont.)
@@ -53,6 +59,11 @@ image::examples/google_2.png[goog]
 
 
 == Unreal Engine 4
+image::icon/UE4.jpg[UE4]
+
+https://docs.unrealengine.com/en-US/Programming/Development/CodingStandard/index.html
+
+== Unreal Engine 4 (cont.)
 image::examples/ue4_1.png[ue4]
 
 == Unreal Engine 4 (cont.)
