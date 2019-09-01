@@ -19,12 +19,13 @@ NOTE: designed to be embed into reveal.js
     { range: [25, 29], notes: "...and real example code" },
     { range: [31, 37], notes: "domain specific guidelines" },
     { range: [47, 49], notes: "C++ guidelines"},
-    { lines:  [4], notes: "notice the chapter tagging system" },
-    { lines: [11], notes: "inspired by the C++ ISO standard itself" },
-    { lines: [14], notes: "handy in searches, code reviews, etc" },
     { range: [51, 60], notes: "some more examples: virtual declarations" },
     { range: [145, 154], notes: "...readability and naming"},
     { range: [161, 168], notes: "...disapprove of Singleton" },
-    { range: [181, 185], notes: "...etc" }
+    { range: [181, 185], notes: "...etc" },
+    { range: [178, 196], notes: "archictural zoom level 1"},
+    { range: [167, 198], notes: "archictural zoom level 2"},
+    { range: [159, 200], notes: "archictural zoom level 3"},
+    { range: [139, 204], notes: "archictural zoom level - full class"},
   ]}
 />

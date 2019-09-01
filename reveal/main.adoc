@@ -128,6 +128,22 @@ image:code-std/vs-standards-open.gif[VS]
 - {nbsp}
 - {nbsp}
 - {nbsp}
+- {nbsp}
+
+
+== Unintended Consequences
+[.step]
+- image:code-std/coding-actor.png[ue4 coding actor]
+
+
+[state=no_list_decor]
+[%notitle, background-iframe="surf_std_tags/index.html#1"]
+== Surf: Tags
+[%step]
+- {nbsp}
+- {nbsp}
+- {nbsp}
+- {nbsp}
 
 
 == Usage
@@ -145,11 +161,6 @@ image::code-std/review-2.png[code review pic]
 == Modify and *Improve*
 - The standard itself is changed though reviews sent to the whole team
 - If enough up-votes → the proposal gets submitted
-
-
-== Unintended Consequences
-[.step]
-- image:code-std/coding-actor.png[ue4 coding actor]
 
 
 == Sections Walkthrough
@@ -224,7 +235,7 @@ image::code-std/review-2.png[code review pic]
 == Obstacles
 [.step]
 - Each project is unique in challenges
-- Differences across
+- Differences across:
 - -> Version of UE4
 - -> servers and repositories
 - -> contracts and legal
@@ -232,7 +243,7 @@ image::code-std/review-2.png[code review pic]
 
 == Solution
 [.step]
-- Move to 'outside' - *GITHUB*
+- Move to 'outside' -> GitHub
 - Open Source under permissive licence
   * BSD 3-clause
 - Small core of maintainers across projects
@@ -246,6 +257,11 @@ image::code-std/review-2.png[code review pic]
 - Reviews and approves `PR` 's
 - Integrates latest into own project
 
+
+== Solution: not enough!
+- Team is small, busy
+- Hard to enforce
+- More support needed...
 
 == Solution: *Ambassadors*
 [.step]

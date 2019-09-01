@@ -14,6 +14,7 @@
     "test": "mdx-deck surf_std.md"
     ,
     "build_std"       : "mdx-deck build -d surf_std        --no-html surf_std.md",
+    "build_std_tags"  : "mdx-deck build -d surf_std_tags   --no-html surf_std_tags.md",
     "build_std_layout": "mdx-deck build -d surf_std_layout --no-html surf_std_layout.md",
     "build_std_braces": "mdx-deck build -d surf_std_braces --no-html surf_std_braces.md",
     "build_std_auto"  : "mdx-deck build -d surf_std_auto   --no-html surf_std_auto.md",
