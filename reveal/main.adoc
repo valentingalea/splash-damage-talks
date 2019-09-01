@@ -18,6 +18,12 @@ More than 12 years in the industry, of which 4 at
 image::SD/SD-logo-white-orange.svg[SD, 200, 200]
 
 
+== Agenda
+- Background on Coding Standards
+- New Approach
+- Adoption / Enforcing
+
+
 == What are Coding Standards
 [quote, Wikipedia]
 Coding conventions are a set of guidelines for a specific programming language that recommend programming style, practices, and methods for each aspect of a program written in that language
@@ -263,6 +269,7 @@ image::code-std/review-2.png[code review pic]
 - Hard to enforce
 - More support needed...
 
+
 == Solution: *Ambassadors*
 [.step]
 - Interested people from projects
@@ -274,13 +281,19 @@ image::code-std/review-2.png[code review pic]
 
 == Conclusion
 [listing]
-                           Projects
+                           PROJECTS
+                        .            .
                        /              \
                       /                \
-                  Core Team         Ambassadors
+                     /                  \
+                    .                    .
+                CORE TEAM          AMBASSADORS
+                    .                    . 
+                     \                  /
                       \                /
                        \              /
-                       github/standards
+                        .            .
+             github/splash-damage/coding-standards
 
 
 == Future
