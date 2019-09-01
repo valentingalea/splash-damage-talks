@@ -19,5 +19,6 @@ NOTE: designed to be embed into reveal.js
     { range: [25, 29], notes: "" },
     { range: [31, 35], notes: "" },
     { range: [37, 43], notes: "" },
+    { range: [46, 51], notes: "" }
   ]}
 />
