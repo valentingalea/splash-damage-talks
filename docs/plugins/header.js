@@ -4,10 +4,12 @@ var Header = (function() {
     var text = create('span', {}, '@valentin_galea' );
     div.appendChild(text);
     div.appendChild(logo);
+    div.style.visibility = 'hidden';
     select('.reveal').appendChild(div);
 
     Reveal.addEventListener('slidechanged', function(event) {
-        if (event.currentSlide.id == 'the_end' ) {
+        if (event.currentSlide.id == 'the_end' ||
+            event.indexh < 2) {
             div.style.visibility = 'hidden';
         } else {
             div.style.visibility = 'visible';

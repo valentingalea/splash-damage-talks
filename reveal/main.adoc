@@ -11,6 +11,8 @@
 :customcss: main.css
 :imagesdir: img
 
+Valentin Galea
+
 == @valentin_galea
 
 More than 12 years in the industry, of which 4 at

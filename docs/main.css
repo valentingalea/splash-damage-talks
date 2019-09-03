@@ -18,11 +18,9 @@ strong {
     padding: .25em;
     font-size: 2em;
 }
-section[data-state="title_card"] h2 {
-    color: white;
-    background-color:rgba(0,0,0,0.75);
-    padding: .25em;
-    font-size: 2em;   
+.reveal section.title.present p {
+    text-align: left;
+    margin-left: .5em;
 }
 
 .reveal ul {
