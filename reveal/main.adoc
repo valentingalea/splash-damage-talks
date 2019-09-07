@@ -23,7 +23,7 @@ image::SD/SD-logo-white-orange.svg[SD, 200, 200]
 == Agenda
 - Background on Coding Standards
 - New Approach
-- Adoption / Enforcing
+- Teams & Projects dynamic
 
 
 == What are Coding Standards
@@ -169,6 +169,16 @@ image::code-std/review-2.png[code review pic]
 == Modify and *Improve*
 - The standard itself is changed though reviews sent to the whole team
 - If enough up-votes → the proposal gets submitted
+
+
+== *Additional* Benefits
+[.step]
+- Useful as teaching material
+  * introduce new paradigms
+- Empowering for _Juniors_
+  * hold accountable _Seniors_ via '3rd party' standard
+- Ease of onboarding
+  * switch projects more easy
 
 
 == Sections Walkthrough
