@@ -116,7 +116,7 @@ image:code-std/vs-standards-open.gif[VS]
   * `SplashDamageCodingStandard.h`
   * `SplashDamageCodingStandard.cpp`
 - Located in the main source code
-  * `ue4/Game/Source/Main/...`
+  * `UE4/Game/Source/Main/...`
 - *Open Source*
   * https://github.com/splash-damage/coding-standards
 
@@ -166,25 +166,25 @@ Takes the pressure off from feeling judgemental
 image::code-std/review-2.png[code review pic]
 
 
+== *Additional* Benefits
+[.step]
+- Empowering for _Juniors_
+  * hold accountable _Seniors_ via '3rd party' standard
+- Useful as teaching material
+  * introduce new paradigms
+- Ease of onboarding
+  * switch projects more easy
+
+
 == Modify and *Improve*
 - The standard itself is changed though reviews sent to the whole team
 - If enough up-votes → the proposal gets submitted
 
 
-== *Additional* Benefits
-[.step]
-- Useful as teaching material
-  * introduce new paradigms
-- Empowering for _Juniors_
-  * hold accountable _Seniors_ via '3rd party' standard
-- Ease of onboarding
-  * switch projects more easy
-
-
-== Sections Walkthrough
+== *.CPP* Sections Walkthrough
 [.step]
 - More architectural than strict rule-sets
-- Mostly *Unreal Engine 4* focused rather than `std::`
+- Mostly _Unreal Engine 4_ focused rather than `std::`
 - Try to cater to all experience levels
   * from _Juniors_ to _Principals_
 
