@@ -1,0 +1,10 @@
+{
+  "name": "reveal",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Valentin Galea",
+  "license": "MIT",
+  "dependencies": {
+    "asciidoctor-reveal.js": "^1.1.3"
+  }
+}
