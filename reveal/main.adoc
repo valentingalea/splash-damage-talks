@@ -166,7 +166,7 @@ Takes the pressure off from feeling judgemental
 image::code-std/review-2.png[code review pic]
 
 
-== *Additional* Benefits
+== Additional Benefits
 [.step]
 - Empowering for _Juniors_
   * hold accountable _Seniors_ via '3rd party' standard
@@ -176,12 +176,12 @@ image::code-std/review-2.png[code review pic]
   * switch projects more easy
 
 
-== Modify and *Improve*
+== Modify and Improve
 - The standard itself is changed though reviews sent to the whole team
 - If enough up-votes → the proposal gets submitted
 
 
-== *.CPP* Sections Walkthrough
+== .CPP Sections Walkthrough
 [.step]
 - More architectural than strict rule-sets
 - Mostly _Unreal Engine 4_ focused rather than `std::`
