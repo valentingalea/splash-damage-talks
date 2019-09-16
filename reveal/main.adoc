@@ -170,10 +170,9 @@ image::code-std/review-2.png[code review pic]
 [.step]
 - Empowering for _Juniors_
   * hold accountable _Seniors_ via '3rd party' standard
-- Useful as teaching material
-  * introduce new paradigms
-- Ease of onboarding
-  * switch projects more easy
+- Learn by example
+  * preferred by a lot of people
+  * can introduce new paradigms
 
 
 == Modify and Improve
