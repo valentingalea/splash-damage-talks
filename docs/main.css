@@ -10,6 +10,11 @@
 strong {
     color: #FF510D;
     text-transform: uppercase;
+    filter: saturate(200%);
+}
+
+a.bare {
+    color: rgb(158, 254, 255);
 }
 
 .reveal section.title.present h1 {
