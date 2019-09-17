@@ -1,6 +1,6 @@
 import { CodeSurfer } from "mdx-deck-code-surfer"
 export { default as theme } from "./theme"
-import code_theme from "prism-react-renderer/themes/vsDark"
+import code_theme from "./theme-surf"
 
 # Code Surfer
 
