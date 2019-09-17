@@ -43,7 +43,7 @@ image::examples/iso.png[iso, float="right"]
 
 `-` actual spec +
 `-` promotes specific styles +
-ex: all `std::` types / functions are _snake_case_
+E.g.: all `std::` types / functions are _snake_case_
 
 
 == C++ Core Guidelines
@@ -81,7 +81,7 @@ image::examples/ue4_2.png[ue4]
 == Enforcing / Adoption
 [.step]
 - Normally presented as standalone documentation
-  * ex: PDF, wiki's, etc
+  * PDF, wiki's, etc
 - People are supposed to study then apply in practice
 - Usually _not_ machine readable
   * somewhat exception: Visual Studio _Core Guidelines_ checker
