@@ -254,7 +254,7 @@ image::code-std/review-2.png[code review pic]
 [.step]
 - Each project is unique in challenges
 - Differences across:
-- -> Version of UE4
+- -> version of UE4
 - -> servers and repositories
 - -> contracts and legal
 
@@ -319,7 +319,7 @@ image::code-std/review-2.png[code review pic]
 
 [%notitle]
 == The End
-*@valentin_galea*
+@valentin_galea
 
 We're hiring!
 
