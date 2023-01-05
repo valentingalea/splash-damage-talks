@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "dependencies": {
-    "mdx-deck": "^1.8.2"
+    "mdx-deck": "^1.10.2"
   },
   "devDependencies": {
     "mdx-deck-code-surfer": "^0.5.5",
